@@ -1,9 +1,30 @@
+import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import React, { Component } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+
 import { StyleSheet, Text, View } from 'react-native';
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
+
+
 import MYSLT from './app/index';
+import RegPage from './app/registration';
+import MainUI from './app/MainUI'
+
+function RegScreen() {
+  return (
+    <View>
+      <Text>reg screen</Text>
+
+    </View>
+  )
+}
+const Stack = createStackNavigator()
+
+
 
 function cacheImages(images) {
   return images.map(image => {
@@ -14,8 +35,8 @@ function cacheImages(images) {
     }
   });
 }
-
-export default class App extends React.Component {
+//const Stack = createStackNavigator();
+class App extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -39,11 +60,22 @@ export default class App extends React.Component {
         />
       );
     }
-    return <MYSLT />
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="MYSLT">
+          <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
+          <Stack.Screen name="RegPage" component={RegPage} />
+          <Stack.Screen name="MainUI" component={MainUI} />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+
+    )
   }
 
 }
 
+export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
