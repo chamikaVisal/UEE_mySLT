@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet, Dimensions, TextInput } from 'react-native'
 import Svg, { Image, Circle, ClipPath } from 'react-native-svg'
 import Animated, { Easing } from 'react-native-reanimated';
-import { TapGestureHandler, State } from 'react-native-gesture-handler';
+import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationEvents } from 'react-navigation';
+
 const { width, height } = Dimensions.get('window');
 
 const {
@@ -108,7 +112,8 @@ class MYSLT extends React.Component {
             extrapolate: Extrapolate.CLAMP
         })
     }
-    render() {
+
+    render(navigation) {
 
         return (
             <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'flex-end' }}>
@@ -140,21 +145,26 @@ class MYSLT extends React.Component {
                                 width="100%"
                             />
                         </Svg>
+                        <Text style={{ fontStyle: 'italic', fontSize: 15, color: 'white' }}>Sri Lanka Telecom</Text>
 
                     </Animated.View>
 
                 </Animated.View>
 
                 <View style={{ height: height / 3, justifyContent: 'center' }}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("RegPage")}>
+                        <TapGestureHandler>
+                            <Animated.View style={{ ...styles.button, opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
 
-                    <TapGestureHandler>
-                        <Animated.View style={{ ...styles.button, opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
-                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#008ECC' }}>Register</Text>
-                        </Animated.View>
-                    </TapGestureHandler>
+                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#009eff' }}>Register</Text>
+
+
+                            </Animated.View>
+                        </TapGestureHandler>
+                    </TouchableOpacity>
 
                     <TapGestureHandler onHandlerStateChange={this.onStateChange}>
-                        <Animated.View style={{ ...styles.button, backgroundColor: '#008ECC', borderWidth: 1, borderColor: 'white', opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
+                        <Animated.View style={{ ...styles.button, backgroundColor: '#009eff', borderWidth: 1, borderColor: 'white', opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
                             <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Login</Text>
                         </Animated.View>
                     </TapGestureHandler>
@@ -167,7 +177,7 @@ class MYSLT extends React.Component {
                     }} >
                         <TapGestureHandler onHandlerStateChange={this.onCloseState}>
                             <Animated.View style={styles.closeButton}>
-                                <Animated.Text style={{ fontSize: 15, color: '#008ECC', transform: [{ rotate: concat(this.rotateCross, 'deg') }] }}>
+                                <Animated.Text style={{ fontSize: 15, color: '#009eff', transform: [{ rotate: concat(this.rotateCross, 'deg') }] }}>
                                     X
                                 </Animated.Text>
                             </Animated.View>
@@ -175,29 +185,31 @@ class MYSLT extends React.Component {
                         <TextInput
                             placeholder="Username"
                             style={styles.textInput}
-                            placeholderTextColor="#008ECC"
+                            placeholderTextColor="#009eff"
                         />
                         <TextInput
                             placeholder="Password"
                             style={styles.textInput}
-                            placeholderTextColor="#008ECC"
+                            placeholderTextColor="#009eff"
                         />
-                        <Animated.View style={{
-                            ...styles.button, shadowColor: "#000",
-                            shadowOffset: {
-                                width: 0,
-                                height: 2,
-                            },
-                            shadowOpacity: 0.25,
-                            shadowRadius: 3.84,
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("MainUI")}>
+                            <Animated.View style={{
+                                ...styles.button, shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
 
-                            elevation: 5,
-                        }}>
+                                elevation: 5,
 
-                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#008ECC' }}>Login</Text>
+                            }} >
 
-                        </Animated.View>
+                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#009eff' }}>Login</Text>
 
+                            </Animated.View>
+                        </TouchableOpacity>
                     </Animated.View>
 
                 </View>
