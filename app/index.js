@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, Dimensions, TextInput } from 'react-native'
+import Svg, { Image, Circle, ClipPath } from 'react-native-svg'
 import Animated, { Easing } from 'react-native-reanimated';
 import { TapGestureHandler, State } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
@@ -18,7 +19,8 @@ const {
     timing,
     clockRunning,
     interpolate,
-    Extrapolate
+    Extrapolate,
+    concat
 
 } = Animated
 
@@ -61,6 +63,14 @@ class MYSLT extends React.Component {
                 ])
             }
         ])
+
+        this.onCloseState = event([
+            {
+                nativeEvent: ({ state }) => block([
+                    cond(eq(state, State.END), set(this.buttonOpacity, runTiming(new Clock(), 0, 1)))
+                ])
+            }
+        ])
         this.buttonY = interpolate(this.buttonOpacity, {
             inputRange: [0, 1],
             outputRange: [100, 0],
@@ -76,46 +86,122 @@ class MYSLT extends React.Component {
             outputRange: [height / 3, 0],
             extrapolate: Extrapolate.CLAMP
         })
+        this.textInputZindex = interpolate(this.buttonOpacity, {
+            inputRange: [0, 1],
+            outputRange: [1, -1],
+            extrapolate: Extrapolate.CLAMP
+        })
+        this.textInputY = interpolate(this.buttonOpacity, {
+            inputRange: [0, 1],
+            outputRange: [1, 100],
+            extrapolate: Extrapolate.CLAMP
+        })
+        this.textInputOpacity = interpolate(this.buttonOpacity, {
+            inputRange: [0, 1],
+            outputRange: [1, 0],
+            extrapolate: Extrapolate.CLAMP
+        })
+
+        this.rotateCross = interpolate(this.buttonOpacity, {
+            inputRange: [0, 1],
+            outputRange: [180, 360],
+            extrapolate: Extrapolate.CLAMP
+        })
     }
     render() {
+
         return (
             <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'flex-end' }}>
 
                 <Animated.View style={{ ...StyleSheet.absoluteFill, transform: [{ translateY: this.bgY }] }}>
 
-                    <Image
-                        source={require('../assets/bg.jpg')}
-                        style={{ flex: 1, height: null, width: null }}
-                    />
+                    <Svg height={height + 50} width={width}>
+                        <ClipPath id="clip">
+                            <Circle r={height + 50} cx={width / 2} />
+                        </ClipPath>
+                        <Image
+                            href={require('../assets/bg.jpg')}
+                            height={height + 50}
+                            width={width}
+                            preserveAspectRatio='xMIDYmid slice'
+                            clipPath="url(#clip)"
 
+                        />
+                    </Svg>
                     <Animated.View style={{
                         position: 'absolute', alignSelf: 'center', alignItems: 'center', alignSelf: 'center', marginTop: 80,
                         transform: [{ translateY: this.logoY }]
                     }}>
-                        <Image
-                            source={require('../assets/logo_slt.png')}
-                            style={{ position: 'absolute', }}
-                        />
+                        <Svg height={250} width={250}>
+                            <Image
+                                href={require('../assets/logo_slt.png')}
+                                position='absolute'
+                                height="100%"
+                                width="100%"
+                            />
+                        </Svg>
+
                     </Animated.View>
 
                 </Animated.View>
 
                 <View style={{ height: height / 3, justifyContent: 'center' }}>
 
-                    <TapGestureHandler onHandlerStateChange={this.onStateChange}>
+                    <TapGestureHandler>
                         <Animated.View style={{ ...styles.button, opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
                             <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#008ECC' }}>Register</Text>
                         </Animated.View>
                     </TapGestureHandler>
 
                     <TapGestureHandler onHandlerStateChange={this.onStateChange}>
-                        <Animated.View style={{ ...styles.button, backgroundColor: '#008ECC', borderWidth: 2, borderColor: 'white', opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
+                        <Animated.View style={{ ...styles.button, backgroundColor: '#008ECC', borderWidth: 1, borderColor: 'white', opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
                             <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Login</Text>
                         </Animated.View>
                     </TapGestureHandler>
 
+                    <Animated.View style={{
+                        height: height / 3 - 10, ...StyleSheet.absoluteFill, top: null, justifyContent: 'center',
+                        zIndex: this.textInputZindex,
+                        opacity: this.textInputOpacity,
+                        transform: [{ translateY: this.textInputY }]
+                    }} >
+                        <TapGestureHandler onHandlerStateChange={this.onCloseState}>
+                            <Animated.View style={styles.closeButton}>
+                                <Animated.Text style={{ fontSize: 15, color: '#008ECC', transform: [{ rotate: concat(this.rotateCross, 'deg') }] }}>
+                                    X
+                                </Animated.Text>
+                            </Animated.View>
+                        </TapGestureHandler>
+                        <TextInput
+                            placeholder="Username"
+                            style={styles.textInput}
+                            placeholderTextColor="#008ECC"
+                        />
+                        <TextInput
+                            placeholder="Password"
+                            style={styles.textInput}
+                            placeholderTextColor="#008ECC"
+                        />
+                        <Animated.View style={{
+                            ...styles.button, shadowColor: "#000",
+                            shadowOffset: {
+                                width: 0,
+                                height: 2,
+                            },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+
+                            elevation: 5,
+                        }}>
+
+                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#008ECC' }}>Login</Text>
+
+                        </Animated.View>
+
+                    </Animated.View>
+
                 </View>
-            </View>
+            </View >
         )
     }
 }
@@ -130,5 +216,37 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginVertical: 5
+    },
+    textInput: {
+        height: 50,
+        borderRadius: 25,
+        borderWidth: 0.5,
+        marginHorizontal: 20,
+        paddingLeft: 10,
+        marginVertical: 5,
+        borderColor: "#008ECC"
+
+    },
+    closeButton: {
+        height: 40,
+        width: 40,
+        backgroundColor: 'white',
+        borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        top: -20,
+        left: width / 2 - 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+
+
     }
 })
