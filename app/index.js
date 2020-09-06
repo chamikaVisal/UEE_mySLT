@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Text, View, StyleSheet, Dimensions, TextInput } from 'react-native'
+// import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Svg, { Image, Circle, ClipPath } from 'react-native-svg'
 import Animated, { Easing } from 'react-native-reanimated';
 import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationEvents } from 'react-navigation';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+// import { NavigationEvents } from 'react-navigation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -111,14 +112,22 @@ class MYSLT extends React.Component {
             outputRange: [180, 360],
             extrapolate: Extrapolate.CLAMP
         })
+        this.goup = interpolate(this.buttonOpacity, {
+            inputRange: [0, 1],
+            outputRange: [-2 * height / 3, 0],
+            extrapolate: Extrapolate.CLAMP
+        })
+    }
+    onFocus = () => {
+
     }
 
-    render(navigation) {
+    render() {
 
         return (
             <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'flex-end' }}>
 
-                <Animated.View style={{ ...StyleSheet.absoluteFill, transform: [{ translateY: this.bgY }] }}>
+                <Animated.View style={{ ...StyleSheet.absoluteFill, transform: [{ translateY: this.bgY }], position: 'absolute', }}>
 
                     <Svg height={height + 50} width={width}>
                         <ClipPath id="clip">
@@ -182,17 +191,21 @@ class MYSLT extends React.Component {
                                 </Animated.Text>
                             </Animated.View>
                         </TapGestureHandler>
+
                         <TextInput
+                            onFocus={this.onFocus}
+                            autoFocus={false}
                             placeholder="Username"
                             style={styles.textInput}
                             placeholderTextColor="#009eff"
                         />
                         <TextInput
+                            autoFocus={false}
                             placeholder="Password"
                             style={styles.textInput}
                             placeholderTextColor="#009eff"
                         />
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("MainUI")}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("MainUI", alert("login success"))}>
                             <Animated.View style={{
                                 ...styles.button, shadowColor: "#000",
                                 shadowOffset: {
@@ -211,6 +224,7 @@ class MYSLT extends React.Component {
                             </Animated.View>
                         </TouchableOpacity>
                     </Animated.View>
+
 
                 </View>
             </View >

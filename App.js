@@ -13,15 +13,9 @@ import { AppLoading } from 'expo';
 import MYSLT from './app/index';
 import RegPage from './app/registration';
 import MainUI from './app/MainUI'
+import Profile from './app/Profile'
 
-function RegScreen() {
-  return (
-    <View>
-      <Text>reg screen</Text>
 
-    </View>
-  )
-}
 const Stack = createStackNavigator()
 
 
@@ -66,6 +60,10 @@ class App extends React.Component {
           <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
           <Stack.Screen name="RegPage" component={RegPage} />
           <Stack.Screen name="MainUI" component={MainUI} />
+          <Stack.Screen name="Profile" component={Profile} />
+
+          {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
+          <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
 
         </Stack.Navigator>
       </NavigationContainer>
