@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
 
 
-
-class MainUI extends Component {
+class Profile extends Component {
 
 
 
@@ -16,10 +15,12 @@ class MainUI extends Component {
                 backgroundColor: '#ffffff'
 
             }}>
-                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center' }}>
-                    <Text>This is Usage Summary</Text>
-                </View>
 
+                {/* Create your profile UI's here -- Nishiki */}
+                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center' }}>
+                    <Text>This is Profile</Text>
+                </View>
+                {/* Create your profile UI's here -- Nishiki */}
 
                 <View style={{
 
@@ -99,7 +100,6 @@ class MainUI extends Component {
                         <Text style={{ justifyContent: 'center', alignItems: 'center', color: '#f1f3f8' }}>Manage</Text>
                     </View>
 
-
                     <View style={{
                         flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginStart: 10
                     }}>
@@ -139,7 +139,7 @@ class MainUI extends Component {
 
                     }}>
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("Profile")}
+                            onPress={() => { Alert.alert("click") }}
                         >
                             <Image
                                 source={{ uri: 'https://www.iconsdb.com/icons/preview/color/F1F3F8/user-8-xxl.png' }}
@@ -202,4 +202,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default MainUI;
+export default Profile;
