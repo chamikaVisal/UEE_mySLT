@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
 
 
-class Profile extends Component {
+class History extends Component {
 
 
 
@@ -16,11 +16,11 @@ class Profile extends Component {
 
             }}>
 
-                {/* Create your profile UI's here -- Nishiki */}
+                {/* Create your History UI's here -- History */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Profile</Text>
+                    <Text>This is History UI</Text>
                 </View>
-                {/* Create your profile UI's here -- Nishiki */}
+                {/* Create your History UI's here -- History */}
 
                 <View style={{
 
@@ -201,4 +201,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default Profile;
+export default History;
