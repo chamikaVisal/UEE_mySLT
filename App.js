@@ -58,8 +58,8 @@ class App extends React.Component {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="MYSLT">
           <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
-          <Stack.Screen name="RegPage" component={RegPage} />
-          <Stack.Screen name="MainUI" component={MainUI} />
+          <Stack.Screen name="RegPage" component={RegPage} options={{ headerShown: false }} />
+          <Stack.Screen name="MainUI" component={MainUI} options={{ headerShown: false }} />
           <Stack.Screen name="Profile" component={Profile} />
 
           {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />

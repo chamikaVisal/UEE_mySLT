@@ -57,9 +57,15 @@ function runTiming(clock, value, dest) {
         state.position
     ]);
 }
+
 class MYSLT extends React.Component {
     constructor() {
         super()
+
+        this.state = {
+            regCliked: false,
+            loginClicked: false
+        };
         this.buttonOpacity = new Value(1)
         this.onStateChange = event([
             {
@@ -118,9 +124,13 @@ class MYSLT extends React.Component {
             extrapolate: Extrapolate.CLAMP
         })
     }
-    onFocus = () => {
-
+    updateState = () => {
+        this.setState({
+            regCliked: true
+        })
+        console.log("reg clicked")
     }
+
 
     render() {
 
@@ -161,16 +171,15 @@ class MYSLT extends React.Component {
                 </Animated.View>
 
                 <View style={{ height: height / 3, justifyContent: 'center' }}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("RegPage")}>
-                        <TapGestureHandler>
-                            <Animated.View style={{ ...styles.button, opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
 
-                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#009eff' }}>Register</Text>
+                    <TapGestureHandler onHandlerStateChange={() => this.props.navigation.navigate("RegPage", alert("asd"))} >
+                        <Animated.View style={{ ...styles.button, opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
+
+                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#009eff' }}>Register</Text>
 
 
-                            </Animated.View>
-                        </TapGestureHandler>
-                    </TouchableOpacity>
+                        </Animated.View>
+                    </TapGestureHandler>
 
                     <TapGestureHandler onHandlerStateChange={this.onStateChange}>
                         <Animated.View style={{ ...styles.button, backgroundColor: '#009eff', borderWidth: 1, borderColor: 'white', opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
@@ -224,6 +233,8 @@ class MYSLT extends React.Component {
                             </Animated.View>
                         </TouchableOpacity>
                     </Animated.View>
+
+
 
 
                 </View>
