@@ -1,8 +1,8 @@
 # UEE_mySLT
 CONFIGS
 
-1. open your command prompt and run 
-npm install -g expo-cli
+1. open your command prompt and run (only if you have not installed expo on your computer)
+npm install -g expo-cli 
 
 2. clone the project and open the command prompt inside the folder.
 
