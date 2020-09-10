@@ -14,7 +14,9 @@ import MYSLT from './app/index';
 import RegPage from './app/registration';
 import MainUI from './app/MainUI'
 import Profile from './app/Profile'
-
+import Manage from './app/Manage'
+import History from './app/History'
+import Promotions from './app/Promotions'
 
 const Stack = createStackNavigator()
 
@@ -60,7 +62,10 @@ class App extends React.Component {
           <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
           <Stack.Screen name="RegPage" component={RegPage} options={{ headerShown: false }} />
           <Stack.Screen name="MainUI" component={MainUI} options={{ headerShown: false }} />
-          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+          <Stack.Screen name="Manage" component={Manage} options={{ headerShown: false }} />
+          <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
+          <Stack.Screen name="Promotions" component={Promotions} options={{ headerShown: false }} />
 
           {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
