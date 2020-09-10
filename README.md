@@ -2,7 +2,7 @@
 CONFIGS
 
 1. open your command prompt and run (only if you have not installed expo on your computer)
-npm install -g expo-cli 
+   npm install -g expo-cli 
 
 2. clone the project and open the command prompt inside the folder.
 
