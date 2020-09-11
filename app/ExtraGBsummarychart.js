@@ -10,7 +10,7 @@ const data = [{
     max: 100
 }]
 
-class MainUI extends Component {
+class ExtraGB extends Component {
 
 
 
@@ -24,22 +24,16 @@ class MainUI extends Component {
 
             }}>
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 0.5, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>Usage Summary</Text>
-                            <View style={{ marginTop: -5, flexDirection: 'row' }}>
-                                <Text style={{ fontSize: 20, color: '#C0C0C0' }}>Your speed is </Text>
-                                <Text style={{ fontSize: 20, color: '#00FF00' }}>Normal </Text>
-                                <Text style={{ fontSize: 20, color: '#C0C0C0' }}>right now</Text>
-                            </View>
-
+                            <Text style={{ fontSize: 28, color: '#009eff' }}>Extra GB Summary</Text>
                         </View>
 
                     </View>
 
                     <View style={{
-                        flex: 2, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20,
+                        flex: 1.5, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 20,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
@@ -52,9 +46,9 @@ class MainUI extends Component {
                     }}>
                         <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
                             <View style={{ flex: 1 }}>
-                                <Text style={{ fontSize: 20 }}>Standard Volume</Text>
+                                <Text style={{ fontSize: 20 }}>Extra GB - 5 GB</Text>
                             </View>
-                            <View style={{ flex: 6 }}>
+                            <View style={{ flex: 5 }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
                                     {data.map((p, i) => {
                                         return <UsagesummaryChart key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} />
@@ -62,9 +56,9 @@ class MainUI extends Component {
                                 </View>
 
                             </View>
-                            <View style={{ flex: 1 }}>
+                            <View style={{ flex: 0.9 }}>
                                 <TouchableOpacity onPress={() => { Alert.alert("click") }}>
-                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
+                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Extra GB Usage</Text>
                                 </TouchableOpacity>
                             </View>
 
@@ -72,7 +66,7 @@ class MainUI extends Component {
                     </View>
 
                     <View style={{
-                        flex: 1, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 5,
+                        flex: 0.8, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 10,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
@@ -83,9 +77,9 @@ class MainUI extends Component {
 
                         elevation: 5,
                     }}>
-                        <View style={{ flex: 1, }}>
+                        <View style={{ flex: 0.9, }}>
                             <View style={{ flexDirection: 'row', flex: 1 }}>
-                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
+                                <View style={{ flex: 1, alignItems: 'center', marginTop: 25 }}>
                                     <Image
                                         style={{ width: 35, height: 35 }}
                                         source={{ uri: 'https://www.iconsdb.com/icons/preview/color/009EFF/clock-6-xxl.png' }}
@@ -96,9 +90,9 @@ class MainUI extends Component {
                                 <View style={{ flex: 5, }}>
                                     <View style={{ flex: 1, flexDirection: 'column' }}>
                                         <View style={{ flex: 1 }}>
-                                            <Text style={{ marginTop: 5, fontSize: 20 }}>Remaining Volume</Text>
+                                            <Text style={{ marginTop: 20, fontSize: 20 }}>Remaining Volume</Text>
                                         </View>
-                                        <View style={{ flex: 1, marginTop: -20 }}>
+                                        <View style={{ flex: 1, marginTop: 35 }}>
                                             <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 31-Aug</Text>
                                         </View>
                                     </View>
@@ -106,10 +100,10 @@ class MainUI extends Component {
                             </View>
 
                         </View>
-                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={{ flex: 1, flex: 2, flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20 }}>Limit</Text>
+                                    <Text style={{ fontSize: 20, marginTop: 25 }}>Limit</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
                                     <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>60.0GB</Text>
@@ -117,7 +111,7 @@ class MainUI extends Component {
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20 }}>Used</Text>
+                                    <Text style={{ fontSize: 20, marginTop: 25  }}>Used</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
                                     <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>30.0GB</Text>
@@ -125,7 +119,7 @@ class MainUI extends Component {
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
+                                    <Text style={{ fontSize: 20, marginRight: 10, marginTop: 25  }}>Remaining</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
                                     <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>30.0GB</Text>
@@ -135,47 +129,19 @@ class MainUI extends Component {
                         </View>
 
                     </View>
+                    <View style={{backgroundColor: '#ffff', flex: 0.3}}>
 
-                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20, paddingRight: 20 }}>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', paddingLeft: 5, borderRadius: 30, height: 40, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate("ExtraGB")}>
-                                    <Text style={{ color: "#009eff" }}>Extra GB</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Add-ons</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Bonus Data</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Free Data</Text>
-
-                                </TouchableOpacity>
-                            </View>
-
-                        </View>
-
-                    </View>
+</View>
                 </View>
 
-
+{/* usage icon */}
                 <View style={{
 
                     position: 'absolute',
                     alignSelf: 'center',
                     backgroundColor: '#ffffff',
                     width: 84,
-                    height: 82,
+                    height: 84.5,
                     borderRadius: 40,
                     bottom: 35,
                     zIndex: 10
@@ -350,4 +316,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default MainUI;
+export default ExtraGB;

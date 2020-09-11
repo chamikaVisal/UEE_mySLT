@@ -19,6 +19,7 @@ import History from './app/History'
 import Promotions from './app/Promotions'
 import PasswordchangeVisal from './app/PasswordchangeVisal'
 import Promocode from './app/Promocode'
+import ExtraGB from './app/ExtraGBsummarychart'
 
 const Stack = createStackNavigator()
 
@@ -70,6 +71,7 @@ class App extends React.Component {
           <Stack.Screen name="Promotions" component={Promotions} options={{ headerShown: false }} />
           <Stack.Screen name="PasswordchangeVisal" component={PasswordchangeVisal} options={{ headerShown: false }} />
           <Stack.Screen name="Promocode" component={Promocode} options={{ headerShown: false }} />
+          <Stack.Screen name="ExtraGB" component={ExtraGB} options={{ headerShown: false }} />
 
           {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}

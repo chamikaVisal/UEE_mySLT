@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, Button } from 'react-native';
 
 
 class Profile extends Component {
@@ -18,12 +18,22 @@ class Profile extends Component {
 
                 {/* Create your profile UI's here -- Nishiki */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Profile UI</Text>
+                    <Text>Profile main page</Text>
                     <View>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("PasswordchangeVisal")}>
                             <Text style={{ color: '#009eff' }}> Click to Change Portal/App Password</Text>
                         </TouchableOpacity>
+
+                        {/* <Button
+  onPress={alert}
+  title="Learn More"
+  color="#841584"
+  accessibilityLabel="Learn more about this purple button"
+/> */}
                     </View>
+                    
+                    
+                    
                 </View>
                 {/* Create your profile UI's here -- Nishiki */}
 
