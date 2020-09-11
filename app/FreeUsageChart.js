@@ -5,12 +5,12 @@ import Constants from 'expo-constants';
 
 
 const data = [{
-    percentage: 50,
+    percentage: 60,
     color: '#009eff',
     max: 100
 }]
 
-class MainUI extends Component {
+class FreeUsageChart extends Component {
 
 
 
@@ -24,22 +24,22 @@ class MainUI extends Component {
 
             }}>
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 0.5, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>Usage Summary</Text>
-                            <View style={{ marginTop: -5, flexDirection: 'row' }}>
+                            <Text style={{ fontSize: 28, color: '#009eff' }}>Free Data Usage</Text>
+                            {/* <View style={{ marginTop: -5, flexDirection: 'row' }}>
                                 <Text style={{ fontSize: 20, color: '#C0C0C0' }}>Your speed is </Text>
                                 <Text style={{ fontSize: 20, color: '#00FF00' }}>Normal </Text>
                                 <Text style={{ fontSize: 20, color: '#C0C0C0' }}>right now</Text>
-                            </View>
+                            </View> */}
 
                         </View>
 
                     </View>
 
                     <View style={{
-                        flex: 2, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20,
+                        flex: 1.2, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
@@ -52,7 +52,7 @@ class MainUI extends Component {
                     }}>
                         <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
                             <View style={{ flex: 1 }}>
-                                <Text style={{ fontSize: 20 }}>Standard Volume</Text>
+                                <Text style={{ fontSize: 20 }}>Free Volume - 5GB</Text>
                             </View>
                             <View style={{ flex: 6 }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -64,7 +64,7 @@ class MainUI extends Component {
                             </View>
                             <View style={{ flex: 1 }}>
                                 <TouchableOpacity onPress={() => { Alert.alert("click") }}>
-                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
+                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Free Data Usage</Text>
                                 </TouchableOpacity>
                             </View>
 
@@ -72,7 +72,7 @@ class MainUI extends Component {
                     </View>
 
                     <View style={{
-                        flex: 1, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 5,
+                        flex: 0.8, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 5,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
@@ -85,7 +85,7 @@ class MainUI extends Component {
                     }}>
                         <View style={{ flex: 1, }}>
                             <View style={{ flexDirection: 'row', flex: 1 }}>
-                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
+                                <View style={{ flex: 1, alignItems: 'center', marginTop: 15 }}>
                                     <Image
                                         style={{ width: 35, height: 35 }}
                                         source={{ uri: 'https://www.iconsdb.com/icons/preview/color/009EFF/clock-6-xxl.png' }}
@@ -96,10 +96,10 @@ class MainUI extends Component {
                                 <View style={{ flex: 5, }}>
                                     <View style={{ flex: 1, flexDirection: 'column' }}>
                                         <View style={{ flex: 1 }}>
-                                            <Text style={{ marginTop: 5, fontSize: 20 }}>Remaining Volume</Text>
+                                            <Text style={{ marginTop: 15, fontSize: 20 }}>Remaining Volume</Text>
                                         </View>
-                                        <View style={{ flex: 1, marginTop: -20 }}>
-                                            <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 31-Aug</Text>
+                                        <View style={{ flex: 0.8, marginTop: -20 }}>
+                                            <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 25-Aug</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -108,27 +108,27 @@ class MainUI extends Component {
                         </View>
                         <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
+                                <View style={{ flex: 2 }}>
                                     <Text style={{ fontSize: 20 }}>Limit</Text>
                                 </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>60.0GB</Text>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>5.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
+                                <View style={{ flex: 2 }}>
                                     <Text style={{ fontSize: 20 }}>Used</Text>
                                 </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>30.0GB</Text>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>2.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
+                                <View style={{ flex: 2 }}>
                                     <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
                                 </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>30.0GB</Text>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>3.0GB</Text>
                                 </View>
                             </View>
 
@@ -136,36 +136,8 @@ class MainUI extends Component {
 
                     </View>
 
-                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20, paddingRight: 20 }}>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', paddingLeft: 5, borderRadius: 30, height: 40, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Extra GB</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Add-ons</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Bonus Data</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate("FreeUsageChart")}>
-                                    <Text style={{ color: "#009eff" }}>Free Data</Text>
-
-                                </TouchableOpacity>
-                            </View>
-
-                        </View>
-
-                    </View>
+                    <View style={{ flex: 0.5, backgroundColor: '#ffffff' }}>
+                    </View> 
                 </View>
 
 
@@ -350,4 +322,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default MainUI;
+export default FreeUsageChart;
