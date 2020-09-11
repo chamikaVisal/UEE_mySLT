@@ -18,7 +18,12 @@ class Profile extends Component {
 
                 {/* Create your profile UI's here -- Nishiki */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Profile</Text>
+                    <Text>This is Profile UI</Text>
+                    <View>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("PasswordchangeVisal")}>
+                            <Text style={{ color: '#009eff' }}> Click to Change Portal/App Password</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 {/* Create your profile UI's here -- Nishiki */}
 
