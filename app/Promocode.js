@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
 
 
-class Promotions extends Component {
+class Promocode extends Component {
 
 
 
@@ -16,11 +16,99 @@ class Promotions extends Component {
 
             }}>
 
-                {/* Create your Promo UI's here -- Promo */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Promotions UI</Text>
+                {/* Create your PasswordchangeVisal UI's here -- PasswordchangeVisal */}
+                <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                            <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
+                            <Text style={{ fontSize: 28, color: '#009eff' }}>Promo Code</Text>
+                            <View style={{ marginTop: -5, flexDirection: 'row' }}>
+                                <Text style={{ fontSize: 20, color: '#C0C0C0' }}>Redeem Your Voucher Now</Text>
+                            </View>
+
+                        </View>
+
+                    </View>
+                    <View style={{
+                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+
+                        elevation: 5,
+                    }}>
+                        <View style={{ flex: 1, }}>
+                            <View style={{ alignItems: 'center', marginTop: 10 }}>
+                                <Text style={{ fontSize: 16 }}>Enter the promocode on the</Text>
+                                <Text style={{ fontSize: 16 }}>voucher to avail yourself with the</Text>
+                                <Text style={{ fontSize: 22, color: '#00FF00' }}>OFFER!</Text>
+                            </View>
+                            <View style={{ alignItems: 'center', marginTop: -40 }}>
+                                <Image
+                                    style={{ width: 250, height: 250 }}
+                                    source={require('../assets/promo.png')}
+                                />
+                            </View>
+
+                        </View>
+                        <View style={{ flex: 1.5, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 5,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                                <View style={{ justifyContent: 'center', marginTop: 20 }}>
+                                    <View style={{ marginTop: 20, alignItems: 'center' }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 22 }}>Enter Voucher ID</Text>
+
+                                    </View>
+
+                                    <View style={{ marginTop: 20 }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Voucher ID</Text>
+                                        <TextInput style={{}}
+                                            autoFocus={false}
+                                            placeholder="Voucher ID"
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                        />
+                                    </View>
+                                    <View style={{ marginTop: 10 }}>
+                                        <TouchableOpacity>
+                                            <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
+                                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Reedem</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
+
+                                </View>
+
+
+                            </View>
+
+                        </View>
+
+                    </View>
+
+
+
+
+
                 </View>
-                {/* Create your Promo UI's here -- Promo */}
+
+
+
+                {/* Create your PasswordchangeVisal UI's here -- PasswordchangeVisal */}
 
                 <View style={{
 
@@ -197,8 +285,27 @@ const styles = StyleSheet.create({
         borderColor: '#009eff'
 
 
-    }
+    },
+    textInput: {
+        height: 50,
+        borderRadius: 25,
+        borderWidth: 0.5,
+        marginHorizontal: 20,
+        paddingLeft: 10,
+        marginVertical: 5,
+        borderColor: "#008ECC"
+
+    },
+    buttonmain: {
+        backgroundColor: 'white',
+        height: 60,
+        marginHorizontal: 20,
+        borderRadius: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 5
+    },
 
 
 });
-export default Promotions;
+export default Promocode;

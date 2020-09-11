@@ -19,6 +19,11 @@ class Manage extends Component {
                 {/* Create your Manage UI's here -- Manage */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
                     <Text>This is Manage UI</Text>
+                    <View>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Promocode")}>
+                            <Text style={{ color: '#009eff' }}> Click to Redeem Data</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 {/* Create your Manage UI's here -- Manage */}
 
