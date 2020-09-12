@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity,TouchableHighlight, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
 
 
-class AddMoreData extends Component {
+class ViewDailyUsage extends Component {
 
 
 
@@ -21,7 +21,7 @@ class AddMoreData extends Component {
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>Add Data Packages</Text>
+                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>Daily Usage</Text>
 
                         </View>
 
@@ -417,4 +417,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default AddMoreData;
+export default ViewDailyUsage;

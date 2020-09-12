@@ -24,6 +24,10 @@ import AddOnUsageChart from './app/AddOnUsageChart'
 import AddMoreData from './app/AddMoreData'
 import TotalUsageChart from './app/TotalUsageChart'
 import ContactInfoChange from './app/ContactInfoChange'
+import ViewDailyUsage from './app/ViewDailyUsage'
+import MoreAddsHansi from './app/MoreAddsHansi'
+
+
 
 
 const Stack = createStackNavigator()
@@ -81,6 +85,8 @@ class App extends React.Component {
           <Stack.Screen name="AddMoreData" component={AddMoreData} options={{ headerShown: false }} />
           <Stack.Screen name="TotalUsageChart" component={TotalUsageChart} options={{ headerShown: false }} />
           <Stack.Screen name="ContactInfoChange" component={ContactInfoChange} options={{ headerShown: false }} />
+          <Stack.Screen name="ViewDailyUsage" component={ViewDailyUsage} options={{ headerShown: false }} />
+          <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} />
 
 
 
