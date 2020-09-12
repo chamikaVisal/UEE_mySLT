@@ -28,12 +28,7 @@ class FreeUsageChart extends Component {
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Free Data Usage</Text>
-                            {/* <View style={{ marginTop: -5, flexDirection: 'row' }}>
-                                <Text style={{ fontSize: 20, color: '#C0C0C0' }}>Your speed is </Text>
-                                <Text style={{ fontSize: 20, color: '#00FF00' }}>Normal </Text>
-                                <Text style={{ fontSize: 20, color: '#C0C0C0' }}>right now</Text>
-                            </View> */}
-
+                          
                         </View>
 
                     </View>
