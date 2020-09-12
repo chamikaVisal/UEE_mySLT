@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity,TouchableHighlight, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
 
 
-class Promocode extends Component {
+class AddMoreData extends Component {
 
 
 
@@ -417,4 +417,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default Promocode;
+export default AddMoreData;
