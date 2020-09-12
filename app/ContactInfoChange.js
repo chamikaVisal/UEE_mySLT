@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
 
 
-class Profile extends Component {
+class ContactInfoChange extends Component {
 
 
 
@@ -16,21 +16,96 @@ class Profile extends Component {
 
             }}>
 
-                {/* Create your profile UI's here -- Nishiki */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Profile UI</Text>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("PasswordchangeVisal")}>
-                            <Text style={{ color: '#009eff' }}> Click to Change Portal/App Password</Text>
-                        </TouchableOpacity>
+                <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                            <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
+                            <Text style={{ fontSize: 28, color: '#009eff' }}>Change Your Contact Info</Text>
+                          
+                        </View>
+
                     </View>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ContactInfoChange")}>
-                            <Text style={{ color: '#009eff' }}> Click to Change Contact Info</Text>
-                        </TouchableOpacity>
+                    <View style={{
+                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+
+                        elevation: 5,
+                    }}>
+                        <View style={{ flex: 1, }}>
+                            <View style={{ alignItems: 'center', marginTop: 10 }}>
+                                <Text style={{ fontSize: 16 }}>You may change your</Text>
+                                <Text style={{ fontSize: 16 }}>Contact information</Text>
+                            </View>
+                            <View style={{ alignItems: 'center' }}>
+                                <Image
+                                    style={{ width: 150, height: 150 }}
+                                    source={require('../assets/Contact.png')}
+                                />
+                            </View>
+
+                        </View>
+                        <View style={{ flex: 2, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 5,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                                <View style={{ marginTop: 10 }}>
+                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Full Name</Text>
+                                    <TextInput
+                                        onFocus={this.onFocus}
+                                        autoFocus={false}
+                                        placeholder="*********"
+                                        style={styles.textInput}
+                                        placeholderTextColor="#C0C0C0"
+                                    />
+                                </View>
+                                <View style={{ marginTop: 10 }}>
+                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Email</Text>
+                                    <TextInput style={{}}
+                                        autoFocus={false}
+                                        placeholder="*********"
+                                        style={styles.textInput}
+                                        placeholderTextColor="#C0C0C0"
+                                    />
+                                </View>
+                                <View style={{ marginTop: 10 }}>
+                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Mobile</Text>
+                                    <TextInput style={{}}
+                                        autoFocus={false}
+                                        placeholder="*********"
+                                        style={styles.textInput}
+                                        placeholderTextColor="#C0C0C0"
+                                    />
+                                </View>
+                                <View style={{ marginTop: 5 }}>
+                                    <TouchableOpacity>
+                                        <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Done</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+
+                            </View>
+
+                        </View>
+
                     </View>
+
                 </View>
-                {/* Create your profile UI's here -- Nishiki */}
 
                 <View style={{
 
@@ -207,8 +282,27 @@ const styles = StyleSheet.create({
         borderColor: '#009eff'
 
 
-    }
+    },
+    textInput: {
+        height: 50,
+        borderRadius: 25,
+        borderWidth: 0.5,
+        marginHorizontal: 20,
+        paddingLeft: 10,
+        marginVertical: 5,
+        borderColor: "#008ECC"
+
+    },
+    buttonmain: {
+        backgroundColor: 'white',
+        height: 60,
+        marginHorizontal: 20,
+        borderRadius: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 5
+    },
 
 
 });
-export default Profile;
+export default ContactInfoChange;
