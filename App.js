@@ -21,6 +21,7 @@ import PasswordchangeVisal from './app/PasswordchangeVisal'
 import Promocode from './app/Promocode'
 import FreeUsageChart from './app/FreeUsageChart'
 import AddOnUsageChart from './app/AddOnUsageChart'
+import AddMoreData from './app/AddMoreData'
 // import TotalUsageChart from './app/TotalUsageChart'
 
 const Stack = createStackNavigator()
@@ -75,6 +76,9 @@ class App extends React.Component {
           <Stack.Screen name="Promocode" component={Promocode} options={{ headerShown: false }} />
           <Stack.Screen name="FreeUsageChart" component={FreeUsageChart} options={{ headerShown: false }} />
           <Stack.Screen name="AddOnUsageChart" component={AddOnUsageChart} options={{ headerShown: false }} />
+          <Stack.Screen name="AddMoreData" component={AddMoreData} options={{ headerShown: false }} />
+          {/* <Stack.Screen name="AddDataPackages" component={AddDataPackages} options={{ headerShown: false }} /> */}
+
           {/* <Stack.Screen name="TotalUsageChart" component={TotalUsageChart} options={{ headerShown: false }} /> */}
 
 

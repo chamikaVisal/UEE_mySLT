@@ -24,6 +24,11 @@ class Manage extends Component {
                             <Text style={{ color: '#009eff' }}> Click to Redeem Data</Text>
                         </TouchableOpacity>
                     </View>
+                    <View>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("AddMoreData")}>
+                            <Text style={{ color: '#009eff' }}> Add More Data</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 {/* Create your Manage UI's here -- Manage */}
 
