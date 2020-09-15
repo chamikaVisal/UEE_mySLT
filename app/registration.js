@@ -1,7 +1,136 @@
-import React, { Component } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity, Image, AppRegistry, ScrollView, Dimensions, TextInput } from 'react-native'
+import React, { Component, useRef } from 'react'
+import { Text, View, StyleSheet, TouchableOpacity, Image, AppRegistry, ScrollView, Dimensions, TextInput, Modal } from 'react-native'
+import { CurrentRenderContext } from '@react-navigation/native';
 
 class registration extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            fnameModalshow: false,
+            lnameModalshow: false,
+            emailModalshow: false,
+            mobnoModalshow: false,
+            broadbandunModalshow: false,
+            nicModalshow: false,
+            passwordModalshow: false,
+
+
+            firstname: '',
+            lastname: '',
+            email: '',
+            mobilenumber: '',
+            bbusername: '',
+            nic: '',
+            pw: '',
+            confirmpw: '',
+
+        };
+    }
+    updateValue(text, field) {
+
+        if (field == 'firstname') {
+            this.setState({
+                firstname: text
+            });
+        }
+        else if (field == 'lastname') {
+            this.setState({
+                lastname: text
+            });
+        }
+        else if (field == 'email') {
+            this.setState({
+                email: text
+            });
+        }
+        else if (field == 'mobilenumber') {
+            this.setState({
+                mobilenumber: text
+            });
+        }
+
+        else if (field == 'bbusername') {
+            this.setState({
+                bbusername: text
+            });
+        }
+        else if (field == 'nic') {
+            this.setState({
+                nic: text
+            });
+        }
+        else if (field == 'pw') {
+            this.setState({
+                pw: text
+            });
+        }
+        else if (field == 'confirmpw') {
+            this.setState({
+                confirmpw: text
+            });
+        }
+    }
+    validateFields = () => {
+
+
+        var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var regPhone = /^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|5|6|7|8)\d)\d{6}$/;
+        console.log("fname " + this.state.firstname)
+
+        if (this.state.firstname === "") {
+            this.setState({
+                fnameModalshow: true
+            });
+        }
+        else if (this.state.lastname === "") {
+
+            this.setState({
+                lnameModalshow: true
+            });
+        }
+        else if (this.state.email === "" || !regEmail.test(this.state.email)) {
+
+            this.setState({
+                emailModalshow: true
+            });
+        }
+        else if (this.state.mobilenumber === "" || !regPhone.test(this.state.mobilenumber)) {
+            this.setState({
+                mobnoModalshow: true
+            });
+        }
+        else {
+            CurrentRenderContext.scroll.scrollTo({ x: 400 })
+        }
+    }
+    validateFieldsnext = () => {
+
+
+        if (this.state.bbusername === "") {
+            this.setState({
+                broadbandunModalshow: true
+            });
+        }
+        else if (this.state.nic === "") {
+
+            this.setState({
+                nicModalshow: true
+            });
+        }
+        else if (this.state.pw != this.state.confirmpw) {
+
+            this.setState({
+                passwordModalshow: true
+            });
+        }
+
+        else {
+            this.props.navigation.navigate("MYSLT", alert("successfully Registered"))
+        }
+    }
+
     render() {
         let screenwidth = Dimensions.get('window').width;
         let screeheight = Dimensions.get('window').height;
@@ -18,7 +147,7 @@ class registration extends Component {
 
                 </View>
                 <ScrollView horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}
-                    ref={(node) => this.scroll = node}
+                    ref={(node) => CurrentRenderContext.scroll = node}
                     style={{
                         flex: 8, backgroundColor: '#ffffff'
 
@@ -49,6 +178,336 @@ class registration extends Component {
                                 <Text style={{ fontSize: 20, marginTop: 5, marginLeft: 20 }}>Basic Information</Text>
 
                             </View>
+                            {/* MODAL first name------------------------------------------------------------------------------------------------------------------- */}
+                            <Modal style={{ flex: 1 }}
+                                transparent={true}
+                                visible={this.state.fnameModalshow}>
+                                <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                        <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                            <TouchableOpacity
+                                                onPress={() => { this.setState({ fnameModalshow: false }) }}
+                                            >
+                                                <View style={{ flexDirection: 'row', }}>
+                                                    <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>First Name</Text>
+                                                    </View>
+                                                    <View style={{ flex: 1 }}>
+                                                        <Text >X</Text>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <View
+                                                style={{
+                                                    borderBottomColor: '#d3d3d3',
+                                                    borderBottomWidth: 1,
+                                                    padding: 10
+                                                }}
+                                            ></View>
+                                            <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                                <Image
+                                                    style={{ width: 60, height: 60 }}
+                                                    source={require('../assets/warning.gif')}
+                                                />
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.firstname}</Text>
+                                                <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your first name is invalid !</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                            <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                                onPress={() => { this.setState({ fnameModalshow: false }) }}>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+                            {/* MODAL last name------------------------------------------------------------------------------------------------------------------- */}
+                            <Modal style={{ flex: 1 }}
+                                transparent={true}
+                                visible={this.state.lnameModalshow}>
+                                <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                        <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                            <TouchableOpacity
+                                                onPress={() => { this.setState({ lnameModalshow: false }) }}
+                                            >
+                                                <View style={{ flexDirection: 'row', }}>
+                                                    <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>Last Name</Text>
+                                                    </View>
+                                                    <View style={{ flex: 1 }}>
+                                                        <Text >X</Text>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <View
+                                                style={{
+                                                    borderBottomColor: '#d3d3d3',
+                                                    borderBottomWidth: 1,
+                                                    padding: 10
+                                                }}
+                                            ></View>
+                                            <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                                <Image
+                                                    style={{ width: 60, height: 60 }}
+                                                    source={require('../assets/warning.gif')}
+                                                />
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.lastname}</Text>
+                                                <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your last name is invalid !</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                            <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                                onPress={() => { this.setState({ lnameModalshow: false }) }}>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+                            {/* MODAL email------------------------------------------------------------------------------------------------------------------- */}
+                            <Modal style={{ flex: 1 }}
+                                transparent={true}
+                                visible={this.state.emailModalshow}>
+                                <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                        <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                            <TouchableOpacity
+                                                onPress={() => { this.setState({ emailModalshow: false }) }}
+                                            >
+                                                <View style={{ flexDirection: 'row', }}>
+                                                    <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>Email</Text>
+                                                    </View>
+                                                    <View style={{ flex: 1 }}>
+                                                        <Text >X</Text>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <View
+                                                style={{
+                                                    borderBottomColor: '#d3d3d3',
+                                                    borderBottomWidth: 1,
+                                                    padding: 10
+                                                }}
+                                            ></View>
+                                            <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                                <Image
+                                                    style={{ width: 60, height: 60 }}
+                                                    source={require('../assets/warning.gif')}
+                                                />
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.email}</Text>
+                                                <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your email is invalid !</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                            <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                                onPress={() => { this.setState({ emailModalshow: false }) }}>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+                            {/* MODAL mobno ------------------------------------------------------------------------------------------------------------------- */}
+                            <Modal style={{ flex: 1 }}
+                                transparent={true}
+                                visible={this.state.mobnoModalshow}>
+                                <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                        <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                            <TouchableOpacity
+                                                onPress={() => { this.setState({ mobnoModalshow: false }) }}
+                                            >
+                                                <View style={{ flexDirection: 'row', }}>
+                                                    <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>Mobile Number</Text>
+                                                    </View>
+                                                    <View style={{ flex: 1 }}>
+                                                        <Text >X</Text>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <View
+                                                style={{
+                                                    borderBottomColor: '#d3d3d3',
+                                                    borderBottomWidth: 1,
+                                                    padding: 10
+                                                }}
+                                            ></View>
+                                            <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                                <Image
+                                                    style={{ width: 60, height: 60 }}
+                                                    source={require('../assets/warning.gif')}
+                                                />
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.mobilenumber}</Text>
+                                                <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your Mobile Number is Invalid !</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                            <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                                onPress={() => { this.setState({ mobnoModalshow: false }) }}>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+                            {/*  MODAL bb username ------------------------------------------------------------------------------------------------------------------- */}
+                            <Modal style={{ flex: 1 }}
+                                transparent={true}
+                                visible={this.state.broadbandunModalshow}>
+                                <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                        <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                            <TouchableOpacity
+                                                onPress={() => { this.setState({ broadbandunModalshow: false }) }}
+                                            >
+                                                <View style={{ flexDirection: 'row', }}>
+                                                    <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>Broadband Username</Text>
+                                                    </View>
+                                                    <View style={{ flex: 1 }}>
+                                                        <Text >X</Text>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <View
+                                                style={{
+                                                    borderBottomColor: '#d3d3d3',
+                                                    borderBottomWidth: 1,
+                                                    padding: 10
+                                                }}
+                                            ></View>
+                                            <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                                <Image
+                                                    style={{ width: 60, height: 60 }}
+                                                    source={require('../assets/warning.gif')}
+                                                />
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.mobilenumber}</Text>
+                                                <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your Broadband Username is Invalid !</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                            <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                                onPress={() => { this.setState({ broadbandunModalshow: false }) }}>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+                            {/* MODAL NIC------------------------------------------------------------------------------------------------------------------- */}
+                            <Modal style={{ flex: 1 }}
+                                transparent={true}
+                                visible={this.state.nicModalshow}>
+                                <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                        <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                            <TouchableOpacity
+                                                onPress={() => { this.setState({ nicModalshow: false }) }}
+                                            >
+                                                <View style={{ flexDirection: 'row', }}>
+                                                    <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>NIC</Text>
+                                                    </View>
+                                                    <View style={{ flex: 1 }}>
+                                                        <Text >X</Text>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <View
+                                                style={{
+                                                    borderBottomColor: '#d3d3d3',
+                                                    borderBottomWidth: 1,
+                                                    padding: 10
+                                                }}
+                                            ></View>
+                                            <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                                <Image
+                                                    style={{ width: 60, height: 60 }}
+                                                    source={require('../assets/warning.gif')}
+                                                />
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.mobilenumber}</Text>
+                                                <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your NIC is Invalid !</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                            <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                                onPress={() => { this.setState({ nicModalshow: false }) }}>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+                            {/* MODAL password------------------------------------------------------------------------------------------------------------------- */}
+                            <Modal style={{ flex: 1 }}
+                                transparent={true}
+                                visible={this.state.passwordModalshow}>
+                                <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                        <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                            <TouchableOpacity
+                                                onPress={() => { this.setState({ passwordModalshow: false }) }}
+                                            >
+                                                <View style={{ flexDirection: 'row', }}>
+                                                    <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>Password</Text>
+                                                    </View>
+                                                    <View style={{ flex: 1 }}>
+                                                        <Text >X</Text>
+                                                    </View>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <View
+                                                style={{
+                                                    borderBottomColor: '#d3d3d3',
+                                                    borderBottomWidth: 1,
+                                                    padding: 10
+                                                }}
+                                            ></View>
+                                            <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                                <Image
+                                                    style={{ width: 60, height: 60 }}
+                                                    source={require('../assets/warning.gif')}
+                                                />
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.mobilenumber}</Text>
+                                                <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your passwords do not match !</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                            <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                                onPress={() => { this.setState({ passwordModalshow: false }) }}>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                    <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </Modal>
+                            {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+
                             <View style={{ margin: 10, marginTop: 25 }}>
 
                                 <View >
@@ -59,6 +518,7 @@ class registration extends Component {
                                         placeholder="Katie"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        onChangeText={(text) => this.updateValue(text, 'firstname')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 15 }}>
@@ -68,6 +528,7 @@ class registration extends Component {
                                         placeholder="Shore"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        onChangeText={(text) => this.updateValue(text, 'lastname')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 15 }}>
@@ -78,6 +539,7 @@ class registration extends Component {
                                         placeholder="katie@gmail.com"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        onChangeText={(text) => this.updateValue(text, 'email')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 15 }}>
@@ -87,8 +549,10 @@ class registration extends Component {
                                         placeholder="0717291782"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        onChangeText={(text) => this.updateValue(text, 'mobilenumber')}
                                     />
                                 </View>
+
                             </View>
 
                         </View>
@@ -119,7 +583,9 @@ class registration extends Component {
 
                             </View>
                             <View style={{ marginTop: 10 }}>
-                                <TouchableOpacity onPress={() => { this.scroll.scrollTo({ x: 400 }) }}>
+
+                                {/* <TouchableOpacity onPress={() => { this.scroll.scrollTo({ x: 400 }) }}> */}
+                                <TouchableOpacity onPress={this.validateFields}>
                                     <View style={{ ...styles.button, backgroundColor: '#009eff', borderWidth: 1, borderColor: 'white', opacity: this.buttonOpacity, }}>
                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Next</Text>
                                     </View>
@@ -164,6 +630,7 @@ class registration extends Component {
                                         placeholder="BU145236"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        onChangeText={(text) => this.updateValue(text, 'bbusername')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 15 }}>
@@ -173,6 +640,7 @@ class registration extends Component {
                                         placeholder="962061540V"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        onChangeText={(text) => this.updateValue(text, 'nic')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 15 }}>
@@ -183,6 +651,8 @@ class registration extends Component {
                                         placeholder="*********"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        secureTextEntry={true}
+                                        onChangeText={(text) => this.updateValue(text, 'pw')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 15 }}>
@@ -192,6 +662,8 @@ class registration extends Component {
                                         placeholder="*********"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        secureTextEntry={true}
+                                        onChangeText={(text) => this.updateValue(text, 'confirmpw')}
                                     />
                                 </View>
                             </View>
@@ -225,7 +697,7 @@ class registration extends Component {
 
                             </View>
                             <View style={{ marginTop: 10 }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate("MYSLT", alert("successfully Registered"))}>
+                                <TouchableOpacity onPress={this.validateFieldsnext}>
                                     <View style={{ ...styles.button, backgroundColor: '#009eff', borderWidth: 1, borderColor: 'white', opacity: this.buttonOpacity, }}>
                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Register</Text>
                                     </View>
