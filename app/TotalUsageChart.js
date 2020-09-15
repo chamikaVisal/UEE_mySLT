@@ -5,12 +5,12 @@ import Constants from 'expo-constants';
 
 
 const data = [{
-    percentage: 50,
+    percentage: 25,
     color: '#009eff',
     max: 100
 }]
 
-class MainUI extends Component {
+class TotalUsageChart extends Component {
 
 
 
@@ -52,7 +52,7 @@ class MainUI extends Component {
                     }}>
                         <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
                             <View style={{ flex: 1 }}>
-                                <Text style={{ fontSize: 20 }}>Standard Volume</Text>
+                                <Text style={{ fontSize: 20 }}>Total (Free + Standard)</Text>
                             </View>
                             <View style={{ flex: 6 }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -63,7 +63,7 @@ class MainUI extends Component {
 
                             </View>
                             <View style={{ flex: 1 }}>
-                                <TouchableOpacity onPress={() => { Alert.alert("click") }}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("ViewDailyUsage")}>
                                     <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
                                 </TouchableOpacity>
                             </View>
@@ -112,7 +112,7 @@ class MainUI extends Component {
                                     <Text style={{ fontSize: 20 }}>Limit</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>60.0GB</Text>
+                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>65.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
@@ -120,7 +120,7 @@ class MainUI extends Component {
                                     <Text style={{ fontSize: 20 }}>Used</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>30.0GB</Text>
+                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>40.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
@@ -128,7 +128,7 @@ class MainUI extends Component {
                                     <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>30.0GB</Text>
+                                    <Text style={{ fontSize: 22,marginLeft:-20, color: '#00FF00', marginTop: -10 }}>25.0GB</Text>
                                 </View>
                             </View>
 
@@ -350,4 +350,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default MainUI;
+export default TotalUsageChart;

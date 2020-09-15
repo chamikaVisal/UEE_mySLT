@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import UsagesummaryChart from './Usagesummarychart'
+import Constants from 'expo-constants';
 
 
-class Profile extends Component {
+const data = [{
+    percentage: 60,
+    color: '#009eff',
+    max: 100
+}]
+
+class FreeUsageChart extends Component {
 
 
 
@@ -15,22 +23,118 @@ class Profile extends Component {
                 backgroundColor: '#ffffff'
 
             }}>
+                <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 0.5, backgroundColor: '#ffffff' }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                            <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
+                            <Text style={{ fontSize: 28, color: '#009eff' }}>Free Data Usage</Text>
+                          
+                        </View>
 
-                {/* Create your profile UI's here -- Nishiki */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Profile UI</Text>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("PasswordchangeVisal")}>
-                            <Text style={{ color: '#009eff' }}> Click to Change Portal/App Password</Text>
-                        </TouchableOpacity>
                     </View>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ContactInfoChange")}>
-                            <Text style={{ color: '#009eff' }}> Click to Change Contact Info</Text>
-                        </TouchableOpacity>
+
+                    <View style={{
+                        flex: 1.2, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20,
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+
+                        elevation: 5,
+                    }}>
+                        <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
+                            <View style={{ flex: 1 }}>
+                                <Text style={{ fontSize: 20 }}>Free Volume - 5GB</Text>
+                            </View>
+                            <View style={{ flex: 6 }}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
+                                    {data.map((p, i) => {
+                                        return <UsagesummaryChart key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} />
+                                    })}
+                                </View>
+
+                            </View>
+                            <View style={{ flex: 1 }}>
+                                <TouchableOpacity onPress={() => { Alert.alert("click") }}>
+                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Free Data Usage</Text>
+                                </TouchableOpacity>
+                            </View>
+
+                        </View>
                     </View>
+
+                    <View style={{
+                        flex: 0.8, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 5,
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+
+                        elevation: 5,
+                    }}>
+                        <View style={{ flex: 1, }}>
+                            <View style={{ flexDirection: 'row', flex: 1 }}>
+                                <View style={{ flex: 1, alignItems: 'center', marginTop: 15 }}>
+                                    <Image
+                                        style={{ width: 35, height: 35 }}
+                                        source={{ uri: 'https://www.iconsdb.com/icons/preview/color/009EFF/clock-6-xxl.png' }}
+                                        onPress={() => { Alert.alert("click") }}
+                                    />
+
+                                </View>
+                                <View style={{ flex: 5, }}>
+                                    <View style={{ flex: 1, flexDirection: 'column' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ marginTop: 15, fontSize: 20 }}>Remaining Volume</Text>
+                                        </View>
+                                        <View style={{ flex: 0.8, marginTop: -20 }}>
+                                            <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 25-Aug</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+
+                        </View>
+                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 20 }}>Limit</Text>
+                                </View>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>5.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 20 }}>Used</Text>
+                                </View>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>2.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
+                                </View>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>3.0GB</Text>
+                                </View>
+                            </View>
+
+                        </View>
+
+                    </View>
+
+                    <View style={{ flex: 0.5, backgroundColor: '#ffffff' }}>
+                    </View> 
                 </View>
-                {/* Create your profile UI's here -- Nishiki */}
+
 
                 <View style={{
 
@@ -101,6 +205,7 @@ class Profile extends Component {
 
                                 source={{ uri: 'https://www.iconsdb.com/icons/preview/color/F1F3F8/settings-2-xxl.png' }}
 
+                                onPress={() => { Alert.alert("") }}
                             >
 
                             </Image>
@@ -108,6 +213,7 @@ class Profile extends Component {
                         </TouchableOpacity>
                         <Text style={{ justifyContent: 'center', alignItems: 'center', color: '#f1f3f8' }}>Manage</Text>
                     </View>
+
 
                     <View style={{
                         flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginStart: 10
@@ -164,7 +270,7 @@ class Profile extends Component {
 
                     {/* </View> */}
                 </View>
-            </View>
+            </View >
         );
     }
 
@@ -211,4 +317,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default Profile;
+export default FreeUsageChart;
