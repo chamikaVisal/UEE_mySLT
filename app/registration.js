@@ -123,7 +123,7 @@ class registration extends Component {
                 nicModalshow: true
             });
         }
-        else if (this.state.pw != this.state.confirmpw) {
+        else if (this.state.pw != this.state.confirmpw || this.state.pw === "" || this.state.confirmpw === "") {
 
             this.setState({
                 passwordModalshow: true
@@ -460,7 +460,7 @@ class registration extends Component {
                                                     style={{ width: 60, height: 60 }}
                                                     source={require('../assets/warning.gif')}
                                                 />
-                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.mobilenumber}</Text>
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.nic}</Text>
                                                 <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your NIC is Invalid !</Text>
                                             </View>
                                         </View>
