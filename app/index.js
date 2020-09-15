@@ -58,6 +58,7 @@ function runTiming(clock, value, dest) {
     ]);
 }
 
+
 class MYSLT extends React.Component {
     constructor() {
         super()
@@ -74,6 +75,7 @@ class MYSLT extends React.Component {
                 ])
             }
         ])
+
 
         this.onCloseState = event([
             {
@@ -130,6 +132,10 @@ class MYSLT extends React.Component {
         })
         console.log("reg clicked")
     }
+    componentDidMount() {
+
+    }
+
 
 
     render() {
@@ -164,7 +170,8 @@ class MYSLT extends React.Component {
                                 width="100%"
                             />
                         </Svg>
-                        <Text style={{ fontStyle: 'italic', fontSize: 15, color: 'white' }}>Sri Lanka Telecom</Text>
+                        <Text style={{ color: '#ffffff', fontSize: 24 }}>Sri Lanka Telecom</Text>
+                        <Text style={{ color: '#ffffff', fontSize: 24 }}>MySLT</Text>
 
                     </Animated.View>
 
@@ -172,7 +179,7 @@ class MYSLT extends React.Component {
 
                 <View style={{ height: height / 3, justifyContent: 'center' }}>
 
-                    <TapGestureHandler onHandlerStateChange={() => this.props.navigation.navigate("RegPage", alert("asd"))} >
+                    <TapGestureHandler onHandlerStateChange={() => this.props.navigation.navigate("Selectregtype")} >
                         <Animated.View style={{ ...styles.button, opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
 
                             <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#009eff' }}>Register</Text>

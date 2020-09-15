@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, View } from 'react-native';
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
-import { Container, Text } from 'native-base';
+// import { Container, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -28,6 +28,7 @@ import TotalUsageChart from './app/TotalUsageChart'
 import ContactInfoChange from './app/ContactInfoChange'
 import ViewDailyUsage from './app/ViewDailyUsage'
 // import MoreAddsHansi from './app/MoreAddsHansi'
+import Selectregtype from './app/Selectregtype'
 
 
 
@@ -82,24 +83,25 @@ class App extends React.Component {
 
       <Root>
 
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="MYSLT">
-          <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
-          <Stack.Screen name="RegPage" component={RegPage} options={{ headerShown: false }} />
-          <Stack.Screen name="MainUI" component={MainUI} options={{ headerShown: false }} />
-          <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
-          <Stack.Screen name="Manage" component={Manage} options={{ headerShown: false }} />
-          <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
-          <Stack.Screen name="Promotions" component={Promotions} options={{ headerShown: false }} />
-          <Stack.Screen name="PasswordchangeVisal" component={PasswordchangeVisal} options={{ headerShown: false }} />
-          <Stack.Screen name="Promocode" component={Promocode} options={{ headerShown: false }} />
-          <Stack.Screen name="FreeUsageChart" component={FreeUsageChart} options={{ headerShown: false }} />
-          <Stack.Screen name="AddOnUsageChart" component={AddOnUsageChart} options={{ headerShown: false }} />
-          <Stack.Screen name="AddMoreData" component={AddMoreData} options={{ headerShown: false }} />
-          <Stack.Screen name="TotalUsageChart" component={TotalUsageChart} options={{ headerShown: false }} />
-          <Stack.Screen name="ContactInfoChange" component={ContactInfoChange} options={{ headerShown: false }} />
-          <Stack.Screen name="ViewDailyUsage" component={ViewDailyUsage} options={{ headerShown: false }} />
-          {/* <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} /> */}
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="MYSLT">
+            <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
+            <Stack.Screen name="RegPage" component={RegPage} options={{ headerShown: false }} />
+            <Stack.Screen name="MainUI" component={MainUI} options={{ headerShown: false }} />
+            <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+            <Stack.Screen name="Manage" component={Manage} options={{ headerShown: false }} />
+            <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
+            <Stack.Screen name="Promotions" component={Promotions} options={{ headerShown: false }} />
+            <Stack.Screen name="PasswordchangeVisal" component={PasswordchangeVisal} options={{ headerShown: false }} />
+            <Stack.Screen name="Promocode" component={Promocode} options={{ headerShown: false }} />
+            <Stack.Screen name="FreeUsageChart" component={FreeUsageChart} options={{ headerShown: false }} />
+            <Stack.Screen name="AddOnUsageChart" component={AddOnUsageChart} options={{ headerShown: false }} />
+            <Stack.Screen name="AddMoreData" component={AddMoreData} options={{ headerShown: false }} />
+            <Stack.Screen name="TotalUsageChart" component={TotalUsageChart} options={{ headerShown: false }} />
+            <Stack.Screen name="ContactInfoChange" component={ContactInfoChange} options={{ headerShown: false }} />
+            <Stack.Screen name="ViewDailyUsage" component={ViewDailyUsage} options={{ headerShown: false }} />
+            <Stack.Screen name="Selectregtype" component={Selectregtype} options={{ headerShown: false }} />
+            {/* <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} /> */}
 
 
 
