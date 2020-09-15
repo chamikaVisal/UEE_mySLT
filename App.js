@@ -1,13 +1,15 @@
+import { Root } from 'native-base';
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-
-
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
+import { Container, Text } from 'native-base';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 
 
 import MYSLT from './app/index';
@@ -52,6 +54,14 @@ class App extends React.Component {
     }
 
   }
+  async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      ...Ionicons.font,
+    });
+    this.setState({ isReady: true });
+  }
   async _loadAssetsAsync() {
     const imageAssets = cacheImages([
       require('./assets/bg.jpg'),
@@ -69,6 +79,9 @@ class App extends React.Component {
       );
     }
     return (
+
+      <Root>
+
       <NavigationContainer>
         <Stack.Navigator initialRouteName="MYSLT">
           <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
@@ -90,11 +103,13 @@ class App extends React.Component {
 
 
 
-          {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
+
+            {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
 
-        </Stack.Navigator>
-      </NavigationContainer>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Root>
 
     )
   }
