@@ -1,8 +1,68 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal } from 'react-native';
+import { Container, Header, Content, Text, Button, Toast } from "native-base";
 
 
 class PasswordchangeVisal extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pwModalshow: false,
+
+            pw: '',
+            newpw: '',
+            conpw: '',
+
+            showToast: false
+        };
+    }
+    updateValue(text, field) {
+
+        if (field == 'pw') {
+            this.setState({
+                pw: text
+            });
+        }
+        else if (field == 'newpw') {
+            this.setState({
+                newpw: text
+            });
+        }
+        else if (field == 'conpw') {
+            this.setState({
+                conpw: text
+            });
+        }
+
+    }
+    validateFields = () => {
+
+
+        if (this.state.pw === "") {
+            this.setState({
+                pwModalshow: true
+            });
+        }
+        else if (this.state.newpw === "" || this.state.conpw === "" || (this.state.newpw != this.state.conpw === "")) {
+            this.setState({
+                pwModalshow: true
+            });
+        }
+
+        else {
+            Toast.show({
+                text: "Password Successfully Reseted !",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 4000,
+                style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#00ff80" },
+
+            })
+        }
+    }
 
 
 
@@ -54,6 +114,53 @@ class PasswordchangeVisal extends Component {
                             </View>
 
                         </View>
+                        {/* MODAL VOUCHER------------------------------------------------------------------------------------------------------------------- */}
+                        <Modal style={{ flex: 1 }}
+                            transparent={true}
+                            visible={this.state.pwModalshow}>
+                            <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                <View style={{ backgroundColor: 'rgba(52, 52, 52, 0.0)', paddingVertical: 18, paddingHorizontal: 20, borderRadius: 23, }}>
+                                    <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340 }}>
+                                        <TouchableOpacity
+                                            onPress={() => { this.setState({ pwModalshow: false }) }}
+                                        >
+                                            <View style={{ flexDirection: 'row', }}>
+                                                <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                                    <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>New Password</Text>
+                                                </View>
+                                                <View style={{ flex: 1 }}>
+                                                    <Text >X</Text>
+                                                </View>
+                                            </View>
+                                        </TouchableOpacity>
+                                        <View
+                                            style={{
+                                                borderBottomColor: '#d3d3d3',
+                                                borderBottomWidth: 1,
+                                                padding: 10
+                                            }}
+                                        ></View>
+                                        <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 5, marginBottom: 30 }}>
+                                            <Image
+                                                style={{ width: 60, height: 60 }}
+                                                source={require('../assets/warning.gif')}
+                                            />
+
+                                            <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your passwords do not match!</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ position: 'absolute', bottom: 1, justifyContent: 'center', alignItems: 'center', left: 50, right: 50 }} >
+                                        <TouchableOpacity style={{ height: 45, width: 150, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', }}
+                                            onPress={() => { this.setState({ pwModalshow: false }) }}>
+                                            <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>OK</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </View>
+                        </Modal>
+                        {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
                         <View style={{ flex: 2, }}>
                             <View style={{
                                 flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 5,
@@ -75,6 +182,8 @@ class PasswordchangeVisal extends Component {
                                         placeholder="*********"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        secureTextEntry={true}
+                                        onChangeText={(text) => this.updateValue(text, 'pw')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 10 }}>
@@ -84,6 +193,8 @@ class PasswordchangeVisal extends Component {
                                         placeholder="*********"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        secureTextEntry={true}
+                                        onChangeText={(text) => this.updateValue(text, 'newpw')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 10 }}>
@@ -93,10 +204,12 @@ class PasswordchangeVisal extends Component {
                                         placeholder="*********"
                                         style={styles.textInput}
                                         placeholderTextColor="#C0C0C0"
+                                        secureTextEntry={true}
+                                        onChangeText={(text) => this.updateValue(text, 'conpw')}
                                     />
                                 </View>
                                 <View style={{ marginTop: 5 }}>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={this.validateFields}>
                                         <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
                                             <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Reset</Text>
                                         </View>
