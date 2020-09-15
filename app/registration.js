@@ -1,6 +1,10 @@
+import { Root } from "native-base";
 import React, { Component, useRef } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity, Image, AppRegistry, ScrollView, Dimensions, TextInput, Modal } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, Image, AppRegistry, ScrollView, Dimensions, TextInput, Modal } from 'react-native'
 import { CurrentRenderContext } from '@react-navigation/native';
+import { Container, Header, Content, Text, Button, Toast } from "native-base";
+
+
 
 class registration extends Component {
 
@@ -24,7 +28,7 @@ class registration extends Component {
             nic: '',
             pw: '',
             confirmpw: '',
-
+            showToast: false
         };
     }
     updateValue(text, field) {
@@ -127,6 +131,17 @@ class registration extends Component {
         }
 
         else {
+            Toast.show({
+                text: "Successfully Registered !",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 4000,
+                style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#00ff80" },
+
+            })
             this.props.navigation.navigate("MYSLT", alert("successfully Registered"))
         }
     }
@@ -136,6 +151,7 @@ class registration extends Component {
         let screeheight = Dimensions.get('window').height;
         return (
             <View style={{ flex: 1 }}>
+
                 <View style={{ flex: 0.18, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
@@ -397,7 +413,7 @@ class registration extends Component {
                                                     style={{ width: 60, height: 60 }}
                                                     source={require('../assets/warning.gif')}
                                                 />
-                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.mobilenumber}</Text>
+                                                <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.bbusername}</Text>
                                                 <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your Broadband Username is Invalid !</Text>
                                             </View>
                                         </View>
