@@ -25,7 +25,7 @@ import AddMoreData from './app/AddMoreData'
 import TotalUsageChart from './app/TotalUsageChart'
 import ContactInfoChange from './app/ContactInfoChange'
 import ViewDailyUsage from './app/ViewDailyUsage'
-import MoreAddsHansi from './app/MoreAddsHansi'
+// import MoreAddsHansi from './app/MoreAddsHansi'
 
 
 
@@ -86,7 +86,7 @@ class App extends React.Component {
           <Stack.Screen name="TotalUsageChart" component={TotalUsageChart} options={{ headerShown: false }} />
           <Stack.Screen name="ContactInfoChange" component={ContactInfoChange} options={{ headerShown: false }} />
           <Stack.Screen name="ViewDailyUsage" component={ViewDailyUsage} options={{ headerShown: false }} />
-          <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} />
+          {/* <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} /> */}
 
 
 
