@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal } from 'react-native';
 import { Container, Header, Content, Text, Button, Toast } from "native-base";
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 class Promocode extends Component {
@@ -164,32 +165,33 @@ class Promocode extends Component {
 
                                 elevation: 5,
                             }}>
-                                <View style={{ justifyContent: 'center', marginTop: 20 }}>
-                                    <View style={{ marginTop: 20, alignItems: 'center' }}>
-                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 22 }}>Enter Voucher ID</Text>
+                                <ScrollView>
+                                    <View style={{ justifyContent: 'center', marginTop: 20 }}>
+                                        <View style={{ marginTop: 20, alignItems: 'center' }}>
+                                            <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 22 }}>Enter Voucher ID</Text>
+
+                                        </View>
+
+                                        <View style={{ marginTop: 20 }}>
+                                            <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Voucher ID</Text>
+                                            <TextInput style={{}}
+                                                autoFocus={false}
+                                                placeholder="Voucher ID"
+                                                style={styles.textInput}
+                                                placeholderTextColor="#C0C0C0"
+                                                onChangeText={(text) => this.updateValue(text, 'voucherno')}
+                                            />
+                                        </View>
+                                        <View style={{ marginTop: 10 }}>
+                                            <TouchableOpacity onPress={this.validateFields}>
+                                                <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
+                                                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Reedem</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        </View>
 
                                     </View>
-
-                                    <View style={{ marginTop: 20 }}>
-                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Voucher ID</Text>
-                                        <TextInput style={{}}
-                                            autoFocus={false}
-                                            placeholder="Voucher ID"
-                                            style={styles.textInput}
-                                            placeholderTextColor="#C0C0C0"
-                                            onChangeText={(text) => this.updateValue(text, 'voucherno')}
-                                        />
-                                    </View>
-                                    <View style={{ marginTop: 10 }}>
-                                        <TouchableOpacity onPress={this.validateFields}>
-                                            <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
-                                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Reedem</Text>
-                                            </View>
-                                        </TouchableOpacity>
-                                    </View>
-
-                                </View>
-
+                                </ScrollView>
 
                             </View>
 
