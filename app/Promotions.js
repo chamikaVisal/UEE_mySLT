@@ -17,9 +17,8 @@ class Promotions extends Component {
             }}>
 
                 {/* Create your Promo UI's here -- Promo */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Promotions UI</Text>
-                </View>
+               
+               
                 {/* Create your Promo UI's here -- Promo */}
 
                 <View style={{

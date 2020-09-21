@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
 
 
-class Manage extends Component {
+class MoreAddsHansi extends Component {
 
 
 
@@ -16,31 +16,114 @@ class Manage extends Component {
 
             }}>
 
-                {/* Create your Manage UI's here -- Manage */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Manage UI</Text>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Promocode")}>
-                            <Text style={{ color: '#009eff' }}> Click to Redeem Data</Text>
-                        </TouchableOpacity>
+
+                <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                            <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
+                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>More Ads</Text>
+
+                        </View>
+
                     </View>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("AddMoreData")}>
-                            <Text style={{ color: '#009eff' }}> Add More Data</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("TotalUsageChart")}>
-                            <Text style={{ color: '#009eff' }}> View Total Usage</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("MoreAddsHansi")}>
-                            <Text style={{ color: '#009eff' }}>Click for More Ads</Text>
-                        </TouchableOpacity>
+                    <View style={{
+                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -10,
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+
+                        elevation: 5,
+                    }}>
+                       
+                      
+                        <View style={{ flex: 1.5, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 12,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 6,
+                            }}>
+                            <View style={{ alignItems: 'center'}}> 
+                                <Image
+                                    source={require('../assets/add1.jpg') }
+                                    onPress={ ()=> Linking.openURL('https://www.slt.lk/en/offers') }
+                                    style={{
+                                     height: 181,
+                                     width: 330,borderRadius: 20
+                                     }}
+                                 />
+                            </View>
+                           </View>
+                        </View>
+
+                        <View style={{ flex: 1.5, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 40, borderRadius: 20, marginTop: 1,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                            <View style={{ alignItems: 'center'}}>
+                                <Image
+                                    source={require('../assets/add2.jpg')}
+                                    style={{
+                                     height: 175,
+                                     width: 330,borderRadius: 20
+                                     }}
+                                 />
+                            </View>
+                           </View>
+                        </View>
+
+
+
+                
+
+
+                        <View style={{ flex: 1.5, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: -10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                            <View style={{ alignItems: 'center'}}>
+                                <Image
+                                    source={require('../assets/add3.jpg')}
+                                    style={{
+                                     height: 175,
+                                     width: 330,borderRadius: 20
+                                     }}
+                                 />
+                            </View>
+                           </View>
+                        </View>
+                
                     </View>
                 </View>
-                {/* Create your Manage UI's here -- Manage */}
+
 
                 <View style={{
 
@@ -217,8 +300,27 @@ const styles = StyleSheet.create({
         borderColor: '#009eff'
 
 
-    }
+    },
+    textInput: {
+        height: 50,
+        borderRadius: 25,
+        borderWidth: 0.5,
+        marginHorizontal: 20,
+        paddingLeft: 10,
+        marginVertical: 5,
+        borderColor: "#008ECC"
+
+    },
+    buttonmain: {
+        backgroundColor: 'white',
+        height: 60,
+        marginHorizontal: 20,
+        borderRadius: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 5
+    },
 
 
 });
-export default Manage;
+export default MoreAddsHansi;
