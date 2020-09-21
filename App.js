@@ -29,6 +29,7 @@ import ContactInfoChange from './app/ContactInfoChange'
 import ViewDailyUsage from './app/ViewDailyUsage'
 // import MoreAddsHansi from './app/MoreAddsHansi'
 import Selectregtype from './app/Selectregtype'
+import Bonusdatausage from './app/Bonusdatausage'
 
 
 
@@ -101,6 +102,7 @@ class App extends React.Component {
             <Stack.Screen name="ContactInfoChange" component={ContactInfoChange} options={{ headerShown: false }} />
             <Stack.Screen name="ViewDailyUsage" component={ViewDailyUsage} options={{ headerShown: false }} />
             <Stack.Screen name="Selectregtype" component={Selectregtype} options={{ headerShown: false }} />
+            <Stack.Screen name="Bonusdatausage" component={Bonusdatausage} options={{ headerShown: false }} />
             {/* <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} /> */}
 
 

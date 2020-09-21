@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, ScrollView, Dimensions } from 'react-native';
+import { CurrentRenderContext } from '@react-navigation/native';
 import UsagesummaryChart from './Usagesummarychart'
+
 import Constants from 'expo-constants';
 
 
@@ -9,12 +11,17 @@ const data = [{
     color: '#009eff',
     max: 100
 }]
+const data1 = [{
+    percentage: 25,
+    color: '#009eff',
+    max: 100
+}]
 
 class MainUI extends Component {
 
-
-
     render() {
+        let screenwidth = Dimensions.get('window').width;
+        let screeheight = Dimensions.get('window').height;
         return (
 
             <View style={{
@@ -24,7 +31,7 @@ class MainUI extends Component {
 
             }}>
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ backgroundColor: '#ffffff', }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Usage Summary</Text>
@@ -33,32 +40,54 @@ class MainUI extends Component {
                                 <Text style={{ fontSize: 20, color: '#00FF00' }}>Normal </Text>
                                 <Text style={{ fontSize: 20, color: '#C0C0C0' }}>right now</Text>
                             </View>
-
                         </View>
-
                     </View>
 
-                    <View style={{
-                        flex: 2, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 2,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
 
-                        elevation: 5,
-                    }}>
-                        <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
-                            <View style={{ flex: 1 }}>
-                                <Text style={{ fontSize: 20 }}>Standard Volume</Text>
-                            </View>
-                            <View style={{ flex: 6 }}>
-                                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
-                                    {data.map((p, i) => {
-                                        return <UsagesummaryChart key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} />
-                                    })}
+
+
+
+                    <ScrollView horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}
+                        ref={(node) => CurrentRenderContext.scroll = node}
+                        style={{
+                            flex: 8, backgroundColor: '#ffffff', marginTop: 5
+
+                        }}>
+
+
+                        <View style={{}}>
+
+                            <View style={{
+                                flex: 2, backgroundColor: '#ffffff', marginLeft: 20, borderRadius: 20,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                                width: screenwidth - 35, marginTop: 5
+                            }}>
+                                <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
+                                    <View style={{ flex: 1 }}>
+                                        <Text style={{ fontSize: 20 }}>Standard Volume</Text>
+                                    </View>
+                                    <View style={{ flex: 6 }}>
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
+                                            {data.map((p, i) => {
+                                                return <UsagesummaryChart key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} />
+                                            })}
+                                        </View>
+
+                                    </View>
+                                    <View style={{ flex: 1 }}>
+                                        <TouchableOpacity onPress={() => { Alert.alert("click") }}>
+                                            <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
+                                        </TouchableOpacity>
+                                    </View>
+
                                 </View>
 
                             </View>
@@ -66,106 +95,245 @@ class MainUI extends Component {
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate("ViewDailyUsage")}>
                                     <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
                                 </TouchableOpacity>
+
                             </View>
 
-                        </View>
-                    </View>
+                            <View style={{
+                                flex: 1, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 5,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+                                width: screenwidth - 35,
+                                elevation: 5,
+                            }}>
+                                <View style={{ flex: 1, }}>
+                                    <View style={{ flexDirection: 'row', flex: 1 }}>
+                                        <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
+                                            <Image
+                                                style={{ width: 35, height: 35 }}
+                                                source={{ uri: 'https://www.iconsdb.com/icons/preview/color/009EFF/clock-6-xxl.png' }}
+                                                onPress={() => { Alert.alert("click") }}
+                                            />
 
-                    <View style={{
-                        flex: 1, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 5,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 2,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
-
-                        elevation: 5,
-                    }}>
-                        <View style={{ flex: 1, }}>
-                            <View style={{ flexDirection: 'row', flex: 1 }}>
-                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
-                                    <Image
-                                        style={{ width: 35, height: 35 }}
-                                        source={{ uri: 'https://www.iconsdb.com/icons/preview/color/009EFF/clock-6-xxl.png' }}
-                                        onPress={() => { Alert.alert("click") }}
-                                    />
-
-                                </View>
-                                <View style={{ flex: 5, }}>
-                                    <View style={{ flex: 1, flexDirection: 'column' }}>
-                                        <View style={{ flex: 1 }}>
-                                            <Text style={{ marginTop: 5, fontSize: 20 }}>Remaining Volume</Text>
                                         </View>
-                                        <View style={{ flex: 1, marginTop: -20 }}>
-                                            <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 31-Aug</Text>
+                                        <View style={{ flex: 5, }}>
+                                            <View style={{ flex: 1, flexDirection: 'column' }}>
+                                                <View style={{ flex: 1 }}>
+                                                    <Text style={{ marginTop: 5, fontSize: 20 }}>Remaining Volume</Text>
+                                                </View>
+                                                <View style={{ flex: 1, marginTop: -20 }}>
+                                                    <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 31-Aug</Text>
+                                                </View>
+                                            </View>
                                         </View>
                                     </View>
+
                                 </View>
+                                <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                                    <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 20 }}>Limit</Text>
+                                        </View>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>60.0GB</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 20 }}>Used</Text>
+                                        </View>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>30.0GB</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
+                                        </View>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>30.0GB</Text>
+                                        </View>
+                                    </View>
+
+                                </View>
+
                             </View>
 
+                            <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                                <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20, paddingRight: 20 }}>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', paddingLeft: 5, borderRadius: 30, height: 40, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity>
+                                            <Text style={{ color: "#009eff" }}>Extra GB</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("AddOnUsageChart")}>
+                                            <Text style={{ color: "#009eff" }}>Add-ons</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Bonusdatausage")}>
+                                            <Text style={{ color: "#009eff" }}>Bonus Data</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("FreeUsageChart")}>
+                                            <Text style={{ color: "#009eff" }}>Free Data</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+
+                                </View>
+
+                            </View>
                         </View>
-                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20 }}>Limit</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>60.0GB</Text>
-                                </View>
-                            </View>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20 }}>Used</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>30.0GB</Text>
-                                </View>
-                            </View>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>30.0GB</Text>
+
+
+
+
+                        <View style={{ marginLeft: -5 }}>
+
+                            <View style={{
+                                flex: 2, backgroundColor: '#ffffff', marginLeft: 20, borderRadius: 20,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                                width: screenwidth - 35, marginTop: 5
+
+                            }}>
+                                <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
+                                    <View style={{ flex: 1 }}>
+                                        <Text style={{ fontSize: 20 }}>Total (Free + Standard)</Text>
+                                    </View>
+                                    <View style={{ flex: 6 }}>
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
+                                            {data1.map((p, i) => {
+                                                return <UsagesummaryChart key={i} percentage={p.percentage} color={p.color} delay={500 + 100 * i} max={p.max} />
+                                            })}
+                                        </View>
+
+                                    </View>
+                                    <View style={{ flex: 1 }}>
+                                        <TouchableOpacity onPress={() => { Alert.alert("click") }}>
+                                            <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
+                                        </TouchableOpacity>
+                                    </View>
+
                                 </View>
                             </View>
 
+                            <View style={{
+                                flex: 1, backgroundColor: '#ffffff', marginTop: 15, marginLeft: 20, marginRight: 20, borderRadius: 20, marginBottom: 5,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+                                width: screenwidth - 35,
+                                elevation: 5,
+                            }}>
+                                <View style={{ flex: 1, }}>
+                                    <View style={{ flexDirection: 'row', flex: 1 }}>
+                                        <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
+                                            <Image
+                                                style={{ width: 35, height: 35 }}
+                                                source={{ uri: 'https://www.iconsdb.com/icons/preview/color/009EFF/clock-6-xxl.png' }}
+                                                onPress={() => { Alert.alert("click") }}
+                                            />
+
+                                        </View>
+                                        <View style={{ flex: 5, }}>
+                                            <View style={{ flex: 1, flexDirection: 'column' }}>
+                                                <View style={{ flex: 1 }}>
+                                                    <Text style={{ marginTop: 5, fontSize: 20 }}>Remaining Volume</Text>
+                                                </View>
+                                                <View style={{ flex: 1, marginTop: -20 }}>
+                                                    <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 31-Aug</Text>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    </View>
+
+                                </View>
+                                <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                                    <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 20 }}>Limit</Text>
+                                        </View>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>65.0GB</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 20 }}>Used</Text>
+                                        </View>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>40.0GB</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
+                                        </View>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>25.0GB</Text>
+                                        </View>
+                                    </View>
+
+                                </View>
+
+                            </View>
+
+                            <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                                <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20, paddingRight: 20 }}>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', paddingLeft: 5, borderRadius: 30, height: 40, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity>
+                                            <Text style={{ color: "#009eff" }}>Extra GB</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("AddOnUsageChart")}>
+                                            <Text style={{ color: "#009eff" }}>Add-ons</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Bonusdatausage")}>
+                                            <Text style={{ color: "#009eff" }}>Bonus Data</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("FreeUsageChart")}>
+                                            <Text style={{ color: "#009eff" }}>Free Data</Text>
+
+                                        </TouchableOpacity>
+                                    </View>
+
+                                </View>
+
+                            </View>
                         </View>
 
-                    </View>
 
-                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20, paddingRight: 20 }}>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', paddingLeft: 5, borderRadius: 30, height: 40, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Extra GB</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate("AddOnUsageChart")}>
-                                    <Text style={{ color: "#009eff" }}>Add-ons</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
-                                    <Text style={{ color: "#009eff" }}>Bonus Data</Text>
-
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ flex: 1, backgroundColor: '#ffffff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate("FreeUsageChart")}>
-                                    <Text style={{ color: "#009eff" }}>Free Data</Text>
-
-                                </TouchableOpacity>
-                            </View>
-
-                        </View>
-
-                    </View>
+                    </ScrollView>
                 </View>
 
 
@@ -238,7 +406,6 @@ class MainUI extends Component {
 
                                 source={{ uri: 'https://www.iconsdb.com/icons/preview/color/F1F3F8/settings-2-xxl.png' }}
 
-                                onPress={() => { Alert.alert("") }}
                             >
 
                             </Image>
