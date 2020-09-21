@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal, KeyboardAvoidingView, } from 'react-native';
 import { Container, Header, Content, Text, Button, Toast } from "native-base";
+import { ScrollView } from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 
 
 class PasswordchangeVisal extends Component {
@@ -77,6 +79,7 @@ class PasswordchangeVisal extends Component {
             }}>
 
                 {/* Create your PasswordchangeVisal UI's here -- PasswordchangeVisal */}
+
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
@@ -89,6 +92,7 @@ class PasswordchangeVisal extends Component {
                         </View>
 
                     </View>
+
                     <View style={{
                         flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
                         shadowColor: "#000",
@@ -115,6 +119,7 @@ class PasswordchangeVisal extends Component {
 
                         </View>
                         {/* MODAL VOUCHER------------------------------------------------------------------------------------------------------------------- */}
+
                         <Modal style={{ flex: 1 }}
                             transparent={true}
                             visible={this.state.pwModalshow}>
@@ -161,6 +166,7 @@ class PasswordchangeVisal extends Component {
                             </View>
                         </Modal>
                         {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
+
                         <View style={{ flex: 2, }}>
                             <View style={{
                                 flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 5,
@@ -174,53 +180,57 @@ class PasswordchangeVisal extends Component {
 
                                 elevation: 5,
                             }}>
-                                <View style={{ marginTop: 10 }}>
-                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Current Password</Text>
-                                    <TextInput
-                                        onFocus={this.onFocus}
-                                        autoFocus={false}
-                                        placeholder="*********"
-                                        style={styles.textInput}
-                                        placeholderTextColor="#C0C0C0"
-                                        secureTextEntry={true}
-                                        onChangeText={(text) => this.updateValue(text, 'pw')}
-                                    />
-                                </View>
-                                <View style={{ marginTop: 10 }}>
-                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>New Password</Text>
-                                    <TextInput style={{}}
-                                        autoFocus={false}
-                                        placeholder="*********"
-                                        style={styles.textInput}
-                                        placeholderTextColor="#C0C0C0"
-                                        secureTextEntry={true}
-                                        onChangeText={(text) => this.updateValue(text, 'newpw')}
-                                    />
-                                </View>
-                                <View style={{ marginTop: 10 }}>
-                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Confirm Password</Text>
-                                    <TextInput style={{}}
-                                        autoFocus={false}
-                                        placeholder="*********"
-                                        style={styles.textInput}
-                                        placeholderTextColor="#C0C0C0"
-                                        secureTextEntry={true}
-                                        onChangeText={(text) => this.updateValue(text, 'conpw')}
-                                    />
-                                </View>
-                                <View style={{ marginTop: 5 }}>
-                                    <TouchableOpacity onPress={this.validateFields}>
-                                        <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
-                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Reset</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
+                                <ScrollView>
+                                    <View style={{ marginTop: 10 }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Current Password</Text>
+                                        <TextInput
+                                            onFocus={this.onFocus}
+                                            autoFocus={false}
+                                            placeholder="*********"
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                            secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'pw')}
+                                        />
+                                    </View>
+                                    <View style={{ marginTop: 10 }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>New Password</Text>
+                                        <TextInput style={{}}
+                                            autoFocus={false}
+                                            placeholder="*********"
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                            secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'newpw')}
+                                        />
+                                    </View>
+                                    <View style={{ marginTop: 10 }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Confirm Password</Text>
+                                        <TextInput style={{}}
+                                            autoFocus={false}
+                                            placeholder="*********"
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                            secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'conpw')}
+                                        />
+                                    </View>
+                                    <View style={{ marginTop: 5 }}>
+                                        <TouchableOpacity onPress={this.validateFields}>
+                                            <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
+                                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Reset</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
 
+                                </ScrollView>
                             </View>
 
                         </View>
 
+
                     </View>
+
 
 
 

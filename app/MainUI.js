@@ -46,6 +46,7 @@ class MainUI extends Component {
 
 
 
+
                     <ScrollView horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}
                         ref={(node) => CurrentRenderContext.scroll = node}
                         style={{
@@ -88,6 +89,13 @@ class MainUI extends Component {
                                     </View>
 
                                 </View>
+
+                            </View>
+                            <View style={{ flex: 1 }}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("ViewDailyUsage")}>
+                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
+                                </TouchableOpacity>
+
                             </View>
 
                             <View style={{
