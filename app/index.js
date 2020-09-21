@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, Dimensions, TextInput } from 'react-native'
+import { View, StyleSheet, Dimensions, TextInput, Modal } from 'react-native'
 // import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Svg, { Image, Circle, ClipPath } from 'react-native-svg'
 import Animated, { Easing } from 'react-native-reanimated';
@@ -7,6 +7,7 @@ import { TapGestureHandler, State, TouchableOpacity } from 'react-native-gesture
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createStackNavigator } from '@react-navigation/stack';
 // import { NavigationEvents } from 'react-navigation';
+import { Container, Header, Content, Text, Button, Toast } from "native-base";
 
 const { width, height } = Dimensions.get('window');
 
@@ -60,13 +61,18 @@ function runTiming(clock, value, dest) {
 
 
 class MYSLT extends React.Component {
-    constructor() {
-        super()
 
+    constructor() {
+
+        super()
         this.state = {
-            regCliked: false,
-            loginClicked: false
-        };
+            username: ''
+        }
+        this.state = {
+            password: ''
+        }
+
+
         this.buttonOpacity = new Value(1)
         this.onStateChange = event([
             {
@@ -126,16 +132,67 @@ class MYSLT extends React.Component {
             extrapolate: Extrapolate.CLAMP
         })
     }
-    updateState = () => {
-        this.setState({
-            regCliked: true
-        })
-        console.log("reg clicked")
-    }
-    componentDidMount() {
+
+
+    updateValue(text, field) {
+        console.log("awa!")
+        console.log(this.state.username + "prev un")
+
+        if (field == 'username') {
+            this.setState({
+                username: text
+
+            });
+            console.log(this.state.username + "after un")
+        }
+        else if (field == 'password') {
+            this.setState({
+                password: text
+            });
+        }
 
     }
+    handlelogin = () => {
 
+
+        console.log("indside handle login" + "username = " + this.state.username)
+        if (this.state.username === 'user' || this.state.password === 'user') {
+            Toast.show({
+                text: "Login Successful !",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 4000,
+                style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#00ff80" },
+
+            })
+            this.setState({
+                username: ''
+
+            });
+            this.setState({
+                password: ''
+            });
+
+            this.props.navigation.navigate("MainUI")
+
+        }
+        else {
+            Toast.show({
+                text: "Login failed!",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 3000,
+                style: { backgroundColor: "#FFCC00", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#FFCC00" },
+
+            })
+        }
+    }
 
 
     render() {
@@ -214,14 +271,17 @@ class MYSLT extends React.Component {
                             placeholder="Username"
                             style={styles.textInput}
                             placeholderTextColor="#009eff"
+                            onChangeText={(text) => this.updateValue(text, 'username')}
                         />
                         <TextInput
                             autoFocus={false}
                             placeholder="Password"
                             style={styles.textInput}
                             placeholderTextColor="#009eff"
+                            secureTextEntry={true}
+                            onChangeText={(text) => this.updateValue(text, 'password')}
                         />
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("MainUI", alert("login success"))}>
+                        <TouchableOpacity onPress={this.handlelogin}>
                             <Animated.View style={{
                                 ...styles.button, shadowColor: "#000",
                                 shadowOffset: {
@@ -240,10 +300,6 @@ class MYSLT extends React.Component {
                             </Animated.View>
                         </TouchableOpacity>
                     </Animated.View>
-
-
-
-
                 </View>
             </View >
         )
@@ -268,7 +324,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         paddingLeft: 10,
         marginVertical: 5,
-        borderColor: "#008ECC"
+        borderColor: "#008ECC",
+        backgroundColor: '#ffffff',
 
     },
     closeButton: {
