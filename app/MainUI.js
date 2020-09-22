@@ -69,6 +69,7 @@ class MainUI extends Component {
 
                                 elevation: 5,
                                 width: screenwidth - 35, marginTop: 5
+
                             }}>
                                 <View style={{ margin: 5, alignItems: 'center', marginTop: 15, flex: 1 }}>
                                     <View style={{ flex: 1 }}>
@@ -83,19 +84,12 @@ class MainUI extends Component {
 
                                     </View>
                                     <View style={{ flex: 1 }}>
-                                        <TouchableOpacity onPress={() => { Alert.alert("click") }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ViewDailyUsage")}>
                                             <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
                                         </TouchableOpacity>
                                     </View>
 
                                 </View>
-
-                            </View>
-                            <View style={{ flex: 1 }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate("ViewDailyUsage")}>
-                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
-                                </TouchableOpacity>
-
                             </View>
 
                             <View style={{
@@ -197,7 +191,6 @@ class MainUI extends Component {
 
 
 
-
                         <View style={{ marginLeft: -5 }}>
 
                             <View style={{
@@ -227,7 +220,7 @@ class MainUI extends Component {
 
                                     </View>
                                     <View style={{ flex: 1 }}>
-                                        <TouchableOpacity onPress={() => { Alert.alert("click") }}>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ViewDailyUsage")}>
                                             <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
                                         </TouchableOpacity>
                                     </View>
