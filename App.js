@@ -31,8 +31,8 @@ import ViewDailyUsage from './app/ViewDailyUsage'
 import Selectregtype from './app/Selectregtype'
 import Bonusdatausage from './app/Bonusdatausage'
 import ExtraGB from './app/ExtraGBusage'
-
-
+import MyProfile from './app/MyProfile'
+import Accsettings from './app/AccountSettings'
 
 const Stack = createStackNavigator()
 
@@ -105,8 +105,8 @@ class App extends React.Component {
             <Stack.Screen name="Bonusdatausage" component={Bonusdatausage} options={{ headerShown: false }} />
             {/* <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} /> */}
             <Stack.Screen name="ExtraGB" component={ExtraGB} options={{ headerShown: false }}/>
-
-
+            <Stack.Screen name="MyProfile" component={MyProfile} options={{ headerShown: false }}/>
+            <Stack.Screen name="Accsettings" component={Accsettings} options={{ headerShown: false }} />
 
             {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
 
 
-class Profile extends Component {
+class MyProfile extends Component {
 
 
 
@@ -11,7 +11,7 @@ class Profile extends Component {
 
             <View style={{
                 flex: 1,
-                flexDirection: 'column',
+     
                 backgroundColor: '#ffffff'
 
             }}>
@@ -20,12 +20,12 @@ class Profile extends Component {
                 <View style={{  flex: 1,backgroundColor:'#ffff' }}>
                 <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>Profile</Text>
+                            <Text style={{ fontSize: 28, color: '#009eff' }}>My Profile</Text>
                         </View>
 
                 <View style={{flex:1,backgroundColor:'#fff', alignContent:'center'}}>
                             <View style={{
-                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20, marginBottom: 90, backgroundColor: '#ebf8ff',
+                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20, marginBottom: 90, backgroundColor: '#d7f0f7',
                             shadowOffset: {
                                 width: 0,
                                 height: 2,
@@ -38,73 +38,47 @@ class Profile extends Component {
                         }}>
 
                    
-                <View style={{
-                    height:210,
-                    width:210,
-                    backgroundColor:'#ffff', 
-                    borderRadius: 300, 
-                    alignSelf: 'center', 
-                    alignItems: 'center', 
-                    alignContent: 'center', 
-                    justifyContent: 'center',
-                    marginTop: 30
-                    }}>
-
-                <TouchableOpacity onPress={()=> this.props.navigation.navigate("MyProfile")} >
-                <Image
-                         style={{ width: 150, height: 150 }}
-                         source={require('../assets/images.png')}>
-
-                        </Image>
-                        
-                </TouchableOpacity> 
+    
+                            </View>
                 </View>
+                {/* <View style={{flex:1,backgroundColor:'yellow'}}></View>
+                <View style={{flex:1,backgroundColor:'red'}}>
+                    <View style={{flex:2,backgroundColor:'blue',flexDirection:'row'}}>
+                    <View style={{flex:1,backgroundColor:'black'}}></View>
+                    <View style={{flex:1,backgroundColor:'#ffffff',alignContent:'center'}}>
+                        <View style={{
+                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20,
+                            shadowOffset: {
+                                width: 0,
+                                height: 2,
+                            },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            
+                            elevation: 5,
+                            
+                        }}>
 
-                <Text style={{
-                alignContent: 'center',
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'center',
-                fontSize: 16, 
-                fontWeight: 'bold',
-                marginTop: 10 
-                }}>My Profile</Text>
+<View style={{height:20,width:20,backgroundColor:'green', borderRadius: 300}}>
+    <TouchableOpacity>
+<Text>button</Text>
+    </TouchableOpacity>
+</View>
+                        </View>
+                        <View style={{
+                            margin:15,borderWidth:1,borderColor:'blue',flex:1,borderRadius:20
+                        }}>
 
-                <View style={{
-                    height:210,
-                    width:210,
-                    backgroundColor:'#ffff', 
-                    borderRadius: 300, 
-                    alignItems: 'center', 
-                    alignContent: 'center', 
-                    justifyContent: 'center', 
-                    alignSelf: 'center',
-                    marginTop: 20
-                }}>
-                <TouchableOpacity onPress={()=> this.props.navigation.navigate("Accsettings")}>
-                        <Image
-                         style={{ width: 150, height: 150 }}
-                         source={require('../assets/settings.png')}>
+                        </View>
+                    </View>
+                    <View style={{flex:1,backgroundColor:'gray'}}></View>
+                    </View>
 
-                        </Image>
-                </TouchableOpacity>
+
+                    <View style={{flex:1,backgroundColor:'orange'}}></View>
+                    <View></View>
                 </View>
-
-                <Text style={{
-                alignContent: 'center',
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'center',
-                fontSize: 16,
-                fontWeight: 'bold',
-                marginTop: 10  
-                }}>Account Settings</Text>
-
-
-
-                </View>
-                </View>
-                
+                <View style={{flex:1,backgroundColor:'green'}}></View> */}
                 
                 </View>
                 {/* Create your profile UI's here -- Nishiki */}
@@ -114,8 +88,8 @@ class Profile extends Component {
                     position: 'absolute',
                     alignSelf: 'center',
                     backgroundColor: '#ffffff',
-                    width: 85,
-                    height: 85,
+                    width: 84,
+                    height: 82,
                     borderRadius: 40,
                     bottom: 35,
                     zIndex: 10
@@ -288,4 +262,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default Profile;
+export default MyProfile;
