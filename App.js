@@ -30,7 +30,7 @@ import ViewDailyUsage from './app/ViewDailyUsage'
 // import MoreAddsHansi from './app/MoreAddsHansi'
 import Selectregtype from './app/Selectregtype'
 import Bonusdatausage from './app/Bonusdatausage'
-
+import ExtraGB from './app/ExtraGBusage'
 
 
 
@@ -104,7 +104,7 @@ class App extends React.Component {
             <Stack.Screen name="Selectregtype" component={Selectregtype} options={{ headerShown: false }} />
             <Stack.Screen name="Bonusdatausage" component={Bonusdatausage} options={{ headerShown: false }} />
             {/* <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} /> */}
-
+            <Stack.Screen name="ExtraGB" component={ExtraGB} options={{ headerShown: false }}/>
 
 
 

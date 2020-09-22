@@ -160,7 +160,7 @@ class MainUI extends Component {
                             <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                                 <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20, paddingRight: 20 }}>
                                     <View style={{ flex: 1, backgroundColor: '#ffffff', paddingLeft: 5, borderRadius: 30, height: 40, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ExtraGB")}>
                                             <Text style={{ color: "#009eff" }}>Extra GB</Text>
 
                                         </TouchableOpacity>
