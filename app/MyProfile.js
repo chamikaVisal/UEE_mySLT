@@ -25,7 +25,7 @@ class MyProfile extends Component {
 
                 <View style={{flex:1,backgroundColor:'#fff', alignContent:'center'}}>
                             <View style={{
-                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20, marginBottom: 90, backgroundColor: '#d7f0f7',
+                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20, marginBottom: 90, backgroundColor: '#ffff',
                             shadowOffset: {
                                 width: 0,
                                 height: 2,
@@ -35,51 +35,73 @@ class MyProfile extends Component {
                             
                             elevation: 5,
                             
-                        }}>
-
-                   
+                            }}>
+  
     
+                            <View>
+                                <Image 
+                                style={{ 
+                                width: 140, 
+                                height: 140,
+                                alignSelf: 'center', 
+                                alignItems: 'center', 
+                                alignContent: 'center', 
+                                justifyContent: 'center',
+                                marginTop: 10 }}
+                                source={require('../assets/images.png')}>
+
+                                </Image>
                             </View>
-                </View>
-                {/* <View style={{flex:1,backgroundColor:'yellow'}}></View>
-                <View style={{flex:1,backgroundColor:'red'}}>
-                    <View style={{flex:2,backgroundColor:'blue',flexDirection:'row'}}>
-                    <View style={{flex:1,backgroundColor:'black'}}></View>
-                    <View style={{flex:1,backgroundColor:'#ffffff',alignContent:'center'}}>
-                        <View style={{
-                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20,
-                            shadowOffset: {
-                                width: 0,
-                                height: 2,
-                            },
-                            shadowOpacity: 0.25,
-                            shadowRadius: 3.84,
+                            {/* content of my profile */}
+
+                            <View style={{flex: .7}}>
+                                    <Text style={{
+                                        fontSize: 18,
+                                        fontWeight: "bold",
+                                        marginTop: 25,
+                                        marginLeft: 20
+                                    }}>USER DETAILS{"\n"}
+                                    </Text>
+                                    <Text style={{
+                                        fontSize: 16,
+                                        marginLeft: 50
+                                    }}>
+                                        Username      :      RG2956821{"\n"}
+                                        Name             :      Arron Hunter{"\n"}
+                                        Email              :      arron.h@example.com{"\n"}{"\n"}
+                                    </Text>
+
+                                    <Text style={{
+                                        fontSize: 18,
+                                        fontWeight: "bold",
+                                        marginLeft: 20
+                                    }}>ACCOUNT DETAILS{"\n"}</Text>
+                                    <Text style={{
+                                        fontSize: 16,
+                                        marginLeft: 50
+                                        }}>
+                                        Package          :   web-booster{"\n"}
+                                        Billing Date     :   1st of the month{"\n"}
+
+                                    </Text>
+                            </View>
+
+
+
+                            {/* content of my profile */}
+
+                                    <View style={{ flex: .15, marginTop: 5 }}>
+                                                <TouchableOpacity>
+                                                    <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
+                                                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Switch User</Text>
+                                                    </View>
+                                                </TouchableOpacity>
+                                    </View>
                             
-                            elevation: 5,
                             
-                        }}>
+                            </View>
 
-<View style={{height:20,width:20,backgroundColor:'green', borderRadius: 300}}>
-    <TouchableOpacity>
-<Text>button</Text>
-    </TouchableOpacity>
-</View>
-                        </View>
-                        <View style={{
-                            margin:15,borderWidth:1,borderColor:'blue',flex:1,borderRadius:20
-                        }}>
-
-                        </View>
-                    </View>
-                    <View style={{flex:1,backgroundColor:'gray'}}></View>
-                    </View>
-
-
-                    <View style={{flex:1,backgroundColor:'orange'}}></View>
-                    <View></View>
                 </View>
-                <View style={{flex:1,backgroundColor:'green'}}></View> */}
-                
                 </View>
                 {/* Create your profile UI's here -- Nishiki */}
 
@@ -88,8 +110,8 @@ class MyProfile extends Component {
                     position: 'absolute',
                     alignSelf: 'center',
                     backgroundColor: '#ffffff',
-                    width: 84,
-                    height: 82,
+                    width: 85,
+                    height: 85,
                     borderRadius: 40,
                     bottom: 35,
                     zIndex: 10
@@ -258,6 +280,15 @@ const styles = StyleSheet.create({
         borderColor: '#009eff'
 
 
+    },
+    buttonmain: {
+        backgroundColor: 'white',
+        height: 50,
+        marginHorizontal: 50,
+        borderRadius: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 5
     }
 
 
