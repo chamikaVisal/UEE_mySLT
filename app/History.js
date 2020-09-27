@@ -19,6 +19,12 @@ class History extends Component {
                 {/* Create your History UI's here -- History */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
                     <Text>This is History UI</Text>
+
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate("PurchaseHistory")}
+                    >
+                        <Text style={{ color: '#009eff' }}>Purchase History</Text>
+                    </TouchableOpacity>
                 </View>
                 {/* Create your History UI's here -- History */}
 
