@@ -67,7 +67,7 @@ class AccountSettings extends Component {
                        {/* buttons start*/}
 {/* button1 */}         
                         <View style={{ flex: 0.5, }}>
-                        <TouchableOpacity onPress={()=> this.props.navigation.navigate("MyProfile")}>
+                        <TouchableOpacity onPress={()=> this.props.navigation.navigate("AddNewUser")}>
                             <View style={{
                                 flex: 4, backgroundColor: '#faf8f2', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
                                 paddingBottom: 120,

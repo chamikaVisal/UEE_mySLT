@@ -39,6 +39,11 @@ class Manage extends Component {
                             <Text style={{ color: '#009eff' }}>Click for More Ads</Text>
                         </TouchableOpacity>
                     </View>
+                    <View>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Giftdata")}>
+                            <Text style={{ color: '#009eff' }}>Gift data</Text>
+                        </TouchableOpacity>
+                    </View>
 
                     <Text>This is Profile UI</Text>
                     <View>

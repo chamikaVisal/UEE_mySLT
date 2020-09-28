@@ -34,7 +34,8 @@ import ExtraGB from './app/ExtraGBusage'
 import MyProfile from './app/MyProfile'
 import Accsettings from './app/AccountSettings'
 import PurchaseHistory from './app/PurchaseHistory'
-
+import AddNewUser from './app/AddNewUser'
+import Giftdata from './app/GiftData'
 
 const Stack = createStackNavigator()
 
@@ -110,7 +111,8 @@ class App extends React.Component {
             <Stack.Screen name="MyProfile" component={MyProfile} options={{ headerShown: false }} />
             <Stack.Screen name="Accsettings" component={Accsettings} options={{ headerShown: false }} />
             <Stack.Screen name="PurchaseHistory" component={PurchaseHistory} options={{ headerShown: false }} />
-
+            <Stack.Screen name="AddNewUser" component={AddNewUser} options={{headerShown: false}} />
+            <Stack.Screen name="Giftdata" component={Giftdata} options={{headerShown: false}} />
             {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
 
