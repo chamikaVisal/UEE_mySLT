@@ -23,9 +23,13 @@ class AccountSettings extends Component {
             buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
             buttonTextStyle: { color: "#00ff80" },
 
+
         })
 
+
     }
+
+
 
     render() {
         return (
@@ -37,39 +41,250 @@ class AccountSettings extends Component {
 
             }}>
 
-                {/* Create your profile UI's here -- Nishiki */}
-                <View style={{ flex: 1, backgroundColor: '#fffff' }}>
 
+                <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 45 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>Account Settings</Text>
+                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>ACCOUNT SETTING</Text>
+
                         </View>
 
+                    </View>
+                    
+                    <View style={{
+                        flex: 4, backgroundColor: '#ebf8ff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -30,
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
 
-                        <View style={{ flex: 1, backgroundColor: '#fff', alignContent: 'center' }}>
+                        elevation: 5,
+                    }}>
+                       {/* buttons start*/}
+{/* button1 */}         
+                        <View style={{ flex: 0.5, }}>
+                        <TouchableOpacity onPress={()=> this.props.navigation.navigate("MyProfile")}>
                             <View style={{
-                                margin: 15, flex: 1, backgroundColor: '#ffffff', shadowColor: "#000", borderRadius: 20, marginBottom: 90, backgroundColor: '#ebf8ff',
+                                flex: 4, backgroundColor: '#faf8f2', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                paddingBottom: 120,
+                                shadowColor: "#000",
                                 shadowOffset: {
                                     width: 0,
-                                    height: 2,
+                                    height: 1,
                                 },
                                 shadowOpacity: 0.25,
                                 shadowRadius: 3.84,
 
                                 elevation: 5,
-
                             }}>
-                                {/* Ravindu's part */}
-                                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <TouchableOpacity onPress={() => { this.setState({ modal1show: true }) }}>
-                                        <Text style={{ color: '#009eff' }}> Change Broadband password</Text>
-                                    </TouchableOpacity>
-                                    {/* Ravindu's part */}
-                                </View>
-                                {/* MODAL change password--------THIS DOES NOT EFFECT YOUR CODE. YOU CAN JUST ASSUME THIS IS NOT A PART OF ACCOUNT SETTINGS */}
+                            {/* icon for button 01 */}
+                            <View
+                            style={{
+                                flex: 2,
+                                
+                            }}>
+                                
+                                <Image
+                                    style={{ 
+                                        width: 70, 
+                                        height: 70,
+                                        marginTop: 25,
+                                        marginLeft: 10 }}
+                                    source={require('../assets/user_add.png')}>
 
-                                <Modal style={{ flex: 1 }}
+                                </Image>
+                                    
+                            
+                            {/* icon for button 01 */}
+                            
+                            <View
+                            style={{
+                                flexDirection: "column",
+                                flex: 2,
+                                marginLeft: 100,
+                                marginTop: -53,
+                                
+                            }}>
+                            
+                            <Text
+                            style={{
+                                fontWeight: 'bold',
+                                fontSize: 20
+                            }}>Add New User</Text>
+                            </View>
+                            </View>
+                           </View>
+                           </TouchableOpacity>
+                        </View>
+{/* button1 */}
+{/* button2 */}
+                        <View style={{ flex: 0.5, }}>
+                        <TouchableOpacity onPress={()=> this.props.navigation.navigate("ContactInfoChange")}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#faf8f2', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                paddingBottom: 120,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 1,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                            {/* icon for button 02 */}
+                            <View
+                            style={{
+                                flex: 2,
+                                
+                            }}>
+                                <Image
+                                    style={{ 
+                                        width: 70, 
+                                        height: 70,
+                                        marginTop: 25,
+                                        marginLeft: 10 }}
+                                    source={require('../assets/free-mobile-phone-icon-760-thumb.png')}>
+
+                                </Image>
+                                    
+                            
+                            {/* icon for button 02 */}
+                            <View
+                            style={{
+                                flexDirection: "column",
+                                flex: 2,
+                                marginLeft: 100,
+                                marginTop: -65,
+                                
+                            }}>
+                            <Text
+                            style={{
+                                fontWeight: 'bold',
+                                fontSize: 20
+                            }}>Change Contact Information</Text>
+                            </View>
+                            </View>
+                           </View>
+                           </TouchableOpacity>
+                        </View>
+{/* button2 */}
+{/* button3 */}
+                        <View style={{ flex: 0.5, }}>
+                        <TouchableOpacity onPress={()=> this.props.navigation.navigate("ContactInfoChange")}>
+                            <View style={{
+                               flex: 4, backgroundColor: '#faf8f2', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                               paddingBottom: 120,
+                               shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 1,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                            {/* icon for button 03 */}
+                            <View
+                            style={{
+                                flex: 2,
+                                
+                            }}>
+                                <Image
+                                    style={{ 
+                                        width: 70, 
+                                        height: 70,
+                                        marginTop: 25,
+                                        marginLeft: 10 }}
+                                    source={require('../assets/broadband.jpg')}>
+
+                                </Image>
+                                    
+                            
+                            {/* icon for button 03 */}
+                            <View
+                            style={{
+                                flexDirection: "column",
+                                flex: 2,
+                                marginLeft: 100,
+                                marginTop: -65,
+                                
+                            }}>
+                            <Text
+                            style={{
+                                fontWeight: 'bold',
+                                fontSize: 20
+                            }}>Change Broadband Information</Text>
+                            </View>
+                            </View>
+                           </View>
+                           </TouchableOpacity>
+                        </View>
+{/* button3 */}
+{/* button4 */}
+                        <View style={{ flex: 0.5, }}>
+                        <TouchableOpacity onPress={() => { this.setState({ modal1show: true }) }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#faf8f2', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                paddingBottom: 120,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 1,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                            {/* icon for button 04 */}
+                            <View
+                            style={{
+                                flex: 2,
+                                
+                            }}>
+                                <Image
+                                    style={{ 
+                                        width: 70, 
+                                        height: 70,
+                                        marginTop: 25,
+                                        marginLeft: 10 }}
+                                    source={require('../assets/password.jpg')}>
+
+                                </Image>
+                                    
+                            
+                            {/* icon for button 04 */}
+                            <View
+                            style={{
+                                flexDirection: "column",
+                                flex: 2,
+                                marginLeft: 100,
+                                marginTop: -65,
+                                
+                            }}>
+                            <Text
+                            style={{
+                                fontWeight: 'bold',
+                                fontSize: 20
+                            }}>Change Portal/app Password</Text>
+                            </View>
+                            </View>
+                           </View>
+                           </TouchableOpacity>
+                        </View>
+{/* button4 */}
+                {/* buttons end */}
+
+                {/* MODAL change password--------THIS DOES NOT EFFECT YOUR CODE. YOU CAN JUST ASSUME THIS IS NOT A PART OF ACCOUNT SETTINGS */}
+
+                <Modal style={{ flex: 1 }}
                                     transparent={true}
                                     visible={this.state.modal1show}>
                                     <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -116,13 +331,10 @@ class AccountSettings extends Component {
                                                     </View>
                                                 </TouchableOpacity>
 
-
                                             </View>
 
 
-
                                         </View>
-
 
                                     </View>
                                 </Modal>
@@ -171,7 +383,6 @@ class AccountSettings extends Component {
                                             </View>
                                             <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
 
-
                                                 <TouchableOpacity style={{ height: 45, width: 100, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', marginLeft: 10 }}
                                                     onPress={() => { this.setState({ modal2show: false }, this.showToast) }}>
                                                     <View style={{ justifyContent: 'center', alignItems: 'center', }}>
@@ -179,33 +390,26 @@ class AccountSettings extends Component {
                                                     </View>
                                                 </TouchableOpacity>
 
-
                                             </View>
 
 
-
                                         </View>
-
 
                                     </View>
                                 </Modal>
                                 {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
 
-                            </View>
-                        </View>
-
-
                     </View>
                 </View>
-                {/* Create your profile UI's here -- Nishiki */}
+
 
                 <View style={{
 
                     position: 'absolute',
                     alignSelf: 'center',
                     backgroundColor: '#ffffff',
-                    width: 84,
-                    height: 82,
+                    width: 85,
+                    height: 85,
                     borderRadius: 40,
                     bottom: 35,
                     zIndex: 10
@@ -379,11 +583,20 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 25,
         borderWidth: 0.5,
-
+        marginHorizontal: 20,
         paddingLeft: 10,
         marginVertical: 5,
         borderColor: "#008ECC"
 
+    },
+    buttonmain: {
+        backgroundColor: 'white',
+        height: 60,
+        marginHorizontal: 20,
+        borderRadius: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 5
     },
 
 
