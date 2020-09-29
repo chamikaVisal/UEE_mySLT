@@ -22,7 +22,7 @@ class Entertainment extends Component {
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>Entertainment</Text>
+                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>Promotions - Entertainment</Text>
 
                         </View>
 
@@ -165,8 +165,8 @@ class Entertainment extends Component {
                     position: 'absolute',
                     alignSelf: 'center',
                     backgroundColor: '#ffffff',
-                    width: 84,
-                    height: 82,
+                    width: 85,
+                    height: 85,
                     borderRadius: 40,
                     bottom: 35,
                     zIndex: 10
