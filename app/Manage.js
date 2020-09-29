@@ -44,6 +44,11 @@ class Manage extends Component {
                             <Text style={{ color: '#009eff' }}>Gift data</Text>
                         </TouchableOpacity>
                     </View>
+                    <View>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("DataAddOns")}>
+                            <Text style={{ color: '#009eff' }}>Data add ons</Text>
+                        </TouchableOpacity>
+                    </View>
 
                     <Text>This is Profile UI</Text>
                     <View>

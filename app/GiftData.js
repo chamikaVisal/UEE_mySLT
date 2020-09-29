@@ -20,7 +20,7 @@ class GiftData extends Component {
     validateFields = () => {
 
             Toast.show({
-                text: "User added successfully !",
+                text: "Gift data sent successfully !",
                 position: 'bottom',
                 textStyle: { fontWeight: 'bold' },
                 duration: 4000,
@@ -36,13 +36,6 @@ class GiftData extends Component {
     
 
     render() {
-        // let data = [{
-        //     value: '1 GB',
-        //   }, {
-        //     value: '2 GB',
-        //   }, {
-        //     value: '10 GB',
-        //   }];
 
         return (
             
@@ -163,13 +156,13 @@ class GiftData extends Component {
                                                 GB
                                             </Text>
                                             </View>
-                                                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("AddNewUser")}>
+                                                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("AddMoreData")}>
                                                     <View style={{ ...styles.buttonmain, backgroundColor: '#b8b6b2', marginHorizontal: 30, height: 40, marginTop: 20, marginBottom: 10}}>
                                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>View package details</Text>
                                                     </View>
                                                     </TouchableOpacity>
 
-                                        </View>
+                                            </View>
                                     </View>
 {/* end - select data package box */}
                                             <View style={{ marginTop: -10 }}>
@@ -189,7 +182,7 @@ class GiftData extends Component {
                     </View>
                 </View>
 
-                {/* Create your PasswordchangeVisal UI's here -- PasswordchangeVisal */}
+                {/*  */}
 
                 <View style={{
 
