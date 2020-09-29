@@ -50,17 +50,13 @@ class Manage extends Component {
                         </TouchableOpacity>
                     </View>
 
-                    <Text>This is Profile UI</Text>
+                    <Text>This is PromoUI</Text>
                     <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("PasswordchangeVisal")}>
-                            <Text style={{ color: '#009eff' }}> Click to Change Portal/App Password</Text>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Entertainment")}>
+                            <Text style={{ color: '#009eff' }}> Entertainment UI</Text>
                         </TouchableOpacity>
                     </View>
-                    <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("ContactInfoChange")}>
-                            <Text style={{ color: '#009eff' }}> Click to Change Contact Info</Text>
-                        </TouchableOpacity>
-                    </View>
+                    
                 </View>
                 {/* Create your Manage UI's here -- Manage */}
 
