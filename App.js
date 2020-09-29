@@ -27,7 +27,7 @@ import AddMoreData from './app/AddMoreData'
 import TotalUsageChart from './app/TotalUsageChart'
 import ContactInfoChange from './app/ContactInfoChange'
 import ViewDailyUsage from './app/ViewDailyUsage'
-// import MoreAddsHansi from './app/MoreAddsHansi'
+import MoreAddsHansi from './app/MoreAddsHansi'
 import Selectregtype from './app/Selectregtype'
 import Bonusdatausage from './app/Bonusdatausage'
 import ExtraGB from './app/ExtraGBusage'
@@ -36,6 +36,7 @@ import Accsettings from './app/AccountSettings'
 import PurchaseHistory from './app/PurchaseHistory'
 import AddNewUser from './app/AddNewUser'
 import Giftdata from './app/GiftData'
+import DataAddOns from './app/DataAddOns'
 
 const Stack = createStackNavigator()
 
@@ -106,13 +107,14 @@ class App extends React.Component {
             <Stack.Screen name="ViewDailyUsage" component={ViewDailyUsage} options={{ headerShown: false }} />
             <Stack.Screen name="Selectregtype" component={Selectregtype} options={{ headerShown: false }} />
             <Stack.Screen name="Bonusdatausage" component={Bonusdatausage} options={{ headerShown: false }} />
-            {/* <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} /> */}
+            <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: false }} />
             <Stack.Screen name="ExtraGB" component={ExtraGB} options={{ headerShown: false }} />
             <Stack.Screen name="MyProfile" component={MyProfile} options={{ headerShown: false }} />
             <Stack.Screen name="Accsettings" component={Accsettings} options={{ headerShown: false }} />
             <Stack.Screen name="PurchaseHistory" component={PurchaseHistory} options={{ headerShown: false }} />
             <Stack.Screen name="AddNewUser" component={AddNewUser} options={{headerShown: false}} />
             <Stack.Screen name="Giftdata" component={Giftdata} options={{headerShown: false}} />
+            <Stack.Screen name="DataAddOns" component={DataAddOns} options={{headerShown: false}} />
             {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
 
