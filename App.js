@@ -37,6 +37,7 @@ import PurchaseHistory from './app/PurchaseHistory'
 import AddNewUser from './app/AddNewUser'
 import Giftdata from './app/GiftData'
 import DataAddOns from './app/DataAddOns'
+import Entertainment from './app/Entertainment'
 
 const Stack = createStackNavigator()
 
@@ -115,6 +116,7 @@ class App extends React.Component {
             <Stack.Screen name="AddNewUser" component={AddNewUser} options={{headerShown: false}} />
             <Stack.Screen name="Giftdata" component={Giftdata} options={{headerShown: false}} />
             <Stack.Screen name="DataAddOns" component={DataAddOns} options={{headerShown: false}} />
+            <Stack.Screen name="Entertainment" component={Entertainment} options={{headerShown: false}} />
             {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
 
