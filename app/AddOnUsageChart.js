@@ -136,9 +136,8 @@ class AddOnUsageChart extends Component {
                         <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 125, paddingRight: 20 }}>
                       
                             <View style={{ flex: 0.6,backgroundColor: '#009eff', paddingLeft: 5, borderRadius: 30, height: 50, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("DataAddOns")}>
                                     <Text style={{ color: "#ffffff" }}>Get More Add-ons</Text>
-
                                 </TouchableOpacity>
                              </View> 
                              </View>
