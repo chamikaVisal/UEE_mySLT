@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity,TouchableHighlight, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Toast } from "native-base";
 
 
 class AddMoreData extends Component {
 
+    validateFields = () => {
 
+        Toast.show({
+            text: "Data Package Added to the Bill !",
+            position: 'bottom',
+            textStyle: { fontWeight: 'bold' },
+            duration: 4000,
+            style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+            buttonText: "Okay",
+            buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+            buttonTextStyle: { color: "#00ff80" },
+
+        })
+    
+}
 
     render() {
         return (
@@ -39,10 +55,10 @@ class AddMoreData extends Component {
                         elevation: 5,
                     }}>
                        
-                      
+                      <ScrollView>
                         <View style={{ flex: 1.7, }}>
                             <View style={{
-                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                flex: 4, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
                                 shadowColor: "#000",
                                 shadowOffset: {
                                     width: 0,
@@ -53,9 +69,9 @@ class AddMoreData extends Component {
 
                                 elevation: 5,
                             }}>
-
+                                 <TouchableOpacity>
                             <View style={{ flex: 1.4, }}>
-                                <View style={{ justifyContent: 'center', marginTop: 20 }}>
+                                <View style={{ justifyContent: 'center', marginTop: 15 }}>
                                     <View style={{ marginTop: -1, alignItems: 'center' }}>
                                         <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-140 }}>1.0 GB</Text>
 
@@ -68,18 +84,18 @@ class AddMoreData extends Component {
                                     <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 100 + TAX</Text>
                                 </View>
                                 <View style={{ flex: 2 }}>
-                                    <Text style={{ fontSize: 15, color: '#C0C0C0',marginLeft:140, marginTop: -40 }}>(Valid for 30 days)</Text>
+                                    <Text style={{ fontSize: 15, color: '#A49591',marginLeft:140, marginTop:-30 , marginBottom:20}}>(Valid for 60 days)</Text>
                                 </View>
                             </View>
                             </View>
-
+                            </TouchableOpacity>
                            </View>
 
                         </View>
 
                         <View style={{ flex: 1.4, }}>
                             <View style={{
-                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 60, borderRadius: 20, marginTop: -30,
+                                flex: 4, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, marginBottom: 60, borderRadius: 20, marginTop: -30,
                                 shadowColor: "#000",
                                 shadowOffset: {
                                     width: 0,
@@ -90,8 +106,9 @@ class AddMoreData extends Component {
 
                                 elevation: 5,
                             }}>
+                                <TouchableOpacity>
                                  <View style={{ flex: 1.4, }}>
-                                <View style={{ justifyContent: 'center', marginTop: 20 }}>
+                                <View style={{ justifyContent: 'center', marginTop: 15 }}>
                                     <View style={{ marginTop: 2, alignItems: 'center' }}>
                                         <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>2.0 GB</Text>
 
@@ -103,20 +120,69 @@ class AddMoreData extends Component {
                                     <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 200 + TAX</Text>
                                 </View>
                                 <View style={{ flex: 2 }}>
-                                    <Text style={{ fontSize: 15, color: '#C0C0C0',marginLeft:140, marginTop: -40 }}>(Valid for 30 days)</Text>
+                                    <Text style={{ fontSize: 15, color: '#A49591',marginLeft:140, marginTop: -30 , marginBottom:20}}>(Valid for 60 days)</Text>
                                 </View>
                             </View>
                             </View>
+                            </TouchableOpacity>
                             </View>
 
                         </View>
+
+                        <View style={{ flex: 1.4, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, marginBottom: 60, borderRadius: 20, marginTop: -40,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                                <TouchableOpacity>
+                                 <View style={{ flex: 1.4, }}>
+                                <View style={{ justifyContent: 'center', marginTop: 15 }}>
+                                    <View style={{ marginTop: 2, alignItems: 'center' }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>3.0 GB</Text>
+
+                                    </View>
+
+                                </View>
+                                <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 300 + TAX</Text>
+                                </View>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 15, color: '#A49591',marginLeft:140, marginTop: -30, marginBottom:20 }}>(Valid for 60 days)</Text>
+                                </View>
+                            </View>
+                            </View>
+                            </TouchableOpacity>
+                            </View>
+
+                        </View>
+                        <View style={{ flex: 1.7, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 5, marginTop: -50,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                               
+                            }}>
                         <View style={{ flex: 0.4, }}>
-                        <View style={{ justifyContent: 'center', marginTop: -6 }}>
-                                    <View style={{ marginTop: -30, alignItems: 'center' ,marginLeft:-175}}>
-                                        <Text style={{ color: '#C0C0C0', marginHorizontal: 20, fontSize: 18, fontWeight:'bold' }}>LKR 100 per GB</Text>
+                        <View style={{ justifyContent: 'center', marginTop: -5 }}>
+                                    <View style={{ marginTop: 20, alignItems: 'center' ,marginLeft:-175}}>
+                                        <Text style={{ color: '#C0C0C0', marginHorizontal: 20, fontSize: 18, fontWeight:'bold' }}>85 LKR per GB</Text>
                                     </View>
                                 </View>
                         </View>
+                        </View></View>
+                        
 
                         <View style={{ flex: 1.7, }}>
                             <View style={{
@@ -131,23 +197,25 @@ class AddMoreData extends Component {
 
                                 elevation: 5,
                             }}>
+                                <TouchableOpacity>
                                   <View style={{ flex: 1.4, }}>
-                                <View style={{ justifyContent: 'center', marginTop: 20 }}>
+                                <View style={{ justifyContent: 'center', marginTop: 15 }}>
                                     <View style={{ marginTop: 2, alignItems: 'center' }}>
-                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>20.0 GB</Text>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>5.0 GB</Text>
 
                                     </View>
 
                                 </View>
                                 <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 2 }}>
-                                    <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 100 + TAX</Text>
+                                    <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 425 + TAX</Text>
                                 </View>
                                 <View style={{ flex: 2 }}>
-                                    <Text style={{ fontSize: 15, color: '#C0C0C0',marginLeft:140, marginTop: -40 }}>(Valid for 30 days)</Text>
+                                    <Text style={{ fontSize: 15, color: '#A49591',marginLeft:140, marginTop: -30,marginBottom:20 }}>(Valid for 60 days)</Text>
                                 </View>
                             </View>
                             </View>
+                            </TouchableOpacity>
                             </View>
 
                         </View>
@@ -168,28 +236,129 @@ class AddMoreData extends Component {
                                 elevation: 5,  
 
                             }}>
-                                
+                                <TouchableOpacity>
                                  <View style={{ flex: 1.4, }}>
                                 
-                                <View style={{ justifyContent: 'center', marginTop: 20 }}>
+                                <View style={{ justifyContent: 'center', marginTop: 15 }}>
                                
                                     <View style={{ marginTop: 2, alignItems: 'center' }}>
-                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>25.0 GB</Text>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>7.0 GB</Text>
                                     </View>
 
                                 </View>
                                 <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 2 }}>
-                                    <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 100 + TAX</Text>
+                                    <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 595 + TAX</Text>
                                </View>
                                 <View style={{ flex: 2 }}>
-                                    <Text style={{ fontSize: 15, color: '#C0C0C0',marginLeft:140, marginTop: -40 }}>(Valid for 30 days)</Text>
+                                    <Text style={{ fontSize: 15, color: '#A49591',marginLeft:140, marginTop: -30 ,marginBottom:20}}>(Valid for 60 days)</Text>
                                 </View>
                             </View>                           
 
                             </View>
+                            </TouchableOpacity>
                         </View>
                             </View>
+                           
+                            <View style={{ flex: 1.7, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: -40, borderRadius: 5, marginTop: -120,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                               
+                            }}>
+                        <View style={{ flex: 0.4, }}>
+                        <View style={{ justifyContent: 'center', marginTop: -5 }}>
+                                    <View style={{ marginTop: 20, alignItems: 'center' ,marginLeft:-175}}>
+                                        <Text style={{ color: '#C0C0C0', marginHorizontal: 20, fontSize: 18, fontWeight:'bold' }}>75 LKR per GB</Text>
+                                    </View>
+                                </View>
+                        </View>
+                        </View></View>
+                        
+                            
+                        <View style={{ flex: 1.7, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 95, borderRadius: 20, marginTop: -60,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+                                <TouchableOpacity>
+                                  <View style={{ flex: 1.4, }}>
+                                <View style={{ justifyContent: 'center', marginTop: 15 }}>
+                                    <View style={{ marginTop: 2, alignItems: 'center' }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>20.0 GB</Text>
+
+                                    </View>
+
+                                </View>
+                                <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 1500 + TAX</Text>
+                                </View>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 15, color: '#A49591',marginLeft:140, marginTop: -30,marginBottom:20 }}>(Valid for 60 days)</Text>
+                                </View>
+                            </View>
+                            </View>
+                            </TouchableOpacity>
+                            </View>
+
+                        </View>
+
+                     
+                        <View style={{ flex: 1.7, }}>
+         
+                               <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 130, borderRadius: 20, marginTop: -75,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,  
+
+                            }}>
+                                <TouchableOpacity>
+                                 <View style={{ flex: 1.4, }}>
+                                
+                                <View style={{ justifyContent: 'center', marginTop: 15 }}>
+                               
+                                    <View style={{ marginTop: 2, alignItems: 'center' }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 40, marginLeft:-130 }}>30.0 GB</Text>
+                                    </View>
+
+                                </View>
+                                <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 18,fontWeight:'bold', marginRight: 10, marginLeft: 150, marginTop:-60 }}>LKR 2250 + TAX</Text>
+                               </View>
+                                <View style={{ flex: 2 }}>
+                                    <Text style={{ fontSize: 15, color: '#A49591',marginLeft:140, marginTop: -30 ,marginBottom:20}}>(Valid for 60 days)</Text>
+                                </View>
+                            </View>                           
+
+                            </View>
+                            </TouchableOpacity>
+                        </View>
+                            </View>
+                           
+         
+        
+                          
                            
                         <View style={{ flex: 0.2, }}>
                         <View style={{
@@ -207,7 +376,7 @@ class AddMoreData extends Component {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ flex: 1,height:50, backgroundColor: '#009eff', marginLeft: 5, borderRadius: 30, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={this.validateFields}>
                                     <Text style={{ color: "#ffffff",fontSize:17 }}>Add Bill</Text>
 
                                 </TouchableOpacity>
@@ -215,6 +384,7 @@ class AddMoreData extends Component {
                         </View>
                     </View>
                        </View>
+                       </ScrollView>
                     </View>
                 </View>
 

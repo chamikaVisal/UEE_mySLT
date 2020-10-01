@@ -1,5 +1,7 @@
+import { DatePicker } from 'native-base';
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 class ViewDailyUsage extends Component {
@@ -26,6 +28,7 @@ class ViewDailyUsage extends Component {
                         </View>
 
                     </View>
+                    
                     <View style={{
                         flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -10,
                         shadowColor: "#000",
@@ -40,24 +43,111 @@ class ViewDailyUsage extends Component {
                     }}>
                        
                       
+                       <ScrollView>
+                       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                        <View style={{ flex: 1, flexDirection: 'row', margin: 5, backgroundColor: '#ffffff' }}>
 
-                       <View style={{ flex: 1, }}>
-                        
-                         <View style={{ flex: 1.4,marginTop:10, backgroundColor: '#ffffff' }}>
-                        <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20, paddingRight: 20 }}>
-                            <View style={{ flex: 1, }}>                             
-                                    <Text style={{ fontSize:17 }}>Standard</Text>    
+                            <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                                <View style={{ flex: 1, marginHorizontal: 20, marginBottom:5}}>
+                                    <Text style={{ fontsize:30 ,fontWeight:'bold'}}>From</Text>
+                                </View>
+
+
+                                <View style={{ borderWidth: 1, borderColor: '#C0C0C0', flex: 2, marginHorizontal: 10, borderRadius: 10,backgroundColor: '#faf8f2' }}>
+
+                                    <DatePicker />
+                                </View>
+
                             </View>
-                            <View style={{ flex: 1, }}>                             
-                                    <Text style={{ fontSize:17 }}>To</Text>    
+
+                            <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                                <View style={{ flex: 1, marginHorizontal: 20,marginBottom:5}}>
+                                    <Text style={{fontsize:30,fontWeight:'bold'}}>To</Text>
+                                </View>
+
+
+                                <View style={{ borderWidth: 1, borderColor: '#C0C0C0', flex: 2, marginHorizontal: 10, borderRadius: 10, backgroundColor: '#faf8f2' }}>
+
+                                    <DatePicker />
+                                </View>
+
                             </View>
                         </View>
+
                     </View>
-                       </View>
 
+                      
+                        <View style={{ flex: 1.5, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
 
+                                elevation: 5,
+                            }}>
 
+                        <View style={{ flex: 1, }}>
+                            <View style={{ flexDirection: 'row', flex: 1}}>
+                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
+                                    <Image
+                                        style={{ width: 36, height: 36 }}
+                                        source={require('../assets/signal.png')}
+                                        onPress={() => { Alert.alert("click") }}
+                                    />
 
+                                </View>
+                                <View style={{ flex: 5, }}>
+                                    <View style={{ flex: 1, flexDirection: 'column' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ marginTop: 5, fontSize: 20 }}>02-OCT-20</Text>
+                                        </View>
+                                        <View style={{ flex: 1, marginTop: 1 }}>
+                                            <Text style={{ fontSize: 15,fontWeight:'bold'}}>3GB</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+
+                        </View>
+                        
+                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18, marginTop:5 }}>Limit</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>25.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Used</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>22.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18, marginRight: 10,marginTop:5  }}>Remaining</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10 }}>4.0GB</Text>
+                                </View>
+                            </View>
+
+                        </View>
+
+                        </View>
+
+                        </View>
+
+                      
 
                         <View style={{ flex: 1.5, }}>
                             <View style={{
@@ -86,7 +176,7 @@ class ViewDailyUsage extends Component {
                                 <View style={{ flex: 5, }}>
                                     <View style={{ flex: 1, flexDirection: 'column' }}>
                                         <View style={{ flex: 1 }}>
-                                            <Text style={{ marginTop: 5, fontSize: 20 }}>29-AUG-20</Text>
+                                            <Text style={{ marginTop: 5, fontSize: 20 }}>01-OCT-20</Text>
                                         </View>
                                         <View style={{ flex: 1, marginTop: 1 }}>
                                             <Text style={{ fontSize: 15,fontWeight:'bold', }}>1GB</Text>
@@ -100,35 +190,168 @@ class ViewDailyUsage extends Component {
                         <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Limit</Text>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Limit</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>25.0GB</Text>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>25.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Used</Text>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Used</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>15.0GB</Text>
+                                    <Text style={{ fontSize: 20, color: '#009eff'}}>19.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18, marginRight: 10 }}>Remaining</Text>
+                                    <Text style={{ fontSize: 18, marginRight: 10,marginTop:5  }}>Remaining</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10, marginTop: -10 }}>10.0GB</Text>
+                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10 }}>7.0GB</Text>
                                 </View>
                             </View>
 
                         </View>
-
+                        </View>
                         </View>
 
+                        <View style={{ flex: 1.5, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: -10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+
+                        <View style={{ flex: 1, }}>
+                            <View style={{ flexDirection: 'row', flex: 1 }}>
+                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
+                                    <Image
+                                        style={{ width: 36, height: 36 }}
+                                        source={require('../assets/signal.png')}
+                                        onPress={() => { Alert.alert("click") }}
+                                    />
+
+                                </View>
+                                <View style={{ flex: 5, }}>
+                                    <View style={{ flex: 1, flexDirection: 'column' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ marginTop: 5, fontSize: 20 }}>31-AUG-20</Text>
+                                        </View>
+                                        <View style={{ flex: 1, marginTop: 1 }}>
+                                            <Text style={{ fontSize: 15,fontWeight:'bold', }}>2GB</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+
+                        </View>
+                        
+                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Limit</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>25.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Used</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>18.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18, marginRight: 10 ,marginTop:5 }}>Remaining</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10 }}>8.0GB</Text>
+                                </View>
+                            </View>
+
+                        </View>
+                        </View>
                         </View>
 
+                        <View style={{ flex: 1.5, }}>
+                            <View style={{
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: -10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+
+                        <View style={{ flex: 1, }}>
+                            <View style={{ flexDirection: 'row', flex: 1 }}>
+                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
+                                    <Image
+                                        style={{ width: 36, height: 36 }}
+                                        source={require('../assets/signal.png')}
+                                        onPress={() => { Alert.alert("click") }}
+                                    />
+
+                                </View>
+                                <View style={{ flex: 5, }}>
+                                    <View style={{ flex: 1, flexDirection: 'column' }}>
+                                        <View style={{ flex: 1 }}>
+                                            <Text style={{ marginTop: 5, fontSize: 20 }}>30-AUG-20</Text>
+                                        </View>
+                                        <View style={{ flex: 1, marginTop: 1 }}>
+                                            <Text style={{ fontSize: 15,fontWeight:'bold', }}>1GB</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+
+                        </View>
+                        
+                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Limit</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>25.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Used</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>16.0GB</Text>
+                                </View>
+                            </View>
+                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 18, marginRight: 10,marginTop:5  }}>Remaining</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10 }}>9.0GB</Text>
+                                </View>
+                            </View>
+
+                        </View>
+                        </View>
+                        </View>
                       
 
                         <View style={{ flex: 1.5, }}>
@@ -172,174 +395,37 @@ class ViewDailyUsage extends Component {
                         <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Limit</Text>
+                                    <Text style={{ fontSize: 18,marginTop:5  }}>Limit</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>25.0GB</Text>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>25.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Used</Text>
+                                    <Text style={{ fontSize: 18 ,marginTop:5 }}>Used</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>15.0GB</Text>
+                                    <Text style={{ fontSize: 20, color: '#009eff' }}>15.0GB</Text>
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18, marginRight: 10 }}>Remaining</Text>
+                                    <Text style={{ fontSize: 18, marginRight: 10,marginTop:5  }}>Remaining</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10, marginTop: -10 }}>10.0GB</Text>
+                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10 }}>10.0GB</Text>
                                 </View>
                             </View>
 
                         </View>
                         </View>
                         </View>
-
-                        <View style={{ flex: 1.5, }}>
-                            <View style={{
-                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: -10,
-                                shadowColor: "#000",
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
-
-                                elevation: 5,
-                            }}>
-
-                        <View style={{ flex: 1, }}>
-                            <View style={{ flexDirection: 'row', flex: 1 }}>
-                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
-                                    <Image
-                                        style={{ width: 36, height: 36 }}
-                                        source={require('../assets/signal.png')}
-                                        onPress={() => { Alert.alert("click") }}
-                                    />
-
-                                </View>
-                                <View style={{ flex: 5, }}>
-                                    <View style={{ flex: 1, flexDirection: 'column' }}>
-                                        <View style={{ flex: 1 }}>
-                                            <Text style={{ marginTop: 5, fontSize: 20 }}>29-AUG-20</Text>
-                                        </View>
-                                        <View style={{ flex: 1, marginTop: 1 }}>
-                                            <Text style={{ fontSize: 15,fontWeight:'bold', }}>1GB</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                            </View>
-
-                        </View>
-                        
-                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Limit</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>25.0GB</Text>
-                                </View>
-                            </View>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Used</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>15.0GB</Text>
-                                </View>
-                            </View>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18, marginRight: 10 }}>Remaining</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10, marginTop: -10 }}>10.0GB</Text>
-                                </View>
-                            </View>
-
-                        </View>
-                        </View>
-                        </View>
-
-                        <View style={{ flex: 1.5, }}>
-                            <View style={{
-                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: -10,
-                                shadowColor: "#000",
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
-
-                                elevation: 5,
-                            }}>
-
-                        <View style={{ flex: 1, }}>
-                            <View style={{ flexDirection: 'row', flex: 1 }}>
-                                <View style={{ flex: 1, alignItems: 'center', marginTop: 10 }}>
-                                    <Image
-                                        style={{ width: 36, height: 36 }}
-                                        source={require('../assets/signal.png')}
-                                        onPress={() => { Alert.alert("click") }}
-                                    />
-
-                                </View>
-                                <View style={{ flex: 5, }}>
-                                    <View style={{ flex: 1, flexDirection: 'column' }}>
-                                        <View style={{ flex: 1 }}>
-                                            <Text style={{ marginTop: 5, fontSize: 20 }}>29-AUG-20</Text>
-                                        </View>
-                                        <View style={{ flex: 1, marginTop: 1 }}>
-                                            <Text style={{ fontSize: 15,fontWeight:'bold', }}>1GB</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                            </View>
-
-                        </View>
-                        
-                        <View style={{ flex: 1, flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Limit</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>25.0GB</Text>
-                                </View>
-                            </View>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18 }}>Used</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#009eff', marginTop: -10 }}>15.0GB</Text>
-                                </View>
-                            </View>
-                            <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 18, marginRight: 10 }}>Remaining</Text>
-                                </View>
-                                <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, color: '#00FF00',marginLeft: -10, marginTop: -10 }}>10.0GB</Text>
-                                </View>
-                            </View>
-
-                        </View>
-                        </View>
-                        </View>
-                      
 
                        
 
                            
-                        <View style={{ flex: 0.5, }}>
+                        {/* <View style={{ flex: 0.5, }}>
                     
                          <View style={{ flex: 0.4,marginTop:15, backgroundColor: '#ffffff' }}>
                         <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 20,paddingRight:20, marginLeft:30}}>
@@ -363,11 +449,14 @@ class ViewDailyUsage extends Component {
 
                                 </View>
                         </View>
-                    </View>
                        </View>
-                    </View>
-                </View>
+                    </View> */}
 
+                    </ScrollView>
+
+                    </View>
+                    
+                </View>
 
                 <View style={{
 

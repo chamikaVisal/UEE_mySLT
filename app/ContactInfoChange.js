@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Toast } from "native-base";
 
 
 class ContactInfoChange extends Component {
+
+    validateFields = () => {
+
+        Toast.show({
+            text: "Contact Info changed successfully !",
+            position: 'bottom',
+            textStyle: { fontWeight: 'bold' },
+            duration: 4000,
+            style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+            buttonText: "Okay",
+            buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+            buttonTextStyle: { color: "#00ff80" },
+
+        })
+    
+}
 
 
 
@@ -50,7 +68,9 @@ class ContactInfoChange extends Component {
                             </View>
 
                         </View>
+                        
                         <View style={{ flex: 2, }}>
+                        <ScrollView>
                             <View style={{
                                 flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 5,
                                 shadowColor: "#000",
@@ -91,17 +111,20 @@ class ContactInfoChange extends Component {
                                         placeholderTextColor="#C0C0C0"
                                     />
                                 </View>
+                            
                                 <View style={{ marginTop: 5 }}>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={this.validateFields}>
                                         <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
                                             <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Done</Text>
                                         </View>
                                     </TouchableOpacity>
                                 </View>
+                               
 
                             </View>
-
+                            </ScrollView>
                         </View>
+                       
 
                     </View>
 
