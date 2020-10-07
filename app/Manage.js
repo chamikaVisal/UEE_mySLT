@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert } from 'react-native';
+import { Container, Header, Content, CardItem, Text, Right } from 'native-base';
+import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 class Manage extends Component {
@@ -17,8 +20,97 @@ class Manage extends Component {
             }}>
 
                 {/* Create your Manage UI's here -- Manage */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', alignContent: 'center', alignSelf: 'center', flex: 1 }}>
-                    <Text>This is Manage UI</Text>
+                <View style={{
+                    flex: 6, marginHorizontal: 10,
+                }}>
+                    <ScrollView>
+                        <Card style={{ borderRadius: 20, height: 50 }}>
+                            <Card.Title>ADD MORE DATA</Card.Title>
+                            <Card.Divider />
+                            <Card.Image source={require('../assets/adddata.jpg')} style={{ height: 100 }} />
+                            <Text style={{ marginBottom: 10 }}>
+                                Upgrade your existing data bundle here
+                            </Text>
+                            <Button onPress={() => this.props.navigation.navigate("AddMoreData")}
+                                icon={<Icon name='add' color='#ffffff' />}
+                                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                                title='Add now' />
+                        </Card>
+
+
+                        <Card style={{ borderRadius: 20, justifyContent: 'center' }}>
+                            <Card.Title>DATA ADD-ONS</Card.Title>
+                            <Card.Divider />
+                            <Card.Image source={require('../assets/add_ons.jpg')} style={{ height: 100 }} />
+                            <Text style={{ marginBottom: 10, justifyContent: 'center' }}>
+                                Add more to your data package
+  </Text>
+                            <Button onPress={() => this.props.navigation.navigate("DataAddOns")}
+                                icon={<Icon name='add' color='#ffffff' />}
+                                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                                title='Add now' />
+                        </Card>
+
+                        <Card style={{ borderRadius: 20 }}>
+                            <Card.Title>GIFT DATA</Card.Title>
+                            <Card.Divider />
+                            <Card.Image source={require('../assets/giftData.png')} style={{ height: 100 }} />
+                            <Text style={{ marginBottom: 10 }}>
+                                Gift data to your loved ones
+  </Text>
+                            <Button onPress={() => this.props.navigation.navigate("Giftdata")}
+                                icon={<Icon name='add' color='#ffffff' />}
+                                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                                title='Gift Data' />
+                        </Card>
+
+                        <Card style={{ borderRadius: 20 }}>
+                            <Card.Title>REDEEM DATA</Card.Title>
+                            <Card.Divider />
+                            <Card.Image source={require('../assets/redeemData.jpg')} style={{ height: 100 }} />
+                            <Text style={{ marginBottom: 10 }}>
+                                Redeem data using your voucher
+  </Text>
+                            <Button onPress={() => this.props.navigation.navigate("Promocode")}
+                                icon={<Icon name='add' color='#ffffff' />}
+                                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                                title='Redeem Now' />
+                        </Card>
+
+                        <Card style={{ borderRadius: 20 }}>
+                            <Card.Title>HAPPY DAY</Card.Title>
+                            <Card.Divider />
+                            <Card.Image source={require('../assets/happyday.jpg')} style={{ height: 100 }} />
+                            <Text style={{ marginBottom: 10 }}>
+                                Check in for the happy day offers
+  </Text>
+                            <Button onPress={() => this.props.navigation.navigate("")}
+                                icon={<Icon name='add' color='#ffffff' />}
+                                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                                title='Find Out' />
+                        </Card>
+                        <Card style={{ borderRadius: 20 }}>
+                            <Card.Title>MORE</Card.Title>
+                            <Card.Divider />
+                            <Card.Image source={require('../assets/more.jpg')} style={{ height: 100 }} />
+                            <Text style={{ marginBottom: 10 }}>
+                                Upgrade your existing data bundle here
+  </Text>
+                            <Button onPress={() => this.props.navigation.navigate("MoreAddsHansi")}
+                                icon={<Icon name='add' color='#ffffff' />}
+                                buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
+                                title='Find out' />
+                        </Card>
+
+
+                    </ScrollView>
+
+
+
+
+
+
+                    {/* <Text>This is Manage UI</Text>
                     <View>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("Promocode")}>
                             <Text style={{ color: '#009eff' }}> Click to Redeem Data</Text>
@@ -50,13 +142,15 @@ class Manage extends Component {
                         </TouchableOpacity>
                     </View>
 
-                    <Text>This is PromoUI</Text>
                     <View>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("Entertainment")}>
                             <Text style={{ color: '#009eff' }}> Entertainment UI</Text>
                         </TouchableOpacity>
-                    </View>
-                    
+                    </View> */}
+
+                </View>
+                <View style={{ flex: 1 }}>
+
                 </View>
                 {/* Create your Manage UI's here -- Manage */}
 

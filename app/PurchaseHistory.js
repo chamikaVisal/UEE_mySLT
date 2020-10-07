@@ -5,7 +5,38 @@ import { ScrollView, TextInput } from 'react-native-gesture-handler';
 
 
 class PurchaseHistory extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            toDateSet: false,
+            fromDateSet: false,
 
+            bothset: false,
+
+            showExtraContent: false,
+        };
+    }
+    setToDate = () => {
+        this.setState({
+            toDateSet: true
+        });
+        if (this.state.fromDateSet) {
+            this.setState({
+                bothset: true
+            });
+        }
+    }
+    setFromDate = () => {
+        this.setState({
+            fromDateSet: true
+        });
+
+    }
+    componentDidMount() {
+        this.setState({
+            bothset: false
+        })
+    }
 
 
     render() {
@@ -23,7 +54,10 @@ class PurchaseHistory extends Component {
                     <View style={{ flex: 1, backgroundColor: '#ffffff', justifyContent: "center", alignItems: 'center' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', alignSelf: 'center', marginTop: 20 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>Purchase History</Text>
+                            <TouchableOpacity onPress={() => { this.setState({ bothset: false }) }}>
+                                <Text style={{ fontSize: 28, color: '#009eff' }}>Purchase History</Text>
+                            </TouchableOpacity>
+
                         </View>
                     </View>
 
@@ -38,7 +72,7 @@ class PurchaseHistory extends Component {
 
                                 <View style={{ borderWidth: 1, borderColor: '#009eff', flex: 2, marginHorizontal: 10, borderRadius: 20, }}>
 
-                                    <DatePicker />
+                                    <DatePicker onDateChange={this.setFromDate} />
                                 </View>
 
                             </View>
@@ -51,7 +85,7 @@ class PurchaseHistory extends Component {
 
                                 <View style={{ borderWidth: 1, borderColor: '#009eff', flex: 2, marginHorizontal: 10, borderRadius: 20, }}>
 
-                                    <DatePicker />
+                                    <DatePicker onDateChange={this.setToDate} />
                                 </View>
 
                             </View>
@@ -59,188 +93,271 @@ class PurchaseHistory extends Component {
 
                     </View>
                     <View style={{ flex: 5, backgroundColor: '#ffffff' }}>
-                        <ScrollView>
+                        <ScrollView>{/* ssadda */}
+                            {this.state.bothset ? (
+                                <View>
+                                    <View style={{
+                                        marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
+                                        shadowOffset: {
+                                            width: 0,
+                                            height: 2,
+                                        },
+                                        shadowOpacity: 0.25,
+                                        shadowRadius: 3.84,
 
-                            <View style={{
-                                marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
+                                        elevation: 5,
+                                        flex: 1,
+                                        flexDirection: 'row'
+                                    }}>
+                                        <View style={{ flex: 1, }}>
+                                            <View style={{ flex: 5, }}>
+                                                <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
+                                                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1 }}>
+                                                <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                    <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1, }}>
+                                                <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                    <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                                </View>
 
-                                elevation: 5,
-                                flex: 1,
-                                flexDirection: 'row'
-                            }}>
-                                <View style={{ flex: 1, }}>
-                                    <View style={{ flex: 5, }}>
-                                        <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
-                                            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                            </View>
+                                        </View>
+                                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+
                                         </View>
                                     </View>
-                                    <View style={{ flex: 1 }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 16, }}>Post paid</Text>
-                                        </View>
-                                    </View>
-                                    <View style={{ flex: 1, }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
-                                        </View>
+                                    <View style={{
+                                        marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
+                                        shadowOffset: {
+                                            width: 0,
+                                            height: 2,
+                                        },
+                                        shadowOpacity: 0.25,
+                                        shadowRadius: 3.84,
 
-                                    </View>
-                                </View>
-                                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+                                        elevation: 5,
+                                        flex: 1,
+                                        flexDirection: 'row'
+                                    }}>
+                                        <View style={{ flex: 1, }}>
+                                            <View style={{ flex: 5, }}>
+                                                <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
+                                                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1 }}>
+                                                <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                    <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1, }}>
+                                                <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                    <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                                </View>
 
-                                </View>
-                            </View>
-                            <View style={{
-                                marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
+                                            </View>
+                                        </View>
+                                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
 
-                                elevation: 5,
-                                flex: 1,
-                                flexDirection: 'row'
-                            }}>
-                                <View style={{ flex: 1, }}>
-                                    <View style={{ flex: 5, }}>
-                                        <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
-                                            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
                                         </View>
                                     </View>
-                                    <View style={{ flex: 1 }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 16, }}>Post paid</Text>
-                                        </View>
-                                    </View>
-                                    <View style={{ flex: 1, }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
-                                        </View>
-
-                                    </View>
-                                </View>
-                                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
-
-                                </View>
-                            </View>
-                            <View style={{
-                                marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
-
-                                elevation: 5,
-                                flex: 1,
-                                flexDirection: 'row'
-                            }}>
-                                <View style={{ flex: 1, }}>
-                                    <View style={{ flex: 5, }}>
-                                        <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
-                                            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
-                                        </View>
-                                    </View>
-                                    <View style={{ flex: 1 }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 16, }}>Post paid</Text>
-                                        </View>
-                                    </View>
-                                    <View style={{ flex: 1, }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
-                                        </View>
-
-                                    </View>
-                                </View>
-                                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
 
                                 </View>
-                            </View>
-                            <View style={{
-                                marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
+                            ) : (
+                                    <View>
+                                        <View style={{
+                                            marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
+                                            shadowOffset: {
+                                                width: 0,
+                                                height: 2,
+                                            },
+                                            shadowOpacity: 0.25,
+                                            shadowRadius: 3.84,
 
-                                elevation: 5,
-                                flex: 1,
-                                flexDirection: 'row'
-                            }}>
-                                <View style={{ flex: 1, }}>
-                                    <View style={{ flex: 5, }}>
-                                        <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
-                                            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                            elevation: 5,
+                                            flex: 1,
+                                            flexDirection: 'row'
+                                        }}>
+                                            <View style={{ flex: 1, }}>
+                                                <View style={{ flex: 5, }}>
+                                                    <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
+                                                        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1 }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1, }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                                    </View>
+
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+
+                                            </View>
                                         </View>
-                                    </View>
-                                    <View style={{ flex: 1 }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                        <View style={{
+                                            marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
+                                            shadowOffset: {
+                                                width: 0,
+                                                height: 2,
+                                            },
+                                            shadowOpacity: 0.25,
+                                            shadowRadius: 3.84,
+
+                                            elevation: 5,
+                                            flex: 1,
+                                            flexDirection: 'row'
+                                        }}>
+                                            <View style={{ flex: 1, }}>
+                                                <View style={{ flex: 5, }}>
+                                                    <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
+                                                        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1 }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1, }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                                    </View>
+
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+
+                                            </View>
                                         </View>
-                                    </View>
-                                    <View style={{ flex: 1, }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                        <View style={{
+                                            marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
+                                            shadowOffset: {
+                                                width: 0,
+                                                height: 2,
+                                            },
+                                            shadowOpacity: 0.25,
+                                            shadowRadius: 3.84,
+
+                                            elevation: 5,
+                                            flex: 1,
+                                            flexDirection: 'row'
+                                        }}>
+                                            <View style={{ flex: 1, }}>
+                                                <View style={{ flex: 5, }}>
+                                                    <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
+                                                        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1 }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1, }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                                    </View>
+
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+
+                                            </View>
+                                        </View>
+                                        <View style={{
+                                            marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
+                                            shadowOffset: {
+                                                width: 0,
+                                                height: 2,
+                                            },
+                                            shadowOpacity: 0.25,
+                                            shadowRadius: 3.84,
+
+                                            elevation: 5,
+                                            flex: 1,
+                                            flexDirection: 'row'
+                                        }}>
+                                            <View style={{ flex: 1, }}>
+                                                <View style={{ flex: 5, }}>
+                                                    <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
+                                                        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1 }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1, }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                                    </View>
+
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+
+                                            </View>
+                                        </View>
+                                        <View style={{
+                                            marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
+                                            shadowOffset: {
+                                                width: 0,
+                                                height: 2,
+                                            },
+                                            shadowOpacity: 0.25,
+                                            shadowRadius: 3.84,
+
+                                            elevation: 5,
+                                            flex: 1,
+                                            flexDirection: 'row'
+                                        }}>
+                                            <View style={{ flex: 1, }}>
+                                                <View style={{ flex: 5, }}>
+                                                    <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
+                                                        <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1 }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 16, }}>Post paid</Text>
+                                                    </View>
+                                                </View>
+                                                <View style={{ flex: 1, }}>
+                                                    <View style={{ margin: 2, marginHorizontal: 10 }}>
+                                                        <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
+                                                    </View>
+
+                                                </View>
+                                            </View>
+                                            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                                                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+
+                                            </View>
                                         </View>
 
                                     </View>
-                                </View>
-                                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
+                                )}
+                            {/* sadasdas */}
 
-                                </View>
-                            </View>
-                            <View style={{
-                                marginHorizontal: 20, marginVertical: 10, borderRadius: 20, shadowColor: "#000", backgroundColor: '#ffffff',
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
 
-                                elevation: 5,
-                                flex: 1,
-                                flexDirection: 'row'
-                            }}>
-                                <View style={{ flex: 1, }}>
-                                    <View style={{ flex: 5, }}>
-                                        <View style={{ margin: 10, backgroundColor: '#009eff', alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10 }}>
-                                            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Extra 5GB</Text>
-                                        </View>
-                                    </View>
-                                    <View style={{ flex: 1 }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 16, }}>Post paid</Text>
-                                        </View>
-                                    </View>
-                                    <View style={{ flex: 1, }}>
-                                        <View style={{ margin: 2, marginHorizontal: 10 }}>
-                                            <Text style={{ fontSize: 14, color: 'silver' }}>Tue, June 13 - 6.30 PM</Text>
-                                        </View>
-
-                                    </View>
-                                </View>
-                                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#009eff' }}>Rs. 250</Text>
-
-                                </View>
-                            </View>
 
 
 

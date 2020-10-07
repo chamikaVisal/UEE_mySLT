@@ -90,12 +90,12 @@ class App extends React.Component {
       <Root>
 
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="MainUI">
+          <Stack.Navigator initialRouteName="PasswordchangeVisal">
             <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
             <Stack.Screen name="RegPage" component={RegPage} options={{ headerShown: false }} />
             <Stack.Screen name="MainUI" component={MainUI} options={{ headerShown: false }} />
             <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
-            <Stack.Screen name="Manage" component={Manage} options={{ headerShown: false }} />
+            <Stack.Screen name="Manage" component={Manage} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 80, right: 80 } }} />
             <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
             <Stack.Screen name="Promotions" component={Promotions} options={{ headerShown: false }} />
             <Stack.Screen name="PasswordchangeVisal" component={PasswordchangeVisal} options={{ headerShown: false }} />
@@ -113,10 +113,10 @@ class App extends React.Component {
             <Stack.Screen name="MyProfile" component={MyProfile} options={{ headerShown: false }} />
             <Stack.Screen name="Accsettings" component={Accsettings} options={{ headerShown: false }} />
             <Stack.Screen name="PurchaseHistory" component={PurchaseHistory} options={{ headerShown: false }} />
-            <Stack.Screen name="AddNewUser" component={AddNewUser} options={{headerShown: false}} />
-            <Stack.Screen name="Giftdata" component={Giftdata} options={{headerShown: false}} />
-            <Stack.Screen name="DataAddOns" component={DataAddOns} options={{headerShown: false}} />
-            <Stack.Screen name="Entertainment" component={Entertainment} options={{headerShown: false}} />
+            <Stack.Screen name="AddNewUser" component={AddNewUser} options={{ headerShown: false }} />
+            <Stack.Screen name="Giftdata" component={Giftdata} options={{ headerShown: false }} />
+            <Stack.Screen name="DataAddOns" component={DataAddOns} options={{ headerShown: false }} />
+            <Stack.Screen name="Entertainment" component={Entertainment} options={{ headerShown: false }} />
             {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
 
