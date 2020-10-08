@@ -66,9 +66,7 @@ class Bonusdatausage extends Component {
 
                             </View>
                             <View style={{ flex: 1 }}>
-                                <TouchableOpacity onPress={() => { Alert.alert("click") }}>
-                                    <Text style={{ fontSize: 20, color: "#C0C0C0" }}>Tap for Daily Usage</Text>
-                                </TouchableOpacity>
+
                             </View>
 
                         </View>
