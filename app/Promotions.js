@@ -1,9 +1,106 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Text, Alert } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert } from 'react-native';
+import {
+    Container,
+    Header,
+    Title,
+    Content,
+    Button,
+    Left,
+    Right,
+    Body,
+    Icon,
+    Accordion,
+    Text,
+    View,
+} from "native-base";
 
+
+const dataArray = [
+    {
+        title: "Entertainment",
+        content:
+            "Find the packages     >",
+    },
+    {
+        title: "Education",
+        content:
+            "Find the packages     >",
+    },
+    {
+        title: "Work",
+        content:
+            "Find the packages     >",
+    },
+    {
+        title: "Other",
+        content:
+            "Find the packages     >",
+    },
+];
 
 class Promotions extends Component {
+    constructor(props) {
+        super(props);
 
+        this.validateFields = this.validateFields.bind(this);
+
+    }
+    _renderHeader(item, expanded) {
+        return (
+            <View
+                style={{
+                    flexDirection: "row",
+                    padding: 10,
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    backgroundColor: "#009eff",
+                    marginVertical: 5, borderRadius: 20
+                }}
+            >
+                <Text style={{ fontWeight: "600", color: "#fff" }}>
+                    {" "}{item.title}
+                </Text>
+                {expanded
+                    ? <Icon style={{ fontSize: 18, color: '#ffffff' }} name="arrow-up" />
+                    : <Icon style={{ fontSize: 18, color: '#ffffff' }} name="arrow-down" />}
+            </View>
+        );
+    }
+    validateFields = (item) => {
+        if (item === "Entertainment")
+            this.props.navigation.navigate("Entertainment");
+
+    }
+    _renderContent = (item) => {
+        return (
+            <View style={{ flex: 1 }}>
+                <View style={{ flex: 2 }}>
+                    <Image
+                        style={{ height: 100, width: 300 }}
+                        source={require('../assets/adddata.jpg')}
+                    />
+
+                </View>
+                <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                    <TouchableOpacity onPress={() => this.validateFields(item.title)} >
+                        <Text
+                            style={{
+                                backgroundColor: "#ffffff",
+                                padding: 10,
+                                color: "#009eff"
+
+                            }}
+                        >
+                            {item.content}
+                        </Text>
+                    </TouchableOpacity>
+                    <Icon style={{ fontSize: 18, color: '#ffffff' }} name="arrow-up" />
+                </View>
+            </View>
+
+        );
+    }
 
 
 
@@ -25,8 +122,6 @@ class Promotions extends Component {
                                 <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                                 <Text style={{ fontSize: 28, color: '#009eff' }}>Promotions</Text>
                             </View>
-
-
                         </View>
                         <View style={{
                             flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
@@ -40,9 +135,9 @@ class Promotions extends Component {
 
                             elevation: 5,
                         }}>
-                            <View style={{ flex: 1.8, justifyContent: 'center', alignItems: 'center' }}>
+                            <View style={{ flex: 1.6, justifyContent: 'center', alignItems: 'center' }}>
 
-                                <Text style={{ fontSize: 16 }}>Here You Can Find Your Rsecent</Text>
+                                <Text style={{ fontSize: 16 }}>Here You Can Find Your Recent</Text>
                                 <Text style={{ fontSize: 22, color: '#00FF00' }}>OFFER!</Text>
 
                                 <Image
@@ -55,6 +150,30 @@ class Promotions extends Component {
                             <View style={{
                                 flex: 3,
                             }}>
+                                <Content padder>
+                                    <Accordion
+                                        iconStyle={{ color: "green" }}
+                                        expandedIconStyle={{ color: "red" }}
+                                        headerStyle={{ backgroundColor: '#009eff', marginVertical: 5, borderRadius: 20 }}
+                                        dataArray={dataArray}
+                                        renderHeader={this._renderHeader}
+                                        renderContent={this._renderContent} />
+                                </Content>
+
+                                {/* <Container>
+
+
+                                    <Content padder style={{ backgroundColor: "white" }}>
+                                        <Accordion
+                                            dataArray={dataArray}
+                                            animation={true}
+                                            expanded={true}
+                                            renderHeader={this._renderHeader}
+                                            renderContent={this._renderContent}
+                                        />
+                                    </Content>
+                                </Container> */}
+
 
 
 
