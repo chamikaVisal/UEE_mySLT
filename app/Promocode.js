@@ -63,7 +63,7 @@ class Promocode extends Component {
                 {/* Create your PasswordchangeVisal UI's here -- PasswordchangeVisal */}
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 30 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Promo Code</Text>
                             <View style={{ marginTop: -5, flexDirection: 'row' }}>
@@ -91,7 +91,7 @@ class Promocode extends Component {
                                 <Text style={{ fontSize: 16 }}>voucher to avail yourself with the</Text>
                                 <Text style={{ fontSize: 22, color: '#00FF00' }}>OFFER!</Text>
                             </View>
-                            <View style={{ alignItems: 'center', marginTop: -40 }}>
+                            <View style={{ alignItems: 'center', marginTop: -62 }}>
                                 <Image
                                     style={{ width: 250, height: 250 }}
                                     source={require('../assets/promo.png')}

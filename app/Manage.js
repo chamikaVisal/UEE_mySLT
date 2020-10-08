@@ -84,7 +84,7 @@ class Manage extends Component {
                             <Text style={{ marginBottom: 10 }}>
                                 Check in for the happy day offers
   </Text>
-                            <Button onPress={() => this.props.navigation.navigate("")}
+                            <Button
                                 icon={<Icon name='add' color='#ffffff' />}
                                 buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
                                 title='Find Out' />

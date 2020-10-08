@@ -118,13 +118,13 @@ class Promotions extends Component {
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, }}>
                         <View style={{ flex: 1 }}>
-                            <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                            <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 30 }}>
                                 <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                                 <Text style={{ fontSize: 28, color: '#009eff' }}>Promotions</Text>
                             </View>
                         </View>
                         <View style={{
-                            flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
+                            flex: 5, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
                             shadowColor: "#000",
                             shadowOffset: {
                                 width: 0,
@@ -135,7 +135,7 @@ class Promotions extends Component {
 
                             elevation: 5,
                         }}>
-                            <View style={{ flex: 1.6, justifyContent: 'center', alignItems: 'center' }}>
+                            <View style={{ flex: 1.8, justifyContent: 'center', alignItems: 'center' }}>
 
                                 <Text style={{ fontSize: 16 }}>Here You Can Find Your Recent</Text>
                                 <Text style={{ fontSize: 22, color: '#00FF00' }}>OFFER!</Text>

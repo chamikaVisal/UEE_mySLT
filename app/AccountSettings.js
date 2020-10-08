@@ -8,26 +8,87 @@ class AccountSettings extends Component {
         super(props);
         this.state = {
             modal1show: false,
-            modal2show: false
+            modal2show: false,
+            pw: '',
+            newpw: '',
+            conpw: '',
         };
     }
 
-    showToast = () => {
-        Toast.show({
-            text: "Password Successfully Reseted !",
-            position: 'bottom',
-            textStyle: { fontWeight: 'bold' },
-            duration: 4000,
-            style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
-            buttonText: "Okay",
-            buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
-            buttonTextStyle: { color: "#00ff80" },
+    updateValue(text, field) {
 
-
-        })
-
+        if (field == 'pw') {
+            this.setState({
+                pw: text
+            });
+        }
+        else if (field == 'newpw') {
+            this.setState({
+                newpw: text
+            });
+        }
+        else if (field == 'conpw') {
+            this.setState({
+                conpw: text
+            });
+        }
 
     }
+    goNext = () => {
+        if (this.state.pw === "") {
+            this.setState({ modal1show: false });
+            Toast.show({
+                text: "Current Password can not be null",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 3000,
+                style: { backgroundColor: "#FFCC00", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#FFCC00" },
+
+            })
+
+        }
+        else {
+            this.setState({ modal1show: false, modal2show: true });
+        }
+
+    }
+    changepw = () => {
+        if (this.state.newpw === "" || this.state.conpw === "" || (this.state.newpw != this.state.conpw === "")) {
+            this.setState({ modal2show: false });
+            Toast.show({
+                text: "Both passwords should be the same",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 3000,
+                style: { backgroundColor: "#FFCC00", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#FFCC00" },
+
+            })
+        }
+
+        else {
+            this.setState({ modal2show: false });
+            Toast.show({
+                text: "Password Successfully Reseted !",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 4000,
+                style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#00ff80" },
+
+            })
+        }
+
+    }
+
+
 
 
 
@@ -44,7 +105,7 @@ class AccountSettings extends Component {
 
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 45 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, marginTop: 3, color: '#009eff' }}>ACCOUNT SETTING</Text>
 
@@ -229,7 +290,61 @@ class AccountSettings extends Component {
                                 </View>
                             </TouchableOpacity>
                         </View>
-                        {/* button3 */}
+                        {/* button by chamika */}
+
+                        <View style={{ flex: 0.5, }}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate("PasswordchangeVisal")}>
+                                <View style={{
+                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                    paddingBottom: 120,
+                                    shadowColor: "#000",
+                                    shadowOffset: {
+                                        width: 0,
+                                        height: 1,
+                                    },
+                                    shadowOpacity: 0.25,
+                                    shadowRadius: 3.84,
+
+                                    elevation: 5,
+                                }}>
+                                    {/* icon for button 03 */}
+                                    <View
+                                        style={{
+                                            flex: 2,
+
+                                        }}>
+                                        <Image
+                                            style={{
+                                                width: 70,
+                                                height: 70,
+                                                marginTop: 25,
+                                                marginLeft: 10
+                                            }}
+                                            source={require('../assets/password.jpg')}>
+
+                                        </Image>
+
+
+                                        {/* icon for button 03 */}
+                                        <View
+                                            style={{
+                                                flexDirection: "column",
+                                                flex: 2,
+                                                marginLeft: 100,
+                                                marginTop: -65,
+
+                                            }}>
+                                            <Text
+                                                style={{
+                                                    fontWeight: 'bold',
+                                                    fontSize: 20
+                                                }}>Change Portal/App Password</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                        {/* button  by chamika */}
                         {/* button4 */}
                         <View style={{ flex: 0.5, }}>
                             <TouchableOpacity onPress={() => { this.setState({ modal1show: true }) }}>
@@ -277,7 +392,7 @@ class AccountSettings extends Component {
                                                 style={{
                                                     fontWeight: 'bold',
                                                     fontSize: 20
-                                                }}>Change Portal/app Password</Text>
+                                                }}>Change Broadband Password</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -316,6 +431,7 @@ class AccountSettings extends Component {
                                             style={styles.textInput}
                                             placeholderTextColor="#C0C0C0"
                                             secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'pw')}
 
                                         />
                                     </View>
@@ -329,7 +445,7 @@ class AccountSettings extends Component {
                                         </TouchableOpacity>
 
                                         <TouchableOpacity style={{ height: 45, width: 100, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', marginLeft: 10 }}
-                                            onPress={() => { this.setState({ modal1show: false, modal2show: true }) }}>
+                                            onPress={this.goNext}>
                                             <View style={{ justifyContent: 'center', alignItems: 'center', }}>
                                                 <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>Next</Text>
                                             </View>
@@ -373,6 +489,7 @@ class AccountSettings extends Component {
                                             style={styles.textInput}
                                             placeholderTextColor="#C0C0C0"
                                             secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'newpw')}
 
                                         />
                                         <TextInput
@@ -382,13 +499,14 @@ class AccountSettings extends Component {
                                             style={styles.textInput}
                                             placeholderTextColor="#C0C0C0"
                                             secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'conpw')}
 
                                         />
                                     </View>
                                     <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
 
                                         <TouchableOpacity style={{ height: 45, width: 100, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', marginLeft: 10 }}
-                                            onPress={() => { this.setState({ modal2show: false }, this.showToast) }}>
+                                            onPress={this.changepw}>
                                             <View style={{ justifyContent: 'center', alignItems: 'center', }}>
                                                 <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>Confirm</Text>
                                             </View>

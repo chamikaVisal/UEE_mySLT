@@ -35,7 +35,7 @@ class DataAddOns extends Component {
 
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 30 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, marginTop: 3, color: '#009eff' }}>DATA ADD-ON</Text>
 

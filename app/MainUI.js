@@ -32,7 +32,7 @@ class MainUI extends Component {
             }}>
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ backgroundColor: '#ffffff', }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 10 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Usage Summary</Text>
                             <View style={{ marginTop: -5, flexDirection: 'row' }}>
@@ -255,7 +255,7 @@ class MainUI extends Component {
                                                 <View style={{ flex: 1 }}>
                                                     <Text style={{ marginTop: 5, fontSize: 20 }}>Remaining Volume</Text>
                                                 </View>
-                                                <View style={{ flex: 1, marginTop: -20 }}>
+                                                <View style={{ flex: 1, }}>
                                                     <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 31-Aug</Text>
                                                 </View>
                                             </View>

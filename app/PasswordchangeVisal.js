@@ -82,7 +82,7 @@ class PasswordchangeVisal extends Component {
 
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Reset Your Password</Text>
                             <View style={{ marginTop: -5, flexDirection: 'row' }}>
