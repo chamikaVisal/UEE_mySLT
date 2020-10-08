@@ -28,7 +28,7 @@ class FreeUsageChart extends Component {
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Free Data Usage</Text>
-                          
+
                         </View>
 
                     </View>
@@ -132,7 +132,7 @@ class FreeUsageChart extends Component {
                     </View>
 
                     <View style={{ flex: 0.5, backgroundColor: '#ffffff' }}>
-                    </View> 
+                    </View>
                 </View>
 
 
@@ -220,7 +220,7 @@ class FreeUsageChart extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

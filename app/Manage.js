@@ -236,7 +236,7 @@ class Manage extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

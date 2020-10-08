@@ -6,6 +6,7 @@ class Promotions extends Component {
 
 
 
+
     render() {
         return (
 
@@ -17,8 +18,57 @@ class Promotions extends Component {
             }}>
 
                 {/* Create your Promo UI's here -- Promo */}
-               
-               
+                <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 1, }}>
+                        <View style={{ flex: 1 }}>
+                            <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                                <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
+                                <Text style={{ fontSize: 28, color: '#009eff' }}>Promotions</Text>
+                            </View>
+
+
+                        </View>
+                        <View style={{
+                            flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
+                            shadowColor: "#000",
+                            shadowOffset: {
+                                width: 0,
+                                height: 2,
+                            },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+
+                            elevation: 5,
+                        }}>
+                            <View style={{ flex: 1.8, justifyContent: 'center', alignItems: 'center' }}>
+
+                                <Text style={{ fontSize: 16 }}>Here You Can Find Your Rsecent</Text>
+                                <Text style={{ fontSize: 22, color: '#00FF00' }}>OFFER!</Text>
+
+                                <Image
+                                    style={{ width: 220, height: 120 }}
+                                    source={require('../assets/promo_nishiki.png')}
+                                />
+
+
+                            </View>
+                            <View style={{
+                                flex: 3,
+                            }}>
+
+
+
+                            </View>
+
+
+                        </View>
+
+                    </View>
+
+
+                </View>
+
+
                 {/* Create your Promo UI's here -- Promo */}
 
                 <View style={{
@@ -103,7 +153,7 @@ class Promotions extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity,TouchableHighlight, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Animated, Text, Alert, TextInput } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Linking } from 'react-native';
 import { Toast } from "native-base";
@@ -19,8 +19,8 @@ class DataAddOns extends Component {
             buttonTextStyle: { color: "#00ff80" },
 
         })
-    
-}
+
+    }
 
     render() {
         return (
@@ -37,24 +37,25 @@ class DataAddOns extends Component {
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>DATA ADD-ON</Text>
+                            <Text style={{ fontSize: 28, marginTop: 3, color: '#009eff' }}>DATA ADD-ON</Text>
 
                         </View>
 
                     </View>
 
                     <View>
-                                <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/broadband/packages')}>
-                                <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 15, marginBottom: 20, 
-                                                }}>
-                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#ffffff' }}>Browse more data add ons here!</Text>
-                                </View>
-                                 </TouchableOpacity>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/broadband/packages')}>
+                            <View style={{
+                                ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 15, marginBottom: 20,
+                            }}>
+                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#ffffff' }}>Browse more data add ons here!</Text>
+                            </View>
+                        </TouchableOpacity>
 
                     </View>
 
                     {/* start box 01 */}
-                    
+
                     <View style={{
                         flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -10,
                         shadowColor: "#000",
@@ -67,410 +68,415 @@ class DataAddOns extends Component {
 
                         elevation: 5,
                     }}>
-                        
-                <ScrollView>
-                    
-                        {/* button 1 -start */}
-                       <View style={{
-                        flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 2,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
 
-                        elevation: 5,
-                        }}>
-                       
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 15,
-                            fontSize: 17
-                        }}>Home Schooling and</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 17
-                        }}>WFH</Text>
+                        <ScrollView>
 
-                        <Text style={{
-                            marginLeft: 250,
-                            fontSize: 22,
-                            marginTop: -45,
-                            fontWeight: 'bold'
-                        }}>30 GB</Text>
+                            {/* button 1 -start */}
+                            <View style={{
+                                flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+
+                                elevation: 5,
+                            }}>
+
+                                <Text style={{
+                                    marginLeft: 10,
+                                    marginTop: 15,
+                                    fontSize: 17
+                                }}>Home Schooling and</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    fontSize: 17
+                                }}>WFH</Text>
+
+                                <Text style={{
+                                    marginLeft: 250,
+                                    fontSize: 22,
+                                    marginTop: -45,
+                                    fontWeight: 'bold'
+                                }}>30 GB</Text>
 
 
                                 <View>
-                                <TouchableOpacity onPress={this.validateFields}>
-                                <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5, 
-                                                }}>
-                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
-                                </View>
-                                 </TouchableOpacity>
+                                    <TouchableOpacity onPress={this.validateFields}>
+                                        <View style={{
+                                            ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5,
+                                        }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
+                                        </View>
+                                    </TouchableOpacity>
 
                                 </View>
 
 
 
-                       {/* horizontal line */}
-                        <View style={{
-                            flex: .5
-                        }}>
+                                {/* horizontal line */}
+                                <View style={{
+                                    flex: .5
+                                }}>
+                                    <View style={{
+                                        borderBottomColor: '#C0C0C0',
+                                        borderBottomWidth: 1,
+                                        marginTop: 5
+                                    }} />
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        marginTop: 3,
+                                        fontSize: 16,
+                                        fontStyle: 'italic'
+                                    }}>Meet Lite</Text>
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 14,
+                                        marginBottom: 5,
+                                    }}>Zoom, Teams and more</Text>
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 25,
+                                        marginTop: -45,
+                                        marginBottom: 10,
+                                        marginLeft: 220,
+                                        fontWeight: 'bold'
+                                    }}>Rs. 195</Text>
+
+                                </View>
+                                {/* horizontal line */}
+
+                            </View>
+                            {/* button 1 - end */}
+                            {/* button 2- start */}
                             <View style={{
-                                borderBottomColor: '#C0C0C0',
-                                borderBottomWidth: 1,
-                                marginTop: 5
-                            }}/>
+                                flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
 
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 3,
-                            fontSize: 16,
-                            fontStyle: 'italic'
-                        }}>Meet Lite</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 14,
-                            marginBottom: 5,
-                        }}>Zoom, Teams and more</Text>
+                                elevation: 5,
+                            }}>
 
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 25,
-                            marginTop: -45,
-                            marginBottom: 10,
-                            marginLeft: 220,
-                            fontWeight: 'bold'
-                        }}>Rs. 195</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    marginTop: 15,
+                                    fontSize: 17
+                                }}>Home Schooling and</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    fontSize: 17
+                                }}>WFH</Text>
 
-                        </View>
-                        {/* horizontal line */}
-
-                       </View>
-                        {/* button 1 - end */}
-                        {/* button 2- start */}
-                        <View style={{
-                        flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 2,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
-
-                        elevation: 5,
-                        }}>
-                       
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 15,
-                            fontSize: 17
-                        }}>Home Schooling and</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 17
-                        }}>WFH</Text>
-
-                        <Text style={{
-                            marginLeft: 240,
-                            fontSize: 22,
-                            marginTop: -45,
-                            fontWeight: 'bold'
-                        }}>100 GB</Text>
+                                <Text style={{
+                                    marginLeft: 240,
+                                    fontSize: 22,
+                                    marginTop: -45,
+                                    fontWeight: 'bold'
+                                }}>100 GB</Text>
 
 
                                 <View>
-                                <TouchableOpacity onPress={this.validateFields}>
-                                <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5, 
-                                                }}>
-                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
-                                </View>
-                                 </TouchableOpacity>
+                                    <TouchableOpacity onPress={this.validateFields}>
+                                        <View style={{
+                                            ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5,
+                                        }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
+                                        </View>
+                                    </TouchableOpacity>
 
                                 </View>
 
 
-                       {/* horizontal line */}
-                        <View style={{
-                            flex: .5
-                        }}>
+                                {/* horizontal line */}
+                                <View style={{
+                                    flex: .5
+                                }}>
+                                    <View style={{
+                                        borderBottomColor: '#C0C0C0',
+                                        borderBottomWidth: 1,
+                                        marginTop: 5
+                                    }} />
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        marginTop: 5,
+                                        fontSize: 16,
+                                        fontStyle: 'italic'
+                                    }}>Meet Max</Text>
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 14,
+                                        marginBottom: 5
+                                    }}>Zoom, Teams and more</Text>
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 25,
+                                        marginTop: -45,
+                                        marginBottom: 10,
+                                        marginLeft: 220,
+                                        fontWeight: 'bold'
+                                    }}>Rs. 495</Text>
+
+                                </View>
+                                {/* horizontal line */}
+
+                            </View>
+                            {/* button 2 - end */}
+                            {/* button 3 - start */}
                             <View style={{
-                                borderBottomColor: '#C0C0C0',
-                                borderBottomWidth: 1,
-                                marginTop: 5
-                            }}/>
+                                flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
 
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 5,
-                            fontSize: 16,
-                            fontStyle: 'italic'
-                        }}>Meet Max</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 14,
-                            marginBottom: 5
-                        }}>Zoom, Teams and more</Text>
+                                elevation: 5,
+                            }}>
 
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 25,
-                            marginTop: -45,
-                            marginBottom: 10,
-                            marginLeft: 220,
-                            fontWeight: 'bold'
-                        }}>Rs. 495</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    marginTop: 15,
+                                    fontSize: 17
+                                }}>Entertainment</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    fontSize: 17
+                                }}>Unlimited</Text>
 
-                        </View>
-                        {/* horizontal line */}
-
-                       </View>
-                        {/* button 2 - end */}
-                        {/* button 3 - start */}
-                        <View style={{
-                        flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 2,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
-
-                        elevation: 5,
-                        }}>
-                       
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 15,
-                            fontSize: 17
-                        }}>Entertainment</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 17
-                        }}>Unlimited</Text>
-
-                        <Text style={{
-                            marginLeft: 210,
-                            fontSize: 20,
-                            marginTop: -45,
-                            fontWeight: 'bold'
-                        }}>UNLIMITED</Text>
+                                <Text style={{
+                                    marginLeft: 210,
+                                    fontSize: 20,
+                                    marginTop: -45,
+                                    fontWeight: 'bold'
+                                }}>UNLIMITED</Text>
 
 
                                 <View>
-                                <TouchableOpacity onPress={this.validateFields}>
-                                <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5, 
-                                                }}>
-                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
-                                </View>
-                                 </TouchableOpacity>
+                                    <TouchableOpacity onPress={this.validateFields}>
+                                        <View style={{
+                                            ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5,
+                                        }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
+                                        </View>
+                                    </TouchableOpacity>
 
                                 </View>
 
-                       {/* horizontal line */}
-                        <View style={{
-                            flex: .5
-                        }}>
+                                {/* horizontal line */}
+                                <View style={{
+                                    flex: .5
+                                }}>
+                                    <View style={{
+                                        borderBottomColor: '#C0C0C0',
+                                        borderBottomWidth: 1,
+                                        marginTop: 5
+                                    }} />
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        marginTop: 5,
+                                        fontSize: 16,
+                                        fontStyle: 'italic'
+                                    }}>Entertainment</Text>
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 14,
+                                        marginBottom: 5
+                                    }}>Combo pack</Text>
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 25,
+                                        marginTop: -45,
+                                        marginBottom: 10,
+                                        marginLeft: 220,
+                                        fontWeight: 'bold'
+                                    }}>Rs. 1990</Text>
+
+                                </View>
+                                {/* horizontal line */}
+
+                            </View>
+                            {/* button 3 - end */}
+
+
+                            {/* button 4 - start */}
                             <View style={{
-                                borderBottomColor: '#C0C0C0',
-                                borderBottomWidth: 1,
-                                marginTop: 5
-                            }}/>
+                                flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
 
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 5,
-                            fontSize: 16,
-                            fontStyle: 'italic'
-                        }}>Entertainment</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 14,
-                            marginBottom: 5
-                        }}>Combo pack</Text>
+                                elevation: 5,
+                            }}>
 
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 25,
-                            marginTop: -45,
-                            marginBottom: 10,
-                            marginLeft: 220,
-                            fontWeight: 'bold'
-                        }}>Rs. 1990</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    marginTop: 15,
+                                    fontSize: 17
+                                }}>Entertainment</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    fontSize: 17
+                                }}>Booster</Text>
 
-                        </View>
-                        {/* horizontal line */}
-
-                       </View>
-                       {/* button 3 - end */}
-
-
-                       {/* button 4 - start */}
-                       <View style={{
-                        flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 2,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
-
-                        elevation: 5,
-                        }}>
-                       
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 15,
-                            fontSize: 17
-                        }}>Entertainment</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 17
-                        }}>Booster</Text>
-
-                        <Text style={{
-                            marginLeft: 240,
-                            fontSize: 22,
-                            marginTop: -45,
-                            fontWeight: 'bold'
-                        }}>100 GB</Text>
+                                <Text style={{
+                                    marginLeft: 240,
+                                    fontSize: 22,
+                                    marginTop: -45,
+                                    fontWeight: 'bold'
+                                }}>100 GB</Text>
 
 
                                 <View>
-                                <TouchableOpacity onPress={this.validateFields}>
-                                <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5, 
-                                                }}>
-                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
-                                </View>
-                                 </TouchableOpacity>
+                                    <TouchableOpacity onPress={this.validateFields}>
+                                        <View style={{
+                                            ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5,
+                                        }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
+                                        </View>
+                                    </TouchableOpacity>
 
                                 </View>
 
-                       {/* horizontal line */}
-                        <View style={{
-                            flex: .5
-                        }}>
+                                {/* horizontal line */}
+                                <View style={{
+                                    flex: .5
+                                }}>
+                                    <View style={{
+                                        borderBottomColor: '#C0C0C0',
+                                        borderBottomWidth: 1,
+                                        marginTop: 5
+                                    }} />
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        marginTop: 5,
+                                        fontSize: 16,
+                                        fontStyle: 'italic'
+                                    }}>Entertainment</Text>
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 14,
+                                        marginBottom: 5
+                                    }}>Limited pack</Text>
+
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 25,
+                                        marginTop: -45,
+                                        marginBottom: 10,
+                                        marginLeft: 220,
+                                        fontWeight: 'bold'
+                                    }}>Rs. 1200</Text>
+
+                                </View>
+                                {/* horizontal line */}
+
+                            </View>
+                            {/* button 4 - end */}
+
+                            {/* button 5 - start */}
                             <View style={{
-                                borderBottomColor: '#C0C0C0',
-                                borderBottomWidth: 1,
-                                marginTop: 5
-                            }}/>
+                                flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
 
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 5,
-                            fontSize: 16,
-                            fontStyle: 'italic'
-                        }}>Entertainment</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 14,
-                            marginBottom: 5
-                        }}>Limited pack</Text>
+                                elevation: 5,
+                            }}>
 
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 25,
-                            marginTop: -45,
-                            marginBottom: 10,
-                            marginLeft: 220,
-                            fontWeight: 'bold'
-                        }}>Rs. 1200</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    marginTop: 15,
+                                    fontSize: 17
+                                }}>Education</Text>
+                                <Text style={{
+                                    marginLeft: 10,
+                                    fontSize: 17
+                                }}>Booster</Text>
 
-                        </View>
-                        {/* horizontal line */}
-
-                       </View>
-                       {/* button 4 - end */}
-
-                       {/* button 5 - start */}
-                       <View style={{
-                        flex: 1, backgroundColor: '#e4f1f7', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 10, marginBottom: 10,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 2,
-                        },
-                        shadowOpacity: 0.25,
-                        shadowRadius: 3.84,
-
-                        elevation: 5,
-                        }}>
-                       
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 15,
-                            fontSize: 17
-                        }}>Education</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 17
-                        }}>Booster</Text>
-
-                        <Text style={{
-                            marginLeft: 250,
-                            fontSize: 22,
-                            marginTop: -45,
-                            fontWeight: 'bold'
-                        }}>50 GB</Text>
+                                <Text style={{
+                                    marginLeft: 250,
+                                    fontSize: 22,
+                                    marginTop: -45,
+                                    fontWeight: 'bold'
+                                }}>50 GB</Text>
 
 
                                 <View>
-                                <TouchableOpacity onPress={this.validateFields}>
-                                <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5, 
-                                                }}>
-                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
-                                </View>
-                                 </TouchableOpacity>
+                                    <TouchableOpacity onPress={this.validateFields}>
+                                        <View style={{
+                                            ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 20, marginBottom: 5,
+                                        }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>Activate</Text>
+                                        </View>
+                                    </TouchableOpacity>
 
                                 </View>
 
-                       {/* horizontal line */}
-                        <View style={{
-                            flex: .5
-                        }}>
-                            <View style={{
-                                borderBottomColor: '#C0C0C0',
-                                borderBottomWidth: 1,
-                                marginTop: 5
-                            }}/>
+                                {/* horizontal line */}
+                                <View style={{
+                                    flex: .5
+                                }}>
+                                    <View style={{
+                                        borderBottomColor: '#C0C0C0',
+                                        borderBottomWidth: 1,
+                                        marginTop: 5
+                                    }} />
 
-                        <Text style={{
-                            marginLeft: 10,
-                            marginTop: 5,
-                            fontSize: 16,
-                            fontStyle: 'italic'
-                        }}>Education</Text>
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 14,
-                            marginBottom: 5
-                        }}>Limited pack</Text>
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        marginTop: 5,
+                                        fontSize: 16,
+                                        fontStyle: 'italic'
+                                    }}>Education</Text>
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 14,
+                                        marginBottom: 5
+                                    }}>Limited pack</Text>
 
-                        <Text style={{
-                            marginLeft: 10,
-                            fontSize: 25,
-                            marginTop: -45,
-                            marginBottom: 10,
-                            marginLeft: 220,
-                            fontWeight: 'bold'
-                        }}>Rs. 1000</Text>
+                                    <Text style={{
+                                        marginLeft: 10,
+                                        fontSize: 25,
+                                        marginTop: -45,
+                                        marginBottom: 10,
+                                        marginLeft: 220,
+                                        fontWeight: 'bold'
+                                    }}>Rs. 1000</Text>
 
-                        </View>
-                        {/* horizontal line */}
+                                </View>
+                                {/* horizontal line */}
 
-                       </View>
-                       {/* button 5 - end */}
-                    </ScrollView> 
-                    </View>  
+                            </View>
+                            {/* button 5 - end */}
+                        </ScrollView>
+                    </View>
                 </View>
-                
-{/* DO NOT CHANGE BELOW */}
+
+                {/* DO NOT CHANGE BELOW */}
                 <View style={{
 
                     position: 'absolute',
@@ -553,7 +559,7 @@ class DataAddOns extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

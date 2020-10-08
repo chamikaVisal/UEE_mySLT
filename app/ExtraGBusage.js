@@ -111,7 +111,7 @@ class ExtraGB extends Component {
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, marginTop: 25  }}>Used</Text>
+                                    <Text style={{ fontSize: 20, marginTop: 25 }}>Used</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
                                     <Text style={{ fontSize: 22, color: '#009eff', marginTop: -10 }}>2.5 GB</Text>
@@ -119,7 +119,7 @@ class ExtraGB extends Component {
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 20, marginRight: 10, marginTop: 25  }}>Remaining</Text>
+                                    <Text style={{ fontSize: 20, marginRight: 10, marginTop: 25 }}>Remaining</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
                                     <Text style={{ fontSize: 22, color: '#00FF00', marginTop: -10 }}>2.5 GB</Text>
@@ -129,12 +129,12 @@ class ExtraGB extends Component {
                         </View>
 
                     </View>
-                    <View style={{backgroundColor: '#ffff', flex: 0.3}}>
+                    <View style={{ backgroundColor: '#ffff', flex: 0.3 }}>
 
-</View>
+                    </View>
                 </View>
 
-{/* usage icon */}
+                {/* usage icon */}
                 <View style={{
 
                     position: 'absolute',
@@ -219,7 +219,7 @@ class ExtraGB extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

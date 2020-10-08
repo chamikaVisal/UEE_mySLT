@@ -15,30 +15,30 @@ class GiftData extends Component {
             showToast: false
         };
     }
-    
-    
+
+
     validateFields = () => {
 
-            Toast.show({
-                text: "Gift data sent successfully !",
-                position: 'bottom',
-                textStyle: { fontWeight: 'bold' },
-                duration: 4000,
-                style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
-                buttonText: "Okay",
-                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
-                buttonTextStyle: { color: "#00ff80" },
+        Toast.show({
+            text: "Gift data sent successfully !",
+            position: 'bottom',
+            textStyle: { fontWeight: 'bold' },
+            duration: 4000,
+            style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+            buttonText: "Okay",
+            buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+            buttonTextStyle: { color: "#00ff80" },
 
-            })
-        
+        })
+
     }
 
-    
+
 
     render() {
 
         return (
-            
+
             <View style={{
                 flex: 1,
                 flexDirection: 'column',
@@ -51,7 +51,7 @@ class GiftData extends Component {
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>GIFT DATA</Text>
-                            
+
 
                         </View>
 
@@ -76,16 +76,17 @@ class GiftData extends Component {
                             </View>
                             <View style={{ alignItems: 'center' }}>
                                 <Image
-                                    style={{ 
-                                        width: 150, 
+                                    style={{
+                                        width: 150,
                                         height: 150,
-                                        marginTop: 10 }}
+                                        marginTop: 10
+                                    }}
                                     source={require('../assets/gift.png')}
                                 />
                             </View>
 
                         </View>
-                        
+
                         <View style={{ flex: 2, }}>
                             <View style={{
                                 flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 40,
@@ -100,8 +101,8 @@ class GiftData extends Component {
                                 elevation: 5,
                             }}>
                                 <ScrollView>
-                                    
-                                    
+
+
                                     <View style={{ marginTop: 10 }}>
                                         <TextInput style={{}}
                                             autoFocus={false}
@@ -113,65 +114,65 @@ class GiftData extends Component {
                                     </View>
 
                                     <View style={{ alignItems: 'center', marginTop: 10 }}>
-                                            <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'red' }}>Ensure the username is correct, as this</Text>
-                                            <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'red' }}>transaction cannot be reversed.</Text>
+                                        <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'red' }}>Ensure the username is correct, as this</Text>
+                                        <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'red' }}>transaction cannot be reversed.</Text>
                                     </View>
-{/* start - select data package box */}
+                                    {/* start - select data package box */}
                                     <View style={{
-                                            flex: 4, backgroundColor: '#faf8f2', marginLeft: 10, marginRight: 10, marginBottom: 50, borderRadius: 20, marginTop: 10,
-                                            shadowColor: "#ffffff",
-                                            shadowOffset: {
-                                                width: 0,
-                                                height: 2,
-                                            },
-                                            shadowOpacity: 0.25,
-                                            shadowRadius: 3.84,
+                                        flex: 4, backgroundColor: '#faf8f2', marginLeft: 10, marginRight: 10, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                        shadowColor: "#ffffff",
+                                        shadowOffset: {
+                                            width: 0,
+                                            height: 2,
+                                        },
+                                        shadowOpacity: 0.25,
+                                        shadowRadius: 3.84,
 
-                                            elevation: 5,
+                                        elevation: 5,
 
                                     }}>
-                                        
-                                        <View style={{flex: 4, height: 110, flexDirection: 'column' }}>
-                                            
+
+                                        <View style={{ flex: 4, height: 110, flexDirection: 'column' }}>
+
                                             <Text style={{
                                                 marginLeft: 10,
                                                 marginTop: 20
                                             }}>Enter a data amount:</Text>
 
 
-                                                    <View style={{ marginTop: -30, marginHorizontal: 100, marginRight: 25, marginLeft: 145 }}>
-                                                        <TextInput style={{}}
-                                                            autoFocus={false}
-                                                            placeholder="Data Amount"
-                                                            style={styles.textInputgb}
-                                                            placeholderTextColor="#C0C0C0"
-                                                            secureTextEntry={true}
-                                                        />
-                                                    </View>
+                                            <View style={{ marginTop: -30, marginHorizontal: 100, marginRight: 25, marginLeft: 145 }}>
+                                                <TextInput style={{}}
+                                                    autoFocus={false}
+                                                    placeholder="Data Amount"
+                                                    style={styles.textInputgb}
+                                                    placeholderTextColor="#C0C0C0"
+                                                    secureTextEntry={true}
+                                                />
+                                            </View>
 
-                                            <View style={{flex: 1, marginTop: -30, marginLeft: 270}}>
-                                            <Text style={{
-                                                fontWeight: 'bold'
-                                            }}>
-                                                GB
+                                            <View style={{ flex: 1, marginTop: -30, marginLeft: 270 }}>
+                                                <Text style={{
+                                                    fontWeight: 'bold'
+                                                }}>
+                                                    GB
                                             </Text>
                                             </View>
-                                                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("AddMoreData")}>
-                                                    <View style={{ ...styles.buttonmain, backgroundColor: '#b8b6b2', marginHorizontal: 30, height: 40, marginTop: 20, marginBottom: 10}}>
-                                                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>View package details</Text>
-                                                    </View>
-                                                    </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.props.navigation.navigate("AddMoreData")}>
+                                                <View style={{ ...styles.buttonmain, backgroundColor: '#b8b6b2', marginHorizontal: 30, height: 40, marginTop: 20, marginBottom: 10 }}>
+                                                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000000' }}>View package details</Text>
+                                                </View>
+                                            </TouchableOpacity>
 
-                                            </View>
+                                        </View>
                                     </View>
-{/* end - select data package box */}
-                                            <View style={{ marginTop: -10 }}>
-                                                    <TouchableOpacity onPress={this.validateFields}>
-                                                    <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginTop: -25 }}>
-                                                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Send data</Text>
-                                                    </View>
-                                                    </TouchableOpacity>
+                                    {/* end - select data package box */}
+                                    <View style={{ marginTop: -10 }}>
+                                        <TouchableOpacity onPress={this.validateFields}>
+                                            <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', marginTop: -25 }}>
+                                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Send data</Text>
                                             </View>
+                                        </TouchableOpacity>
+                                    </View>
 
                                 </ScrollView>
                             </View>
@@ -266,7 +267,7 @@ class GiftData extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}
@@ -394,7 +395,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 40,
         alignItems: "center"
-      }
+    }
 
 });
 export default GiftData;

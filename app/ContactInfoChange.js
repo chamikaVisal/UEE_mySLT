@@ -19,8 +19,8 @@ class ContactInfoChange extends Component {
             buttonTextStyle: { color: "#00ff80" },
 
         })
-    
-}
+
+    }
 
 
 
@@ -39,7 +39,7 @@ class ContactInfoChange extends Component {
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Change Your Contact Info</Text>
-                          
+
                         </View>
 
                     </View>
@@ -68,63 +68,63 @@ class ContactInfoChange extends Component {
                             </View>
 
                         </View>
-                        
+
                         <View style={{ flex: 2, }}>
-                        <ScrollView>
-                            <View style={{
-                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 5,
-                                shadowColor: "#000",
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
+                            <ScrollView>
+                                <View style={{
+                                    flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 5,
+                                    shadowColor: "#000",
+                                    shadowOffset: {
+                                        width: 0,
+                                        height: 2,
+                                    },
+                                    shadowOpacity: 0.25,
+                                    shadowRadius: 3.84,
 
-                                elevation: 5,
-                            }}>
-                                <View style={{ marginTop: 10 }}>
-                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Full Name</Text>
-                                    <TextInput
-                                        onFocus={this.onFocus}
-                                        autoFocus={false}
-                                        placeholder="*********"
-                                        style={styles.textInput}
-                                        placeholderTextColor="#C0C0C0"
-                                    />
-                                </View>
-                                <View style={{ marginTop: 10 }}>
-                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Email</Text>
-                                    <TextInput style={{}}
-                                        autoFocus={false}
-                                        placeholder="*********"
-                                        style={styles.textInput}
-                                        placeholderTextColor="#C0C0C0"
-                                    />
-                                </View>
-                                <View style={{ marginTop: 10 }}>
-                                    <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Mobile</Text>
-                                    <TextInput style={{}}
-                                        autoFocus={false}
-                                        placeholder="*********"
-                                        style={styles.textInput}
-                                        placeholderTextColor="#C0C0C0"
-                                    />
-                                </View>
-                            
-                                <View style={{ marginTop: 5 }}>
-                                    <TouchableOpacity onPress={this.validateFields}>
-                                        <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
-                                            <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Done</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
-                               
+                                    elevation: 5,
+                                }}>
+                                    <View style={{ marginTop: 10 }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Full Name</Text>
+                                        <TextInput
+                                            onFocus={this.onFocus}
+                                            autoFocus={false}
+                                            placeholder="*********"
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                        />
+                                    </View>
+                                    <View style={{ marginTop: 10 }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Email</Text>
+                                        <TextInput style={{}}
+                                            autoFocus={false}
+                                            placeholder="*********"
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                        />
+                                    </View>
+                                    <View style={{ marginTop: 10 }}>
+                                        <Text style={{ color: '#009eff', marginHorizontal: 20, }}>Mobile</Text>
+                                        <TextInput style={{}}
+                                            autoFocus={false}
+                                            placeholder="*********"
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                        />
+                                    </View>
 
-                            </View>
+                                    <View style={{ marginTop: 5 }}>
+                                        <TouchableOpacity onPress={this.validateFields}>
+                                            <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
+                                                <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Done</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
+
+
+                                </View>
                             </ScrollView>
                         </View>
-                       
+
 
                     </View>
 
@@ -212,7 +212,7 @@ class ContactInfoChange extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

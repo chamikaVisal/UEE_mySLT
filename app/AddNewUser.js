@@ -15,21 +15,21 @@ class AddNewUser extends Component {
             showToast: false
         };
     }
-    
+
     validateFields = () => {
 
-            Toast.show({
-                text: "User added successfully !",
-                position: 'bottom',
-                textStyle: { fontWeight: 'bold' },
-                duration: 4000,
-                style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
-                buttonText: "Okay",
-                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
-                buttonTextStyle: { color: "#00ff80" },
+        Toast.show({
+            text: "User added successfully !",
+            position: 'bottom',
+            textStyle: { fontWeight: 'bold' },
+            duration: 4000,
+            style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+            buttonText: "Okay",
+            buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+            buttonTextStyle: { color: "#00ff80" },
 
-            })
-        
+        })
+
     }
 
 
@@ -51,7 +51,7 @@ class AddNewUser extends Component {
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>ADD USER</Text>
-                            
+
 
                         </View>
 
@@ -77,16 +77,17 @@ class AddNewUser extends Component {
                             </View>
                             <View style={{ alignItems: 'center' }}>
                                 <Image
-                                    style={{ 
-                                        width: 120, 
+                                    style={{
+                                        width: 120,
                                         height: 120,
-                                        marginTop: 20 }}
+                                        marginTop: 20
+                                    }}
                                     source={require('../assets/adduserhome.png')}
                                 />
                             </View>
 
                         </View>
-                        
+
                         <View style={{ flex: 2, }}>
                             <View style={{
                                 flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 60,
@@ -101,7 +102,7 @@ class AddNewUser extends Component {
                                 elevation: 5,
                             }}>
                                 <ScrollView>
-                                    
+
                                     <View style={{ marginTop: 35 }}>
                                         <TextInput style={{
                                             alignSelf: 'center',
@@ -113,7 +114,7 @@ class AddNewUser extends Component {
                                             style={styles.textInput}
                                             placeholderTextColor="#C0C0C0"
                                             secureTextEntry={true}
-                                            
+
                                         />
                                     </View>
                                     <View style={{ marginTop: 10 }}>
@@ -226,7 +227,7 @@ class AddNewUser extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

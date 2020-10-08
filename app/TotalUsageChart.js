@@ -128,7 +128,7 @@ class TotalUsageChart extends Component {
                                     <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22,marginLeft:-20, color: '#00FF00', marginTop: -10 }}>25.0GB</Text>
+                                    <Text style={{ fontSize: 22, marginLeft: -20, color: '#00FF00', marginTop: -10 }}>25.0GB</Text>
                                 </View>
                             </View>
 
@@ -253,7 +253,7 @@ class TotalUsageChart extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

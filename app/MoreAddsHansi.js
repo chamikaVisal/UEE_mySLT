@@ -22,7 +22,7 @@ class MoreAddsHansi extends Component {
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, marginTop:3, color: '#009eff' }}>More Ads</Text>
+                            <Text style={{ fontSize: 28, marginTop: 3, color: '#009eff' }}>More Ads</Text>
 
                         </View>
 
@@ -41,121 +41,121 @@ class MoreAddsHansi extends Component {
 
                         elevation: 5,
                     }}>
-                       
-                      <ScrollView>
-                        <View style={{ flex: 1.5, }}>
-                            <View style={{
-                                flex: 4, backgroundColor: '#ffffff', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 20,
-                                shadowColor: "#000",
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
 
-                                elevation: 6,
-                            }}>
-                            <View style={{ alignItems: 'center'}}> 
-                            <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
-                                <Image
-                                    source={require('../assets/add4.jpg') }
-                                    style={{
-                                     height: 181,
-                                     width: 330,borderRadius: 20
-                                     }}
-                                 />
-                                 </TouchableOpacity>
+                        <ScrollView>
+                            <View style={{ flex: 1.5, }}>
+                                <View style={{
+                                    flex: 4, backgroundColor: '#ffffff', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 20,
+                                    shadowColor: "#000",
+                                    shadowOffset: {
+                                        width: 0,
+                                        height: 2,
+                                    },
+                                    shadowOpacity: 0.25,
+                                    shadowRadius: 3.84,
+
+                                    elevation: 6,
+                                }}>
+                                    <View style={{ alignItems: 'center' }}>
+                                        <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
+                                            <Image
+                                                source={require('../assets/add4.jpg')}
+                                                style={{
+                                                    height: 181,
+                                                    width: 330, borderRadius: 20
+                                                }}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
                             </View>
-                           </View>
-                        </View>
 
-                        <View style={{ flex: 1.5, }}>
-                            <View style={{
-                                flex: 4, backgroundColor: '#ffffff', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 40, borderRadius: 20, marginTop:5,
-                                shadowColor: "#000",
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
+                            <View style={{ flex: 1.5, }}>
+                                <View style={{
+                                    flex: 4, backgroundColor: '#ffffff', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 40, borderRadius: 20, marginTop: 5,
+                                    shadowColor: "#000",
+                                    shadowOffset: {
+                                        width: 0,
+                                        height: 2,
+                                    },
+                                    shadowOpacity: 0.25,
+                                    shadowRadius: 3.84,
 
-                                elevation: 6,
-                            }}>
-                            <View style={{ alignItems: 'center'}}>
-                            <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
-                                <Image
-                                    source={require('../assets/add1.jpg')}
-                                    style={{
-                                     height: 181,
-                                     width: 330,borderRadius: 20
-                                     }}
-                                 />
-                                 </TouchableOpacity>
+                                    elevation: 6,
+                                }}>
+                                    <View style={{ alignItems: 'center' }}>
+                                        <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
+                                            <Image
+                                                source={require('../assets/add1.jpg')}
+                                                style={{
+                                                    height: 181,
+                                                    width: 330, borderRadius: 20
+                                                }}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
                             </View>
-                           </View>
-                        </View>
 
 
 
-                
 
 
-                        <View style={{ flex: 1.5, }}>
-                            <View style={{
-                                flex: 4, backgroundColor: '#ffffff', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: -10,
-                                shadowColor: "#000",
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
 
-                                elevation: 6,
-                            }}>
-                            <View style={{ alignItems: 'center'}}>
-                            <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
-                                <Image
-                                    source={require('../assets/add2.jpg')}
-                                    style={{
-                                     height: 181,
-                                     width: 330,borderRadius: 20
-                                     }}
-                                 />
-                                 </TouchableOpacity>
+                            <View style={{ flex: 1.5, }}>
+                                <View style={{
+                                    flex: 4, backgroundColor: '#ffffff', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: -10,
+                                    shadowColor: "#000",
+                                    shadowOffset: {
+                                        width: 0,
+                                        height: 2,
+                                    },
+                                    shadowOpacity: 0.25,
+                                    shadowRadius: 3.84,
+
+                                    elevation: 6,
+                                }}>
+                                    <View style={{ alignItems: 'center' }}>
+                                        <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
+                                            <Image
+                                                source={require('../assets/add2.jpg')}
+                                                style={{
+                                                    height: 181,
+                                                    width: 330, borderRadius: 20
+                                                }}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
                             </View>
-                           </View>
-                        </View>
 
-                        <View style={{ flex: 1.5, }}>
-                            <View style={{
-                                flex: 4, backgroundColor: '#ffffff', justifyContent: "center" ,marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: -15,
-                                shadowColor: "#000",
-                                shadowOffset: {
-                                    width: 0,
-                                    height: 2,
-                                },
-                                shadowOpacity: 0.25,
-                                shadowRadius: 3.84,
+                            <View style={{ flex: 1.5, }}>
+                                <View style={{
+                                    flex: 4, backgroundColor: '#ffffff', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: -15,
+                                    shadowColor: "#000",
+                                    shadowOffset: {
+                                        width: 0,
+                                        height: 2,
+                                    },
+                                    shadowOpacity: 0.25,
+                                    shadowRadius: 3.84,
 
-                                elevation: 6,
-                            }}>
-                            <View style={{ alignItems: 'center'}}>
-                            <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
-                                <Image
-                                    source={require('../assets/add3.jpg')}
-                                    style={{
-                                     height: 181,
-                                     width: 330,borderRadius: 20
-                                     }}
-                                 />
-                                 </TouchableOpacity>
+                                    elevation: 6,
+                                }}>
+                                    <View style={{ alignItems: 'center' }}>
+                                        <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/offers')}>
+                                            <Image
+                                                source={require('../assets/add3.jpg')}
+                                                style={{
+                                                    height: 181,
+                                                    width: 330, borderRadius: 20
+                                                }}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
                             </View>
-                           </View>
-                        </View>
-                </ScrollView>
+                        </ScrollView>
                     </View>
                 </View>
 
@@ -242,7 +242,7 @@ class MoreAddsHansi extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

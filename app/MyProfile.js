@@ -11,97 +11,98 @@ class MyProfile extends Component {
 
             <View style={{
                 flex: 1,
-     
+
                 backgroundColor: '#ffffff'
 
             }}>
 
                 {/* Create your profile UI's here -- Nishiki */}
-                <View style={{  flex: 1,backgroundColor:'#ffff' }}>
-                <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
-                            <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>My Profile</Text>
-                        </View>
+                <View style={{ flex: 1, backgroundColor: '#ffff' }}>
+                    <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
+                        <Text style={{ fontSize: 28, color: '#009eff' }}>My Profile</Text>
+                    </View>
 
-                <View style={{flex:1,backgroundColor:'#fff', alignContent:'center'}}>
-                            <View style={{
-                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20, marginBottom: 90, backgroundColor: '#ffff',
+                    <View style={{ flex: 1, backgroundColor: '#fff', alignContent: 'center' }}>
+                        <View style={{
+                            margin: 15, flex: 1, backgroundColor: '#ffffff', shadowColor: "#000", borderRadius: 20, marginBottom: 90, backgroundColor: '#ffff',
                             shadowOffset: {
                                 width: 0,
                                 height: 2,
                             },
                             shadowOpacity: 0.25,
                             shadowRadius: 3.84,
-                            
+
                             elevation: 5,
-                            
-                            }}>
-  
-    
+
+                        }}>
+
+
                             <View>
-                                <Image 
-                                style={{ 
-                                width: 140, 
-                                height: 140,
-                                alignSelf: 'center', 
-                                alignItems: 'center', 
-                                alignContent: 'center', 
-                                justifyContent: 'center',
-                                marginTop: 10 }}
-                                source={require('../assets/images.png')}>
+                                <Image
+                                    style={{
+                                        width: 140,
+                                        height: 140,
+                                        alignSelf: 'center',
+                                        alignItems: 'center',
+                                        alignContent: 'center',
+                                        justifyContent: 'center',
+                                        marginTop: 10
+                                    }}
+                                    source={require('../assets/images.png')}>
 
                                 </Image>
                             </View>
                             {/* content of my profile */}
 
-                            <View style={{flex: .7}}>
-                                    <Text style={{
-                                        fontSize: 18,
-                                        fontWeight: "bold",
-                                        marginTop: 25,
-                                        marginLeft: 20
-                                    }}>USER DETAILS{"\n"}
-                                    </Text>
-                                    <Text style={{
-                                        fontSize: 16,
-                                        marginLeft: 50
-                                    }}>
-                                        Username      :      RG2956821{"\n"}
-                                        Name             :      Arron Hunter{"\n"}
-                                        Email              :      arron.h@example.com{"\n"}{"\n"}
-                                    </Text>
+                            <View style={{ flex: .7 }}>
+                                <Text style={{
+                                    fontSize: 18,
+                                    fontWeight: "bold",
+                                    marginTop: 25,
+                                    marginLeft: 20
+                                }}>USER DETAILS{"\n"}
+                                </Text>
+                                <Text style={{
+                                    fontSize: 16,
+                                    marginLeft: 50
+                                }}>
+                                    Username      :      RG2956821{"\n"}
+                                    Name             :      Arron Hunter{"\n"}
+                                    Email              :      arron.h@example.com{"\n"}{"\n"}
+                                </Text>
 
-                                    <Text style={{
-                                        fontSize: 18,
-                                        fontWeight: "bold",
-                                        marginLeft: 20
-                                    }}>ACCOUNT DETAILS{"\n"}</Text>
-                                    <Text style={{
-                                        fontSize: 16,
-                                        marginLeft: 50
-                                        }}>
-                                        Package          :   web-booster{"\n"}
-                                        Billing Date     :   1st of the month{"\n"}
+                                <Text style={{
+                                    fontSize: 18,
+                                    fontWeight: "bold",
+                                    marginLeft: 20
+                                }}>ACCOUNT DETAILS{"\n"}</Text>
+                                <Text style={{
+                                    fontSize: 16,
+                                    marginLeft: 50
+                                }}>
+                                    Package          :   web-booster{"\n"}
+                                    Billing Date     :   1st of the month{"\n"}
 
-                                    </Text>
+                                </Text>
                             </View>
 
 
 
                             {/* content of my profile */}
 
-                                    <View style={{ flex: .15, marginTop: 5 }}>
-                                                <TouchableOpacity>
-                                                    <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
-                                                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Switch User</Text>
-                                                    </View>
-                                                </TouchableOpacity>
+                            <View style={{ flex: .15, marginTop: 5 }}>
+                                <TouchableOpacity>
+                                    <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
+                                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Switch User</Text>
                                     </View>
-                            
-                            
+                                </TouchableOpacity>
                             </View>
 
-                </View>
+
+                        </View>
+
+                    </View>
                 </View>
                 {/* Create your profile UI's here -- Nishiki */}
 
@@ -187,7 +188,7 @@ class MyProfile extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

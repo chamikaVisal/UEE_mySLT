@@ -17,95 +17,95 @@ class Profile extends Component {
             }}>
 
                 {/* Create your profile UI's here -- Nishiki */}
-                <View style={{  flex: 1,backgroundColor:'#ffff' }}>
-                <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
-                            <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>Profile</Text>
-                        </View>
+                <View style={{ flex: 1, backgroundColor: '#ffff' }}>
+                    <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
+                        <Text style={{ fontSize: 28, color: '#009eff' }}>Profile</Text>
+                    </View>
 
-                <View style={{flex:1,backgroundColor:'#fff', alignContent:'center'}}>
-                            <View style={{
-                            margin:15,flex:1,backgroundColor:'#ffffff',shadowColor: "#000",borderRadius:20, marginBottom: 90, backgroundColor: '#ebf8ff',
+                    <View style={{ flex: 1, backgroundColor: '#fff', alignContent: 'center' }}>
+                        <View style={{
+                            margin: 15, flex: 1, backgroundColor: '#ffffff', shadowColor: "#000", borderRadius: 20, marginBottom: 90, backgroundColor: '#ebf8ff',
                             shadowOffset: {
                                 width: 0,
                                 height: 2,
                             },
                             shadowOpacity: 0.25,
                             shadowRadius: 3.84,
-                            
+
                             elevation: 5,
-                            
+
                         }}>
 
-                   
-                <View style={{
-                    height:210,
-                    width:210,
-                    backgroundColor:'#ffff', 
-                    borderRadius: 300, 
-                    alignSelf: 'center', 
-                    alignItems: 'center', 
-                    alignContent: 'center', 
-                    justifyContent: 'center',
-                    marginTop: 30
-                    }}>
 
-                <TouchableOpacity onPress={()=> this.props.navigation.navigate("MyProfile")} >
-                <Image
-                         style={{ width: 150, height: 150 }}
-                         source={require('../assets/images.png')}>
+                            <View style={{
+                                height: 210,
+                                width: 210,
+                                backgroundColor: '#ffff',
+                                borderRadius: 300,
+                                alignSelf: 'center',
+                                alignItems: 'center',
+                                alignContent: 'center',
+                                justifyContent: 'center',
+                                marginTop: 30
+                            }}>
 
-                        </Image>
-                        
-                </TouchableOpacity> 
-                </View>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("MyProfile")} >
+                                    <Image
+                                        style={{ width: 150, height: 150 }}
+                                        source={require('../assets/images.png')}>
 
-                <Text style={{
-                alignContent: 'center',
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'center',
-                fontSize: 16, 
-                fontWeight: 'bold',
-                marginTop: 10 
-                }}>My Profile</Text>
+                                    </Image>
 
-                <View style={{
-                    height:210,
-                    width:210,
-                    backgroundColor:'#ffff', 
-                    borderRadius: 300, 
-                    alignItems: 'center', 
-                    alignContent: 'center', 
-                    justifyContent: 'center', 
-                    alignSelf: 'center',
-                    marginTop: 20
-                }}>
-                <TouchableOpacity onPress={()=> this.props.navigation.navigate("Accsettings")}>
-                        <Image
-                         style={{ width: 150, height: 150 }}
-                         source={require('../assets/settings.png')}>
+                                </TouchableOpacity>
+                            </View>
 
-                        </Image>
-                </TouchableOpacity>
-                </View>
+                            <Text style={{
+                                alignContent: 'center',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                alignSelf: 'center',
+                                fontSize: 16,
+                                fontWeight: 'bold',
+                                marginTop: 10
+                            }}>My Profile</Text>
 
-                <Text style={{
-                alignContent: 'center',
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignSelf: 'center',
-                fontSize: 16,
-                fontWeight: 'bold',
-                marginTop: 10  
-                }}>Account Settings</Text>
+                            <View style={{
+                                height: 210,
+                                width: 210,
+                                backgroundColor: '#ffff',
+                                borderRadius: 300,
+                                alignItems: 'center',
+                                alignContent: 'center',
+                                justifyContent: 'center',
+                                alignSelf: 'center',
+                                marginTop: 20
+                            }}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("Accsettings")}>
+                                    <Image
+                                        style={{ width: 150, height: 150 }}
+                                        source={require('../assets/settings.png')}>
+
+                                    </Image>
+                                </TouchableOpacity>
+                            </View>
+
+                            <Text style={{
+                                alignContent: 'center',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                alignSelf: 'center',
+                                fontSize: 16,
+                                fontWeight: 'bold',
+                                marginTop: 10
+                            }}>Account Settings</Text>
 
 
 
-                </View>
-                </View>
-                
-                
+                        </View>
+                    </View>
+
+
                 </View>
                 {/* Create your profile UI's here -- Nishiki */}
 
@@ -191,7 +191,7 @@ class Profile extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}

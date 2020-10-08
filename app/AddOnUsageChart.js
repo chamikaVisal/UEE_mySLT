@@ -27,7 +27,7 @@ class AddOnUsageChart extends Component {
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28,marginTop:10, color: '#009eff' }}>Add-Ons Usage</Text>
+                            <Text style={{ fontSize: 28, marginTop: 10, color: '#009eff' }}>Add-Ons Usage</Text>
 
                         </View>
 
@@ -123,25 +123,25 @@ class AddOnUsageChart extends Component {
                                     <Text style={{ fontSize: 20, marginRight: 10 }}>Remaining</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={{ fontSize: 22, color: '#00FF00',marginLeft: -10, marginTop: -10 }}>10.0GB</Text>
+                                    <Text style={{ fontSize: 22, color: '#00FF00', marginLeft: -10, marginTop: -10 }}>10.0GB</Text>
                                 </View>
                             </View>
 
                         </View>
 
-                    </View>                   
-                    
+                    </View>
+
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                    <View style={{ flex: 1, }}>                               
-                        <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 125, paddingRight: 20 }}>
-                      
-                            <View style={{ flex: 0.6,backgroundColor: '#009eff', paddingLeft: 5, borderRadius: 30, height: 50, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate("DataAddOns")}>
-                                    <Text style={{ color: "#ffffff" }}>Get More Add-ons</Text>
-                                </TouchableOpacity>
-                             </View> 
-                             </View>
-                           
+                        <View style={{ flex: 1, }}>
+                            <View style={{ flexDirection: 'row', paddingTop: 5, paddingLeft: 125, paddingRight: 20 }}>
+
+                                <View style={{ flex: 0.6, backgroundColor: '#009eff', paddingLeft: 5, borderRadius: 30, height: 50, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#009eff" }}>
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate("DataAddOns")}>
+                                        <Text style={{ color: "#ffffff" }}>Get More Add-ons</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
                         </View>
 
                     </View>
@@ -232,7 +232,7 @@ class AddOnUsageChart extends Component {
                     }}>
 
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("History")}
+                            onPress={() => this.props.navigation.navigate("PurchaseHistory")}
                         >
                             <Image
                                 style={{ width: 30, height: 30 }}
