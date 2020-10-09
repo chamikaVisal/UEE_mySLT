@@ -59,7 +59,7 @@ class MyProfile extends Component {
                                 <Text style={{
                                     fontSize: 18,
                                     fontWeight: "bold",
-                                    marginTop: 25,
+                                    marginTop: 10,
                                     marginLeft: 20
                                 }}>USER DETAILS{"\n"}
                                 </Text>
@@ -75,7 +75,8 @@ class MyProfile extends Component {
                                 <Text style={{
                                     fontSize: 18,
                                     fontWeight: "bold",
-                                    marginLeft: 20
+                                    marginLeft: 20,
+                                    marginTop: -15
                                 }}>ACCOUNT DETAILS{"\n"}</Text>
                                 <Text style={{
                                     fontSize: 16,
@@ -91,10 +92,17 @@ class MyProfile extends Component {
 
                             {/* content of my profile */}
 
-                            <View style={{ flex: .15, marginTop: 5 }}>
+                            <View style={{ flex: .15, marginTop: 2, marginBottom: 5 }}>
                                 <TouchableOpacity>
                                     <View style={{ ...styles.buttonmain, backgroundColor: '#009eff', }}>
                                         <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Switch User</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={{ flex: .15, marginTop: 5, marginBottom: 35 }}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate("MYSLT")}>
+                                    <View style={{ ...styles.buttonmain, backgroundColor: '#a0a3a8', }}>
+                                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Sign out</Text>
                                     </View>
                                 </TouchableOpacity>
                             </View>

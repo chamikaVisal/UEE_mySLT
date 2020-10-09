@@ -48,9 +48,9 @@ class AddNewUser extends Component {
 
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 30 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, color: '#009eff' }}>ADD USER</Text>
+                            <Text style={{ fontSize: 28, color: '#009eff' }}>ADD NEW USER</Text>
 
 
                         </View>
@@ -58,7 +58,7 @@ class AddNewUser extends Component {
                     </View>
 
                     <View style={{
-                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
+                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -25,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
@@ -90,7 +90,7 @@ class AddNewUser extends Component {
 
                         <View style={{ flex: 2, }}>
                             <View style={{
-                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 60,
+                                flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 20, borderRadius: 20, marginTop: 60,
                                 shadowColor: "#000",
                                 shadowOffset: {
                                     width: 0,

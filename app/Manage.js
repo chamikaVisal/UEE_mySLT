@@ -28,7 +28,7 @@ class Manage extends Component {
                             <Card.Title>ADD MORE DATA</Card.Title>
                             <Card.Divider />
                             <Card.Image source={require('../assets/adddata.jpg')} style={{ height: 100 }} />
-                            <Text style={{ marginBottom: 10 }}>
+                            <Text style={{ marginBottom: 10, fontWeight: 'bold', textAlign: 'center' }}>
                                 Upgrade your existing data bundle here
                             </Text>
                             <Button onPress={() => this.props.navigation.navigate("AddMoreData")}
@@ -42,7 +42,7 @@ class Manage extends Component {
                             <Card.Title>DATA ADD-ONS</Card.Title>
                             <Card.Divider />
                             <Card.Image source={require('../assets/add_ons.jpg')} style={{ height: 100 }} />
-                            <Text style={{ marginBottom: 10, justifyContent: 'center' }}>
+                            <Text style={{ marginBottom: 10, fontWeight: 'bold', textAlign: 'center' }}>
                                 Add more to your data package
   </Text>
                             <Button onPress={() => this.props.navigation.navigate("DataAddOns")}
@@ -55,7 +55,7 @@ class Manage extends Component {
                             <Card.Title>GIFT DATA</Card.Title>
                             <Card.Divider />
                             <Card.Image source={require('../assets/giftData.png')} style={{ height: 100 }} />
-                            <Text style={{ marginBottom: 10 }}>
+                            <Text style={{ marginBottom: 10, fontWeight: 'bold', textAlign: 'center' }}>
                                 Gift data to your loved ones
   </Text>
                             <Button onPress={() => this.props.navigation.navigate("Giftdata")}
@@ -68,7 +68,7 @@ class Manage extends Component {
                             <Card.Title>REDEEM DATA</Card.Title>
                             <Card.Divider />
                             <Card.Image source={require('../assets/redeemData.jpg')} style={{ height: 100 }} />
-                            <Text style={{ marginBottom: 10 }}>
+                            <Text style={{ marginBottom: 10, fontWeight: 'bold', textAlign: 'center' }}>
                                 Redeem data using your voucher
   </Text>
                             <Button onPress={() => this.props.navigation.navigate("Promocode")}
@@ -81,7 +81,7 @@ class Manage extends Component {
                             <Card.Title>HAPPY DAY</Card.Title>
                             <Card.Divider />
                             <Card.Image source={require('../assets/happyday.jpg')} style={{ height: 100 }} />
-                            <Text style={{ marginBottom: 10 }}>
+                            <Text style={{ marginBottom: 10, fontWeight: 'bold', textAlign: 'center' }}>
                                 Check in for the happy day offers
   </Text>
                             <Button
@@ -93,7 +93,7 @@ class Manage extends Component {
                             <Card.Title>MORE</Card.Title>
                             <Card.Divider />
                             <Card.Image source={require('../assets/more.jpg')} style={{ height: 100 }} />
-                            <Text style={{ marginBottom: 10 }}>
+                            <Text style={{ marginBottom: 10, fontWeight: 'bold', textAlign: 'center' }}>
                                 Upgrade your existing data bundle here
   </Text>
                             <Button onPress={() => this.props.navigation.navigate("MoreAddsHansi")}
@@ -159,8 +159,8 @@ class Manage extends Component {
                     position: 'absolute',
                     alignSelf: 'center',
                     backgroundColor: '#ffffff',
-                    width: 84,
-                    height: 82,
+                    width: 85,
+                    height: 85,
                     borderRadius: 40,
                     bottom: 35,
                     zIndex: 10
