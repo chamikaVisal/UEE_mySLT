@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal, KeyboardAvoidingView, } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal, KeyboardAvoidingView, Dimensions } from 'react-native';
 import { Container, Header, Content, Text, Button, Toast } from "native-base";
 import { ScrollView } from 'react-native-gesture-handler';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
+const { width, height } = Dimensions.get('window');
+
 
 
 class PasswordchangeVisal extends Component {
@@ -94,7 +96,7 @@ class PasswordchangeVisal extends Component {
                     </View>
 
                     <View style={{
-                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
+                        flex: 5, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
@@ -112,7 +114,7 @@ class PasswordchangeVisal extends Component {
                             </View>
                             <View style={{ alignItems: 'center' }}>
                                 <Image
-                                    style={{ width: 150, height: 150 }}
+                                    style={{ width: width / 3, height: height / 6.5 }}
                                     source={require('../assets/pwchange.jpg')}
                                 />
                             </View>
@@ -419,18 +421,18 @@ const styles = StyleSheet.create({
 
     },
     textInput: {
-        height: 50,
+        height: height / 18,
         borderRadius: 25,
         borderWidth: 0.5,
         marginHorizontal: 20,
         paddingLeft: 10,
-        marginVertical: 5,
+        marginVertical: 2,
         borderColor: "#008ECC"
 
     },
     buttonmain: {
         backgroundColor: 'white',
-        height: 60,
+        height: height / 15,
         marginHorizontal: 20,
         borderRadius: 40,
         alignItems: 'center',

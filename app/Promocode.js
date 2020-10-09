@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Animated, Alert, TextInput, Modal, Dimensions } from 'react-native';
 import { Container, Header, Content, Text, Button, Toast } from "native-base";
 import { ScrollView } from 'react-native-gesture-handler';
+const { width, height } = Dimensions.get('window');
 
 
 class Promocode extends Component {
@@ -91,9 +92,9 @@ class Promocode extends Component {
                                 <Text style={{ fontSize: 16 }}>voucher to avail yourself with the</Text>
                                 <Text style={{ fontSize: 22, color: '#00FF00' }}>OFFER!</Text>
                             </View>
-                            <View style={{ alignItems: 'center', marginTop: -62 }}>
+                            <View style={{ alignItems: 'center' }}>
                                 <Image
-                                    style={{ width: 250, height: 250 }}
+                                    style={{ width: width / 2, height: height / 6.5 }}
                                     source={require('../assets/promo.png')}
                                 />
                             </View>
@@ -166,7 +167,7 @@ class Promocode extends Component {
                                 elevation: 5,
                             }}>
                                 <ScrollView>
-                                    <View style={{ justifyContent: 'center', marginTop: 20 }}>
+                                    <View style={{ justifyContent: 'center', marginTop: 5 }}>
                                         <View style={{ marginTop: 20, alignItems: 'center' }}>
                                             <Text style={{ color: '#009eff', marginHorizontal: 20, fontSize: 22 }}>Enter Voucher ID</Text>
 
@@ -386,7 +387,7 @@ const styles = StyleSheet.create({
 
     },
     textInput: {
-        height: 50,
+        height: height / 18,
         borderRadius: 25,
         borderWidth: 0.5,
         marginHorizontal: 20,
@@ -397,7 +398,7 @@ const styles = StyleSheet.create({
     },
     buttonmain: {
         backgroundColor: 'white',
-        height: 60,
+        height: height / 15,
         marginHorizontal: 20,
         borderRadius: 40,
         alignItems: 'center',
