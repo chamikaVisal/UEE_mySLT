@@ -146,7 +146,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 60, right: 60 },
+                headerTitleStyle: { color: '#ffffff', left: 30, right: 30 },
                 title: 'Change Password'
               }} />
 
