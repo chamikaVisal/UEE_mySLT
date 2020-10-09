@@ -33,7 +33,7 @@ class ExtraGB extends Component {
                     </View>
 
                     <View style={{
-                        flex: 1.5, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: 20,
+                        flex: 1.5, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20, marginTop: -20,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,

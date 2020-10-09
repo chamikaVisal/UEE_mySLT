@@ -55,10 +55,10 @@ class Promotions extends Component {
                     justifyContent: "space-between",
                     alignItems: "center",
                     backgroundColor: "#009eff",
-                    marginVertical: 5, borderRadius: 20
+                    marginVertical: 5, borderRadius: 20, height: 55
                 }}
             >
-                <Text style={{ fontWeight: "600", color: "#fff" }}>
+                <Text style={{ fontWeight: "bold", color: "#fff", marginLeft: 20 }}>
                     {" "}{item.title}
                 </Text>
                 {expanded
@@ -77,7 +77,7 @@ class Promotions extends Component {
             <View style={{ flex: 1 }}>
                 <View style={{ flex: 2 }}>
                     <Image
-                        style={{ height: 100, width: 300 }}
+                        style={{ height: 100, width: 350 }}
                         source={require('../assets/adddata.jpg')}
                     />
 
@@ -88,7 +88,7 @@ class Promotions extends Component {
                             style={{
                                 backgroundColor: "#ffffff",
                                 padding: 10,
-                                color: "#009eff"
+                                color: "#009eff", marginLeft: 40
 
                             }}
                         >
@@ -118,13 +118,13 @@ class Promotions extends Component {
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, }}>
                         <View style={{ flex: 1 }}>
-                            <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 30 }}>
+                            <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
                                 <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                                 <Text style={{ fontSize: 28, color: '#009eff' }}>Promotions</Text>
                             </View>
                         </View>
                         <View style={{
-                            flex: 5, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: 10,
+                            flex: 5, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -10,
                             shadowColor: "#000",
                             shadowOffset: {
                                 width: 0,
@@ -137,18 +137,18 @@ class Promotions extends Component {
                         }}>
                             <View style={{ flex: 1.8, justifyContent: 'center', alignItems: 'center' }}>
 
-                                <Text style={{ fontSize: 16 }}>Here You Can Find Your Recent</Text>
-                                <Text style={{ fontSize: 22, color: '#00FF00' }}>OFFER!</Text>
+                                <Text style={{ fontSize: 16, fontWeight: 'bold', marginTop: 10 }}>Here You Can Find Your Recent</Text>
+                                <Text style={{ fontSize: 22, color: '#00FF00' }}>PROMOTIONS!</Text>
 
                                 <Image
-                                    style={{ width: 220, height: 120 }}
+                                    style={{ width: 220, height: 120, marginTop: 10, marginBottom: -20 }}
                                     source={require('../assets/promo_nishiki.png')}
                                 />
 
 
                             </View>
                             <View style={{
-                                flex: 3,
+                                flex: 3, marginTop: 20
                             }}>
                                 <Content padder>
                                     <Accordion
@@ -159,22 +159,6 @@ class Promotions extends Component {
                                         renderHeader={this._renderHeader}
                                         renderContent={this._renderContent} />
                                 </Content>
-
-                                {/* <Container>
-
-
-                                    <Content padder style={{ backgroundColor: "white" }}>
-                                        <Accordion
-                                            dataArray={dataArray}
-                                            animation={true}
-                                            expanded={true}
-                                            renderHeader={this._renderHeader}
-                                            renderContent={this._renderContent}
-                                        />
-                                    </Content>
-                                </Container> */}
-
-
 
 
                             </View>
@@ -195,8 +179,8 @@ class Promotions extends Component {
                     position: 'absolute',
                     alignSelf: 'center',
                     backgroundColor: '#ffffff',
-                    width: 84,
-                    height: 82,
+                    width: 85,
+                    height: 85,
                     borderRadius: 40,
                     bottom: 35,
                     zIndex: 10

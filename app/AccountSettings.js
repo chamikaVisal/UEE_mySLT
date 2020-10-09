@@ -107,14 +107,14 @@ class AccountSettings extends Component {
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
-                            <Text style={{ fontSize: 28, marginTop: 3, color: '#009eff' }}>ACCOUNT SETTING</Text>
+                            <Text style={{ fontSize: 28, marginTop: 3, color: '#009eff' }}>ACCOUNT SETTINGS</Text>
 
                         </View>
 
                     </View>
 
                     <View style={{
-                        flex: 4, backgroundColor: '#ebf8ff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -30,
+                        flex: 4, backgroundColor: '#ebf8ff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -35,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
@@ -187,7 +187,7 @@ class AccountSettings extends Component {
                         <View style={{ flex: 0.5, }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate("ContactInfoChange")}>
                                 <View style={{
-                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 7,
                                     paddingBottom: 120,
                                     shadowColor: "#000",
                                     shadowOffset: {
@@ -237,65 +237,13 @@ class AccountSettings extends Component {
                             </TouchableOpacity>
                         </View>
                         {/* button2 */}
-                        {/* button3 */}
-                        <View style={{ flex: 0.5, }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate("ContactInfoChange")}>
-                                <View style={{
-                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
-                                    paddingBottom: 120,
-                                    shadowColor: "#000",
-                                    shadowOffset: {
-                                        width: 0,
-                                        height: 1,
-                                    },
-                                    shadowOpacity: 0.25,
-                                    shadowRadius: 3.84,
-
-                                    elevation: 5,
-                                }}>
-                                    {/* icon for button 03 */}
-                                    <View
-                                        style={{
-                                            flex: 2,
-
-                                        }}>
-                                        <Image
-                                            style={{
-                                                width: 70,
-                                                height: 70,
-                                                marginTop: 25,
-                                                marginLeft: 10
-                                            }}
-                                            source={require('../assets/broadband.jpg')}>
-
-                                        </Image>
-
-
-                                        {/* icon for button 03 */}
-                                        <View
-                                            style={{
-                                                flexDirection: "column",
-                                                flex: 2,
-                                                marginLeft: 100,
-                                                marginTop: -65,
-
-                                            }}>
-                                            <Text
-                                                style={{
-                                                    fontWeight: 'bold',
-                                                    fontSize: 20
-                                                }}>Change Broadband Information</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
+                        
                         {/* button by chamika */}
 
                         <View style={{ flex: 0.5, }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate("PasswordchangeVisal")}>
                                 <View style={{
-                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 5,
                                     paddingBottom: 120,
                                     shadowColor: "#000",
                                     shadowOffset: {
@@ -349,7 +297,7 @@ class AccountSettings extends Component {
                         <View style={{ flex: 0.5, }}>
                             <TouchableOpacity onPress={() => { this.setState({ modal1show: true }) }}>
                                 <View style={{
-                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 10,
+                                    flex: 4, backgroundColor: '#faf8f2', justifyContent: "center", marginLeft: 20, marginRight: 20, marginBottom: 50, borderRadius: 20, marginTop: 5,
                                     paddingBottom: 120,
                                     shadowColor: "#000",
                                     shadowOffset: {
@@ -374,7 +322,7 @@ class AccountSettings extends Component {
                                                 marginTop: 25,
                                                 marginLeft: 10
                                             }}
-                                            source={require('../assets/password.jpg')}>
+                                            source={require('../assets/broadband.jpg')}>
 
                                         </Image>
 

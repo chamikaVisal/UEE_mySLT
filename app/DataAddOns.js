@@ -35,7 +35,7 @@ class DataAddOns extends Component {
 
                 <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 30 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, marginTop: 3, color: '#009eff' }}>DATA ADD-ON</Text>
 
@@ -46,7 +46,7 @@ class DataAddOns extends Component {
                     <View>
                         <TouchableOpacity onPress={() => Linking.openURL('https://www.slt.lk/en/broadband/packages')}>
                             <View style={{
-                                ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: 15, marginBottom: 20,
+                                ...styles.buttonmain, backgroundColor: '#009eff', marginHorizontal: 40, height: 40, marginTop: -15, marginBottom: 20,
                             }}>
                                 <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#ffffff' }}>Browse more data add ons here!</Text>
                             </View>
@@ -88,11 +88,13 @@ class DataAddOns extends Component {
                                 <Text style={{
                                     marginLeft: 10,
                                     marginTop: 15,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Home Schooling and</Text>
                                 <Text style={{
                                     marginLeft: 10,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>WFH</Text>
 
                                 <Text style={{
@@ -169,11 +171,13 @@ class DataAddOns extends Component {
                                 <Text style={{
                                     marginLeft: 10,
                                     marginTop: 15,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Home Schooling and</Text>
                                 <Text style={{
                                     marginLeft: 10,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>WFH</Text>
 
                                 <Text style={{
@@ -249,11 +253,13 @@ class DataAddOns extends Component {
                                 <Text style={{
                                     marginLeft: 10,
                                     marginTop: 15,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Entertainment</Text>
                                 <Text style={{
                                     marginLeft: 10,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Unlimited</Text>
 
                                 <Text style={{
@@ -330,11 +336,13 @@ class DataAddOns extends Component {
                                 <Text style={{
                                     marginLeft: 10,
                                     marginTop: 15,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Entertainment</Text>
                                 <Text style={{
                                     marginLeft: 10,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Booster</Text>
 
                                 <Text style={{
@@ -410,11 +418,13 @@ class DataAddOns extends Component {
                                 <Text style={{
                                     marginLeft: 10,
                                     marginTop: 15,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Education</Text>
                                 <Text style={{
                                     marginLeft: 10,
-                                    fontSize: 17
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
                                 }}>Booster</Text>
 
                                 <Text style={{

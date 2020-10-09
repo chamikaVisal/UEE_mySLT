@@ -30,7 +30,7 @@ class Entertainment extends Component {
 
                     {/* box 1 starts */}
                     <View style={{
-                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -10,
+                        flex: 4, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, marginBottom: 80, borderRadius: 20, marginTop: -30,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,

@@ -47,7 +47,7 @@ class Profile extends Component {
                                 alignItems: 'center',
                                 alignContent: 'center',
                                 justifyContent: 'center',
-                                marginTop: 30
+                                marginTop: 10
                             }}>
 
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate("MyProfile")} >
@@ -67,7 +67,7 @@ class Profile extends Component {
                                 alignSelf: 'center',
                                 fontSize: 16,
                                 fontWeight: 'bold',
-                                marginTop: 10
+                                marginTop: 5
                             }}>My Profile</Text>
 
                             <View style={{
@@ -79,7 +79,7 @@ class Profile extends Component {
                                 alignContent: 'center',
                                 justifyContent: 'center',
                                 alignSelf: 'center',
-                                marginTop: 20
+                                marginTop: 10
                             }}>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Accsettings")}>
                                     <Image
@@ -97,7 +97,7 @@ class Profile extends Component {
                                 alignSelf: 'center',
                                 fontSize: 16,
                                 fontWeight: 'bold',
-                                marginTop: 10
+                                marginTop: 5
                             }}>Account Settings</Text>
 
 

@@ -113,7 +113,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 80, right: 80 },
+                headerTitleStyle: { color: '#ffffff', left: 105, right: 80 },
                 title: 'Profile'
               }} />
 
@@ -137,7 +137,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 60, right: 60 },
+                headerTitleStyle: { color: '#ffffff', left: 80, right: 60 },
                 title: 'Promotions'
               }} />
 
@@ -240,7 +240,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 70, right: 70 },
+                headerTitleStyle: { color: '#ffffff', left: 90, right: 70 },
                 title: 'Extra GB'
               }}
             />
@@ -250,8 +250,8 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 70, right: 70 },
-                title: 'Profile'
+                headerTitleStyle: { color: '#ffffff', left: 85, right: 70 },
+                title: 'My Profile'
               }}
             />
 
@@ -260,7 +260,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                headerTitleStyle: { color: '#ffffff', left: 55, right: 40 },
                 title: 'Account Settings'
               }}
             />
@@ -280,7 +280,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 50, right: 50 },
+                headerTitleStyle: { color: '#ffffff', left: 65, right: 50 },
                 title: 'Add New User'
               }}
             />
@@ -290,7 +290,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 70, right: 70 },
+                headerTitleStyle: { color: '#ffffff', left: 90, right: 70 },
                 title: 'Gift Data'
               }}
             />
@@ -300,7 +300,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                headerTitleStyle: { color: '#ffffff', left: 70, right: 40 },
                 title: 'Data Add-ons'
               }}
             />
@@ -310,7 +310,7 @@ class App extends React.Component {
               options={{
                 headerShown: true,
                 headerStyle: { backgroundColor: '#009eff' },
-                headerTitleStyle: { color: '#ffffff', left: 60, right: 60 },
+                headerTitleStyle: { color: '#ffffff', left: 70, right: 60 },
                 title: 'Entertainment'
               }}
             />
