@@ -29,7 +29,7 @@ export default class Selectregtype extends Component {
 
 
                 </View>
-                <View style={{ alignItems: 'center', position: "absolute", bottom: 25, left: 40, right: 40 }}>
+                <View style={{ alignItems: 'center', position: "absolute", bottom: 15, left: 40, right: 40 }}>
                     <Text style={{ color: '#009eff', fontSize: 24, }}>- Select Account Type -</Text>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate("RegPage")}>
                         <View style={{

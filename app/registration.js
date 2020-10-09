@@ -144,7 +144,7 @@ class registration extends Component {
                 buttonTextStyle: { color: "#00ff80" },
 
             })
-            this.props.navigation.navigate("MYSLT", alert("successfully Registered"))
+            this.props.navigation.navigate("MYSLT");
         }
     }
 
@@ -156,7 +156,7 @@ class registration extends Component {
 
                 <View style={{ flex: 0.18, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 60 }}>
+                        <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 40 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Create Your Account Here</Text>
                         </View>

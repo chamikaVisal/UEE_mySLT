@@ -91,32 +91,230 @@ class App extends React.Component {
 
         <NavigationContainer>
           <Stack.Navigator initialRouteName="MYSLT">
-            <Stack.Screen name="MYSLT" component={MYSLT} options={{ headerShown: false }} />
-            <Stack.Screen name="RegPage" component={RegPage} options={{ headerShown: false }} />
-            <Stack.Screen name="MainUI" component={MainUI} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 40, right: 40 }, title: 'Usage Summary' }} />
-            <Stack.Screen name="Profile" component={Profile} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 80, right: 80 }, title: 'Profile' }} />
-            <Stack.Screen name="Manage" component={Manage} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 80, right: 80 }, title: 'Manage' }} />
-            <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
-            <Stack.Screen name="Promotions" component={Promotions} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 60, right: 60 }, title: 'Promotions' }} />
-            <Stack.Screen name="PasswordchangeVisal" component={PasswordchangeVisal} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 60, right: 60 }, title: 'Change Password' }} />
-            <Stack.Screen name="Promocode" component={Promocode} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 50, right: 50 }, title: 'Promo Code' }} />
-            <Stack.Screen name="FreeUsageChart" component={FreeUsageChart} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 40, right: 40 }, title: 'Free Data Usage' }} />
-            <Stack.Screen name="AddOnUsageChart" component={AddOnUsageChart} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 50, right: 50 }, title: 'Add on Usage' }} />
-            <Stack.Screen name="AddMoreData" component={AddMoreData} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 40, right: 40 }, title: 'Add More Data' }} />
-            <Stack.Screen name="TotalUsageChart" component={TotalUsageChart} options={{ headerShown: false }} />
-            <Stack.Screen name="ContactInfoChange" component={ContactInfoChange} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 50, right: 50 }, title: 'Change Contact Info' }} />
-            <Stack.Screen name="ViewDailyUsage" component={ViewDailyUsage} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 60, right: 60 }, title: 'Daily Usage' }} />
-            <Stack.Screen name="Selectregtype" component={Selectregtype} options={{ headerShown: false }} />
-            <Stack.Screen name="Bonusdatausage" component={Bonusdatausage} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 40, right: 40 }, title: 'Bonus Data Usage' }} />
-            <Stack.Screen name="MoreAddsHansi" component={MoreAddsHansi} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 50, right: 50 }, title: 'Advertisments' }} />
-            <Stack.Screen name="ExtraGB" component={ExtraGB} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 70, right: 70 }, title: 'Extra GB' }} />
-            <Stack.Screen name="MyProfile" component={MyProfile} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 70, right: 70 }, title: 'Profile' }} />
-            <Stack.Screen name="Accsettings" component={Accsettings} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 40, right: 40 }, title: 'Account Settings' }} />
-            <Stack.Screen name="PurchaseHistory" component={PurchaseHistory} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 40, right: 40 }, title: 'Purchase HIstory' }} />
-            <Stack.Screen name="AddNewUser" component={AddNewUser} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 50, right: 50 }, title: 'Add New User' }} />
-            <Stack.Screen name="Giftdata" component={Giftdata} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 70, right: 70 }, title: 'Gift Data' }} />
-            <Stack.Screen name="DataAddOns" component={DataAddOns} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 40, right: 40 }, title: 'Data Add-ons' }} />
-            <Stack.Screen name="Entertainment" component={Entertainment} options={{ headerShown: true, headerStyle: { backgroundColor: '#009eff' }, headerTitleStyle: { color: '#ffffff', left: 60, right: 60 }, title: 'Entertainment' }} />
+            <Stack.Screen name="MYSLT"
+              component={MYSLT}
+              options={{ headerShown: false }} />
+
+            <Stack.Screen name="RegPage"
+              component={RegPage}
+              options={{ headerShown: false }} />
+
+            <Stack.Screen name="MainUI"
+              component={MainUI}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                title: 'Usage Summary'
+              }} />
+
+            <Stack.Screen name="Profile"
+              component={Profile}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 80, right: 80 },
+                title: 'Profile'
+              }} />
+
+            <Stack.Screen name="Manage"
+              component={Manage}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 80, right: 80 },
+                title: 'Manage'
+              }} />
+
+            <Stack.Screen name="History"
+              component={History}
+              options={{
+                headerShown: false
+              }} />
+
+            <Stack.Screen name="Promotions"
+              component={Promotions}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 60, right: 60 },
+                title: 'Promotions'
+              }} />
+
+            <Stack.Screen name="PasswordchangeVisal"
+              component={PasswordchangeVisal}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 60, right: 60 },
+                title: 'Change Password'
+              }} />
+
+            <Stack.Screen name="Promocode"
+              component={Promocode}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 50, right: 50 },
+                title: 'Promo Code'
+              }} />
+
+            <Stack.Screen name="FreeUsageChart"
+              component={FreeUsageChart}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                title: 'Free Data Usage'
+              }} />
+
+            <Stack.Screen name="AddOnUsageChart"
+              component={AddOnUsageChart}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 50, right: 50 },
+                title: 'Add on Usage'
+              }} />
+
+            <Stack.Screen name="AddMoreData"
+              component={AddMoreData}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                title: 'Add More Data'
+              }} />
+
+            <Stack.Screen name="TotalUsageChart"
+              component={TotalUsageChart}
+              options={{ headerShown: false }}
+            />
+
+            <Stack.Screen name="ContactInfoChange"
+              component={ContactInfoChange}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 50, right: 50 },
+                title: 'Change Contact Info'
+              }}
+            />
+
+            <Stack.Screen name="ViewDailyUsage"
+              component={ViewDailyUsage}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 60, right: 60 },
+                title: 'Daily Usage'
+              }} />
+
+            <Stack.Screen name="Selectregtype"
+              component={Selectregtype}
+              options={{ headerShown: false }}
+            />
+
+            <Stack.Screen name="Bonusdatausage"
+              component={Bonusdatausage}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                title: 'Bonus Data Usage'
+              }}
+            />
+
+            <Stack.Screen name="MoreAddsHansi"
+              component={MoreAddsHansi}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 50, right: 50 },
+                title: 'Advertisments'
+              }}
+            />
+
+            <Stack.Screen name="ExtraGB"
+              component={ExtraGB}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 70, right: 70 },
+                title: 'Extra GB'
+              }}
+            />
+
+            <Stack.Screen name="MyProfile"
+              component={MyProfile}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 70, right: 70 },
+                title: 'Profile'
+              }}
+            />
+
+            <Stack.Screen name="Accsettings"
+              component={Accsettings}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                title: 'Account Settings'
+              }}
+            />
+
+            <Stack.Screen name="PurchaseHistory"
+              component={PurchaseHistory}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                title: 'Purchase HIstory'
+              }}
+            />
+
+            <Stack.Screen name="AddNewUser"
+              component={AddNewUser}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 50, right: 50 },
+                title: 'Add New User'
+              }}
+            />
+
+            <Stack.Screen name="Giftdata"
+              component={Giftdata}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 70, right: 70 },
+                title: 'Gift Data'
+              }}
+            />
+
+            <Stack.Screen name="DataAddOns"
+              component={DataAddOns}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 40, right: 40 },
+                title: 'Data Add-ons'
+              }}
+            />
+
+            <Stack.Screen name="Entertainment"
+              component={Entertainment}
+              options={{
+                headerShown: true,
+                headerStyle: { backgroundColor: '#009eff' },
+                headerTitleStyle: { color: '#ffffff', left: 60, right: 60 },
+                title: 'Entertainment'
+              }}
+            />
+
             {/* <Stack.Screen name="UsageSummary" component={UsageSummary} />
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} /> */}
 

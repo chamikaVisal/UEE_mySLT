@@ -6,16 +6,18 @@ import {
     Text,
     View,
     StyleSheet,
+    Dimensions,
 } from 'react-native';
 import Constants from 'expo-constants';
 import Svg, { G, Circle, Rect } from 'react-native-svg';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
+const { width, height } = Dimensions.get('window');
 
 export default function Usagesummarychart({
     percentage = 75,
-    radius = 110,
+    radius = width / 4,
     strokeWidth = 20,
     duration = 500,
     color = "tomato",

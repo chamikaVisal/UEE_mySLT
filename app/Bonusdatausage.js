@@ -28,7 +28,7 @@ class Bonusdatausage extends Component {
 
 
 
-                    <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 0.8, backgroundColor: '#ffffff' }}>
                         <View style={{ justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
                             <Text style={{ fontSize: 20, }}>Sri Lanka Telecom</Text>
                             <Text style={{ fontSize: 28, color: '#009eff' }}>Bonus Data Usage</Text>
@@ -42,7 +42,7 @@ class Bonusdatausage extends Component {
                     </View>
 
                     <View style={{
-                        flex: 2, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20,
+                        flex: 1.6, backgroundColor: '#ffffff', marginLeft: 20, marginRight: 20, borderRadius: 20,
                         shadowColor: "#000",
                         shadowOffset: {
                             width: 0,
