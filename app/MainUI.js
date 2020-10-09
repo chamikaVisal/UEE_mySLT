@@ -119,7 +119,7 @@ class MainUI extends Component {
                                                 <View style={{ flex: 1 }}>
                                                     <Text style={{ marginTop: 5, fontSize: 20 }}>Remaining Volume</Text>
                                                 </View>
-                                                <View style={{ flex: 1, marginTop: -20 }}>
+                                                <View style={{ flex: 1 }}>
                                                     <Text tyle={{ fontSize: 15, color: '#C0C0C0' }}>Valid till 31-Aug</Text>
                                                 </View>
                                             </View>
