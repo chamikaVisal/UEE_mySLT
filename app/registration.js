@@ -510,7 +510,7 @@ class registration extends Component {
                                                         style={{ width: 60, height: 60 }}
                                                         source={require('../assets/warning.gif')}
                                                     />
-                                                    <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}>{this.state.mobilenumber}</Text>
+                                                    <Text style={{ fontSize: 14, marginTop: 10, color: '#4c4c4c' }}></Text>
                                                     <Text style={{ fontSize: 14, color: '#4c4c4c' }}>Your passwords do not match !</Text>
                                                 </View>
                                             </View>
