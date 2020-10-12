@@ -15,7 +15,78 @@ class AccountSettings extends Component {
         };
     }
 
-    
+    updateValue(text, field) {
+
+        if (field == 'pw') {
+            this.setState({
+                pw: text
+            });
+        }
+        else if (field == 'newpw') {
+            this.setState({
+                newpw: text
+            });
+        }
+        else if (field == 'conpw') {
+            this.setState({
+                conpw: text
+            });
+        }
+
+    }
+    goNext = () => {
+        if (this.state.pw === "") {
+            this.setState({ modal1show: false });
+            Toast.show({
+                text: "Current Password can not be null",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 3000,
+                style: { backgroundColor: "#FFCC00", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#FFCC00" },
+
+            })
+
+        }
+        else {
+            this.setState({ modal1show: false, modal2show: true });
+        }
+
+    }
+    changepw = () => {
+        if (this.state.newpw === "" || this.state.conpw === "" || (this.state.newpw != this.state.conpw === "")) {
+            this.setState({ modal2show: false });
+            Toast.show({
+                text: "Both passwords should be the same",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 3000,
+                style: { backgroundColor: "#FFCC00", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#FFCC00" },
+
+            })
+        }
+
+        else {
+            this.setState({ modal2show: false });
+            Toast.show({
+                text: "Password Successfully Reseted !",
+                position: 'bottom',
+                textStyle: { fontWeight: 'bold' },
+                duration: 4000,
+                style: { backgroundColor: "#00ff80", height: 80, margin: 15, borderRadius: 20, borderWidth: 1, borderColor: '#ffffff' },
+                buttonText: "Okay",
+                buttonStyle: { backgroundColor: "#ffffff", justifyContent: 'center', alignSelf: 'center' },
+                buttonTextStyle: { color: "#00ff80" },
+
+            })
+        }
+
+    }
 
 
 
