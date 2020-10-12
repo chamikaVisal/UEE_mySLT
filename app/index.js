@@ -257,6 +257,8 @@ class MYSLT extends React.Component {
                         opacity: this.textInputOpacity,
                         transform: [{ translateY: this.textInputY }]
                     }} >
+
+                        {/* login */}
                         <TapGestureHandler onHandlerStateChange={this.onCloseState}>
                             <Animated.View style={styles.closeButton}>
                                 <Animated.Text style={{ fontSize: 15, color: '#009eff', transform: [{ rotate: concat(this.rotateCross, 'deg') }] }}>
