@@ -409,7 +409,64 @@ class AccountSettings extends Component {
                         {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
                         {/* MODAL new password--------THIS DOES NOT EFFECT YOUR CODE. YOU CAN JUST ASSUME THIS IS NOT A PART OF ACCOUNT SETTINGS */}
 
-                       
+                        <Modal style={{ flex: 1 }}
+                            transparent={true}
+                            visible={this.state.modal2show}>
+                            <View style={{ backgroundColor: "#000000aa", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+
+                                <View style={{ backgroundColor: "#ffffff", paddingVertical: 30, borderTopColor: "black", paddingHorizontal: 30, borderRadius: 23, width: 340, }}>
+
+                                    <View style={{ flexDirection: 'row', }}>
+                                        <View style={{ flex: 10, alignItems: 'center', justifyContent: 'center' }}>
+                                            <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#222222' }}>Change password</Text>
+                                        </View>
+                                    </View>
+
+                                    <View
+                                        style={{
+                                            borderBottomColor: '#d3d3d3',
+                                            borderBottomWidth: 1,
+                                            padding: 10
+                                        }}
+                                    ></View>
+                                    <View style={{ alignItems: 'center', alignContent: 'center', marginTop: 20, marginBottom: 10 }}>
+                                        <TextInput
+                                            onFocus={this.onFocus}
+                                            autoFocus={false}
+                                            placeholder="               Enter new password                 "
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                            secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'newpw')}
+
+                                        />
+                                        <TextInput
+                                            onFocus={this.onFocus}
+                                            autoFocus={false}
+                                            placeholder="            Re-enter new password              "
+                                            style={styles.textInput}
+                                            placeholderTextColor="#C0C0C0"
+                                            secureTextEntry={true}
+                                            onChangeText={(text) => this.updateValue(text, 'conpw')}
+
+                                        />
+                                    </View>
+                                    <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+
+                                        <TouchableOpacity style={{ height: 45, width: 100, backgroundColor: '#009eff', borderRadius: 23, justifyContent: 'center', alignItems: 'center', marginLeft: 10 }}
+                                            onPress={this.changepw}>
+                                            <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                                                <Text style={{ fontWeight: 'bold', color: '#ffffff' }}>Confirm</Text>
+                                            </View>
+                                        </TouchableOpacity>
+
+                                    </View>
+
+
+                                </View>
+
+                            </View>
+                        </Modal>
                         {/* MODAL------------------------------------------------------------------------------------------------------------------- */}
 
                     </View>
